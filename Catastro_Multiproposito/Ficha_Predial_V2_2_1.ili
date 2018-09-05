@@ -186,6 +186,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
   STRUCTURE COL_ServicioPublicoTipo_Predio_Ficha_Servicio_Publico = value : MANDATORY COL_ServicioPublicoTipo; END COL_ServicioPublicoTipo_Predio_Ficha_Servicio_Publico;
 
   TOPIC Ficha =
+    OID AS INTERLIS.UUIDOID;
     DEPENDS ON Avaluos_V2_2_1.Avaluos,Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro;
 
     /** Persona jurídica que actúa como interesado. REVISAR DEFINICIÓN RESPECTO AL NÚCLEO

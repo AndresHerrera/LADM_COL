@@ -536,6 +536,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
   /** Este Topic agrupa a las clases específicas del avalúo, así como sus atributos.
    */
   TOPIC Avaluos =
+    OID AS INTERLIS.UUIDOID;
     DEPENDS ON Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro;
 
     CLASS Calificacion_Unidad_Construccion (ABSTRACT) =

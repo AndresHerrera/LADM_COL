@@ -12,6 +12,7 @@ VERSION "V2.2.1"  // 2018-02-08 // =
   IMPORTS Catastro_Registro_Nucleo_V2_2_1,LADM_COL_V1_1;
 
   TOPIC Diagnostico_Juridico =
+    OID AS INTERLIS.UUIDOID;
     DEPENDS ON Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro;
 
     DOMAIN

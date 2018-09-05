@@ -13,6 +13,7 @@ VERSION "V2.2.1"  // 2018-04-19 // =
   /** Este tema almacena específicamente las clases que definen la división administrativa desde el punto de vista operativo de catastro.
    */
   TOPIC LimitesOperativosCatastro =
+    OID AS INTERLIS.UUIDOID;
 
     /** Zona ocupada por un sector catastral determinado y su determinación toponímica y catastral.
      */
@@ -101,6 +102,7 @@ VERSION "V2.2.1"  // 2018-04-19 // =
   END LimitesOperativosCatastro;
 
   TOPIC LimitesPoliticoAdministrativos =
+    OID AS INTERLIS.UUIDOID;
 
     CLASS FronteraNacional =
       Nombre : MANDATORY TEXT*8;
@@ -152,6 +154,7 @@ VERSION "V2.2.1"  // 2018-04-19 // =
   /** Topic para separar las clases del paquete de Topografía y Representación que se usan de apoyo en el catastro.
    */
   TOPIC Auxiliares =
+    OID AS INTERLIS.UUIDOID;
     DEPENDS ON Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro;
 
     DOMAIN

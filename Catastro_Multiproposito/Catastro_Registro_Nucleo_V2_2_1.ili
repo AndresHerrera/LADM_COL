@@ -321,6 +321,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
 
   TOPIC Catastro_Registro
   EXTENDS LADM_COL_V1_1.LADM_Nucleo =
+    OID AS INTERLIS.UUIDOID;
     DEPENDS ON LADM_COL_V1_1.LADM_Nucleo;
 
     /** Clase que registra las instancias de los derechos que un interesado ejerce sobre un predio. Es una especialización de la clase LA_RRR del propio modelo.
