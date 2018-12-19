@@ -47,6 +47,7 @@ INTERLIS 2.3;
  * 18.10.2018/at: Se agregan los atributos p_Espacio_De_Nombres y p_Local_Id a la clase Publicidad
  * 29.10.2018/fm: se amplia el tamaño de campo FMI en la clase predio para almacenar cadenas como 'LIBRO 2 TOMO 1/961 FOLIO 37/46 PARTIDA N 58'
  * 18.12.2018/fm: adicion de constraints para validación logica de valores numericos mayores a 0
+ * 19.12.2018/fm: ajuste a constraint construccion area_construccion solo evaluar cuando sea diferente de nulo
  * -----------------------------------------------------------
  * 
  * (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -399,7 +400,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       SET CONSTRAINT Avaluo_Construccion > 0;
       !!@name="Area Construccion"
       !!@ilivalid.msg="El Area Construccion debe ser mayor a cero"
-      SET CONSTRAINT WHERE NOT (Area_Construccion == UNDEFINED):  
+      SET CONSTRAINT WHERE DEFINED(Area_Construccion):  
         Area_Construccion > 0;
     END Construccion;
 
