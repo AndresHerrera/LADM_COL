@@ -46,6 +46,7 @@ INTERLIS 2.3;
  * 25.09.2018/at: Se ajusta la longitud del atributo Codigo_Registral en las clases especializadas de LA_RRR a 5 caracteres de acuerdo a la Resolución 3973 de 2018
  * 18.10.2018/at: Se agregan los atributos p_Espacio_De_Nombres y p_Local_Id a la clase Publicidad
  * 29.10.2018/fm: se amplia el tamaño de campo FMI en la clase predio para almacenar cadenas como 'LIBRO 2 TOMO 1/961 FOLIO 37/46 PARTIDA N 58'
+ * 18.12.2018/fm: adicion de constraints para validación logica de valores numericos mayores a 0
  * -----------------------------------------------------------
  * 
  * (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -393,6 +394,13 @@ VERSION "V2.2.1"  // 2018-02-19 // =
        */
       Avaluo_Construccion : MANDATORY LADM_COL_V1_1.LADM_Nucleo.Peso;
       Area_Construccion : 0.0 .. 99999999999999.9;
+      !!@name="Avaluo Construccion"
+      !!@ilivalid.msg="El Avaluo Construccion debe ser mayor a cero"
+      SET CONSTRAINT Avaluo_Construccion > 0;
+      !!@name="Area Construccion"
+      !!@ilivalid.msg="El Area Construccion debe ser mayor a cero"
+      SET CONSTRAINT WHERE NOT (Area_Construccion == UNDEFINED):  
+        Area_Construccion > 0;
     END Construccion;
 
     CLASS Interesado_Contacto =
@@ -565,6 +573,12 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       SET CONSTRAINT INTERLIS.areAreas(ALL, UNDEFINED, >> poligono_creado);
       !!@name="no_overlaps"
       SET CONSTRAINT no_overlaps(ALL,>> poligono_creado);
+      !!@name="Area calculada"
+      !!@ilivalid.msg="El area calculada debe ser mayor a cero ({t_id}) {su_Espacio_De_Nombres} - {su_Local_Id} "
+      SET CONSTRAINT Area_Calculada > 0;
+      !!@name="Avaluo terreno"
+      !!@ilivalid.msg="El Avaluo terreno debe ser mayor a cero"
+      SET CONSTRAINT Avaluo_Terreno > 0;
     END Terreno;
 
     /** Restricciones a las que está sometido un predio y que inciden sobre los derechos que pueden ejercerse sobre él.

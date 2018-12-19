@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3">
+<HEADERSECTION SENDER="ili2pg-3.11.2-20180208" VERSION="2.3"><MODELS><MODEL NAME="ISO19107_V1_MAGNABOG" VERSION="2016-03-07" URI="http://www.swisslm.ch/models"></MODEL><MODEL NAME="LADM_COL_V1_1" VERSION="V1.1.0" URI="http://www.proadmintierra.info/"></MODEL><MODEL NAME="Catastro_Registro_Nucleo_V2_2_1" VERSION="V2.2.1" URI="http://www.proadmintierra.info/"></MODEL></MODELS></HEADERSECTION>
+<DATASECTION>
+<Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro BID="Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro">
+<Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.Construccion TID="1"><Comienzo_Vida_Util_Version>2018-12-18T16:36:55.185</Comienzo_Vida_Util_Version><su_Espacio_De_Nombres>0</su_Espacio_De_Nombres><su_Local_Id>0</su_Local_Id><poligono_creado><ISO19107_V1_MAGNABOG.GM_MultiSurface2D><geometry><ISO19107_V1_MAGNABOG.GM_Surface2DListValue><value><SURFACE><BOUNDARY><POLYLINE><COORD><C1>273768.9595375722</C1><C2>812296.1849710983</C2></COORD><COORD><C1>294181.79190751445</C1><C2>782810.9826589595</C2></COORD><COORD><C1>314594.62427745666</C1><C2>814564.2774566473</C2></COORD><COORD><C1>296449.8843930636</C1><C2>832709.0173410405</C2></COORD><COORD><C1>273768.9595375722</C1><C2>812296.1849710983</C2></COORD></POLYLINE></BOUNDARY></SURFACE></value></ISO19107_V1_MAGNABOG.GM_Surface2DListValue></geometry></ISO19107_V1_MAGNABOG.GM_MultiSurface2D></poligono_creado><Avaluo_Construccion>0.8</Avaluo_Construccion></Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.Construccion>
+</Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro>
+</DATASECTION>
+</TRANSFER>
