@@ -47,7 +47,7 @@ INTERLIS 2.3;
  * 18.10.2018/at: Se agregan los atributos p_Espacio_De_Nombres y p_Local_Id a la clase Publicidad
  * 29.10.2018/fm: se amplia el tamaño de campo FMI en la clase predio para almacenar cadenas como 'LIBRO 2 TOMO 1/961 FOLIO 37/46 PARTIDA N 58'
  * 18.12.2018/fm: adicion de constraints para validación logica de valores numericos mayores a 0
- * 19.12.2018/fm: ajuste a constraint construccion area_construccion solo evaluar cuando sea diferente de nulo
+ * 19.12.2018/fm-at: ajuste a constraint construccion area_construccion solo evaluar cuando sea diferente de nulo; Unión de dominios "Posesion" y "Ocupacion" para tipo de derecho; Unión de dominios "Desplazamiento Forzado" y "Victima o Restitucion" en tipo de Publicidad
  * -----------------------------------------------------------
  * 
  * (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -103,8 +103,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Derecho_Propiedad_Colectiva,
       Mineria_Derecho,
       Nuda_Propiedad,
-      Ocupacion,
-      Posesion,
+      Posesion_Ocupacion,
       Tenencia,
       Usufructo,
       /** Derecho de dominio o propiedad
@@ -320,8 +319,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Demanda,
       Inicio_de_Proceso_Administrativo,
       Cancelacion,
-      Desplazamiento_Forzado,
-      Victima_o_Restitucion,
+      Desplazamiento_Forzado_Victima_o_Restitucion,
       Publicidad_de_Acto_Juridico
     );
 
