@@ -1,0 +1,10 @@
+INTERLIS 2.3;
+
+!!@ technicalContact=mailto:agenciadeimplementacion@incige.com
+CONTRACTED TYPE MODEL INTERLIS_COMMONS (en)
+AT "mailto:agenciadeimplementacion@incige.com"
+VERSION "V0.1"  // 2018-12-19 // =
+
+  FUNCTION matches( TextVal : TEXT;  pattern : TEXT ) : BOOLEAN;
+
+END INTERLIS_COMMONS.

@@ -1,0 +1,20 @@
+INTERLIS 2.3;
+
+MODEL TEST_INTERLIS_COMMONS (es)
+AT "mailto:USER@localhost"
+VERSION "2018-12-19"  =
+  IMPORTS INTERLIS_COMMONS;
+
+  TOPIC Topic =
+
+    CLASS ClassAttr =
+      textStr : TEXT;
+      patternStr : TEXT;
+      !!@ name = "matches"
+      SET CONSTRAINT
+        INTERLIS_COMMONS.matches(textStr , patternStr);
+    END ClassAttr;
+
+  END Topic;
+
+END TEST_INTERLIS_COMMONS.
