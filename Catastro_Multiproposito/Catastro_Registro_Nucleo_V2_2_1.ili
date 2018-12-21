@@ -48,6 +48,7 @@ INTERLIS 2.3;
  * 29.10.2018/fm: se amplia el tamaño de campo FMI en la clase predio para almacenar cadenas como 'LIBRO 2 TOMO 1/961 FOLIO 37/46 PARTIDA N 58'
  * 18.12.2018/fm: adicion de constraints para validación logica de valores numericos mayores a 0
  * 19.12.2018/fm-at: ajuste a constraint construccion area_construccion solo evaluar cuando sea diferente de nulo; Unión de dominios "Posesion" y "Ocupacion" para tipo de derecho; Unión de dominios "Desplazamiento Forzado" y "Victima o Restitucion" en tipo de Publicidad
+ * 21.12.2018/at: Modificación del tipo de String 'single line String' a 'multi line String' en los atributos 'Primer_Nombre', 'Segundo_Nombre', 'Primer_Apellido', 'Segundo_Apellido' y 'Razon_Social' de la clase COL_Interesado; para soportar caracteres especiales comunes en la información jurídica
  * -----------------------------------------------------------
  * 
  * (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -368,19 +369,19 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Fecha_Emision : INTERLIS.XMLDate;
       /** Primer apellido de la persona física.
        */
-      Primer_Apellido : TEXT*100;
+      Primer_Apellido : MTEXT*100;
       /** Primer nombre de la persona física.
        */
-      Primer_Nombre : TEXT*100;
+      Primer_Nombre : MTEXT*100;
       /** Segundo apellido de la persona física.
        */
-      Segundo_Apellido : TEXT*100;
+      Segundo_Apellido : MTEXT*100;
       /** Segundo nombre de la persona física.
        */
-      Segundo_Nombre : TEXT*100;
+      Segundo_Nombre : MTEXT*100;
       /** Nombre con el que está inscrito.
        */
-      Razon_Social : TEXT*250;
+      Razon_Social : MTEXT*250;
       Genero : Catastro_Registro_Nucleo_V2_2_1.COL_GeneroTipo;
       Tipo_Interesado_Juridico : Catastro_Registro_Nucleo_V2_2_1.COL_InteresadoJuridicoTipo;
     END COL_Interesado;
