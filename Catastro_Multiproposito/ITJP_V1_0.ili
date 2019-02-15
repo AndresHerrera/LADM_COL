@@ -1,0 +1,49 @@
+INTERLIS 2.3;
+
+/** iNFORME TECNICO JURIDICO PRELIMINAR - ANT
+ * 
+ * 07.11.2017/fm: Version inicial del modelo informe tecnico-jurídico preliminar
+ */
+MODEL ITJP_V1_0 (es)
+AT "http://www.proadmintierra.info/"
+VERSION "V2.2.1"  // 2019-02-08 // =
+  IMPORTS Catastro_Registro_Nucleo_V2_2_1;
+
+  TOPIC ITJP =
+    DEPENDS ON Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro;
+
+    CLASS Predio_ITJP =
+      Consecutivo_ITJP : NUMERIC;
+      Numero_FIso : NUMERIC;
+      /** Nombre del propietario o poseedor registrado en el IGAC
+       */
+      Propietario_Poseedor_IGAC : TEXT*200;
+      /** Numero de predio en la herramienta de cartográfia social
+       */
+      Numero_Cartografia_Social : TEXT*20;
+      Observaciones_Generales : MTEXT*2000;
+      Nombre_Predio_IGAC : TEXT*200;
+      Nompre_Predio_SNR : TEXT*200;
+      Observaciones_Identifiacion_Predio : MTEXT*2000;
+      /** Número de Folio de Matricula Inmobiliaria según el IGAC
+       */
+      FMI_IGAC : TEXT*80;
+      Area_IGAC : NUMERIC;
+      Linderos_IGAC : MTEXT*5000;
+      Observaciones_Interesado : MTEXT*2000;
+      Tipologia_ANT : TEXT*20;
+      Historia_Predio : MTEXT*5000;
+      /** PRELIMINARMENTE, EXISTE LICITUD EN LA ADQUISICIÓN DEL PREDIO
+       */
+      Adquisicion_Licita : BOOLEAN;
+      Razonis_Presunta_Ilicitud : TEXT*500;
+    END Predio_ITJP;
+
+    ASSOCIATION PredioITJP_PredioCatastro =
+      Predio_Catastro (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.Predio;
+      Predio_ITJP -- {0..1} Predio_ITJP;
+    END PredioITJP_PredioCatastro;
+
+  END ITJP;
+
+END ITJP_V1_0.
