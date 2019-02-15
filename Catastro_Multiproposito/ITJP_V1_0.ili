@@ -13,8 +13,8 @@ VERSION "V2.2.1"  // 2019-02-08 // =
     DEPENDS ON Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro;
 
     CLASS Predio_ITJP =
-      Consecutivo_ITJP : NUMERIC;
-      Numero_FIso : NUMERIC;
+      Consecutivo_ITJP : 0 .. 999999999999;
+      Numero_FIso : 0 .. 999999999999;
       /** Nombre del propietario o poseedor registrado en el IGAC
        */
       Propietario_Poseedor_IGAC : TEXT*200;
@@ -28,7 +28,7 @@ VERSION "V2.2.1"  // 2019-02-08 // =
       /** Número de Folio de Matricula Inmobiliaria según el IGAC
        */
       FMI_IGAC : TEXT*80;
-      Area_IGAC : NUMERIC;
+      Area_IGAC : 0 .. 999999999999;
       Linderos_IGAC : MTEXT*5000;
       Observaciones_Interesado : MTEXT*2000;
       Tipologia_ANT : TEXT*20;
