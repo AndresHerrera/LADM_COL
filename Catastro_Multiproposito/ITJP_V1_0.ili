@@ -2,7 +2,8 @@ INTERLIS 2.3;
 
 /** iNFORME TECNICO JURIDICO PRELIMINAR - ANT
  * 
- * 07.11.2017/fm: Version inicial del modelo informe tecnico-jurídico preliminar
+ * 08.02.2019/fm: Version inicial del modelo informe tecnico-jurídico preliminar
+ * 18.02.2019/fm: Inclusion variables de correspondencia en la inscripción del predio en la entidad catastral
  */
 MODEL ITJP_V1_0 (es)
 AT "http://www.proadmintierra.info/"
@@ -36,7 +37,19 @@ VERSION "V2.2.1"  // 2019-02-08 // =
       /** PRELIMINARMENTE, EXISTE LICITUD EN LA ADQUISICIÓN DEL PREDIO
        */
       Adquisicion_Licita : BOOLEAN;
-      Razonis_Presunta_Ilicitud : TEXT*500;
+      Razones_Presunta_Ilicitud : TEXT*500;
+      /** EL CASO ES COMPETENCIA DE LA ANT
+       */
+      Competencia_ANT : BOOLEAN;
+      /** POSIBLE RUTA DE ATENCIÓN POR PARTE DE LA ANT
+       */
+      Ruta_ANT : TEXT*200;
+      /** EL PREDIO SE ENCUENTRA EN DOS MUNCIPIOS O UNIDADES CATASTRALES
+       */
+      Predio_En_Dos_Municipios : BOOLEAN;
+      /** LAS PORCIONES DE TIERRA SE ENCUENTRAN INSCRITAS EN LAS ENTIDADES CATASTRALES CORRESPONDIENTES.
+       */
+      Correspondencia_Entidades_Catastrales : BOOLEAN;
     END Predio_ITJP;
 
     ASSOCIATION PredioITJP_PredioCatastro =
