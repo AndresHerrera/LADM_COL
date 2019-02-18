@@ -8,6 +8,7 @@ INTERLIS 2.3;
  * 21.08.2018/ : (AT) Se agrega el dominio COL_FormalidadTipo para los valores del atributo Formalidad en clase Predio_Ficha
  * 17.09.2018/ fm: cambio en el orden de los roles de la asociación PredioFicha_Predio para evitar la creación de la tabla de paso en el modelo físico cuando hay dependencia de topics
  * 17.09.2018/ (AT): Cambio en los nombres de los dominios COL_PredioTipoPublicoTipo y COL_PredioTipo para evitar redundancias
+ * 18.02.2019/ (AT): Cambio en la longitud de algunos atributos de las clases Predio_Ficha y NucreoFamiliar para soportar datos levantados.
  */
 MODEL Ficha_Predial_V2_2_1 (es)
 AT "http://www.proadmintierra.info/"
@@ -308,14 +309,14 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Vigencia_Fiscal : INTERLIS.XMLDate;
       /** Observaciones que se considere oportuno aportar sobre la propiedad inmobiliaria.
        */
-      Observaciones : TEXT*255;
+      Observaciones : MTEXT;
       Fecha_Visita_predial : INTERLIS.XMLDate;
       /** Nombre de la persona que atendió a la recogida de datos en campo sobre el predio.
        */
-      Nombre_Quien_Atendio : TEXT*40;
+      Nombre_Quien_Atendio : TEXT*255;
       /** Número de documento de la persona que atendió a la recogida de datos en campo sobre el predio.
        */
-      Numero_Documento_Quien_Atendio : TEXT*10;
+      Numero_Documento_Quien_Atendio : TEXT*20;
       /** Relación de la persona que atendió a la recogida de datos de campo con el predio encuestado.
        */
       Categoria_Quien_Atendio : Ficha_Predial_V2_2_1.COL_CategoriaQuienAtendioTipo;
@@ -324,10 +325,10 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Tipo_Documento_Quien_Atendio : Catastro_Registro_Nucleo_V2_2_1.COL_InteresadoDocumentoTipo;
       /** Nombre de la persona que levantó los datos en campo.
        */
-      Nombre_Encuestador : TEXT*40;
+      Nombre_Encuestador : TEXT*255;
       /** Número de documento de la persona que levantó los datos en campo.
        */
-      Numero_Documento_Encuestador : TEXT*10;
+      Numero_Documento_Encuestador : TEXT*20;
       /** Tipo de documento aportado por la persona que levantó los datos en campo. Su dominio de valores se encuentra en el modelo de catastro.
        */
       Tipo_Documento_Encuestador : Catastro_Registro_Nucleo_V2_2_1.COL_InteresadoDocumentoTipo;
@@ -359,7 +360,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
     CLASS NucleoFamiliar =
       /** Número de documento de identidad.
        */
-      Documento_Identidad : TEXT*10;
+      Documento_Identidad : TEXT*20;
       /** Tipo de documento al que se refiere el atributo "Documento_Identidad". El dominio de valores está definido en el modelo de catastro.
        */
       Tipo_Documento : Catastro_Registro_Nucleo_V2_2_1.COL_InteresadoDocumentoTipo;
@@ -371,16 +372,16 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Fecha_Emision : INTERLIS.XMLDate;
       /** Primer nombre del titular del documento al que se refiere el atributo "Documento_Identidad".
        */
-      Primer_Nombre : TEXT*20;
+      Primer_Nombre : TEXT*100;
       /** Segundo nombre del titular del documento al que se refiere el atributo "Documento_Identidad".
        */
-      Segundo_Nombre : TEXT*20;
+      Segundo_Nombre : TEXT*100;
       /** Primer apellido del titular del documento al que se refiere el atributo "Documento_Identidad".
        */
-      Primer_Apellido : TEXT*20;
+      Primer_Apellido : TEXT*100;
       /** Segundo apellido del titular del documento al que se refiere el atributo "Documento_Identidad".
        */
-      Segundo_Apellido : TEXT*20;
+      Segundo_Apellido : TEXT*100;
       /** Fecha de nacimiento del titular del documento al que se refiere el atributo "Documento_Identidad".
        */
       Fecha_Nacimiento : INTERLIS.XMLDate;
@@ -401,10 +402,10 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Habita_Predio : BOOLEAN;
       /** Relación de dependencia que existe entre la persona y el Interesado Principal del predio
        */
-      Parentesco : TEXT*20;
+      Parentesco : TEXT*100;
       /** Étnia del núcleo familiar.
        */
-      Etnia : TEXT*20;
+      Etnia : TEXT*150;
       /** Dirección del titular del documento al que se refiere el atributo "Documento_Identidad".
        */
       Direccion : TEXT*100;
