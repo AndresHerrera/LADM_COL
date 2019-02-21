@@ -20,7 +20,7 @@ INTERLIS 2.3;
  * 21.08.2018/ : (AT) Se modifica el atributo Cercania_Hitos de la clase Predio dejandolo de tipo String
  * 23.08.2018/ : (AT) Se cambia el nombre de la relación y de los roles entre unidad_construccion y calificacion_unidad_construccion
  * 18.02.2019/ : (AT) Cambio en el orden de roles de las relaciones en las clases que se relacionan con el modelo catastro-registro
- * 
+ * 21.02.2019/: (AT)  Cambio en el nombre de los atributos "Destino_Econo" y "Anio_Construction" de la clase "Unidad_Construccion" por "Destino_Economico" y "Anio_Construccion" respectivamente.
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -687,7 +687,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Uso : MANDATORY Avaluos_V2_2_1.COL_UsoConstruccionTipo;
       /** Activiadad económica a la que está destinada la unidad de construcción.
        */
-      Destino_Econo : MANDATORY Avaluos_V2_2_1.COL_DestinoEconomicoTipo;
+      Destino_Economico : MANDATORY Avaluos_V2_2_1.COL_DestinoEconomicoTipo;
       /** Tipología de unidad de construcción.
        */
       Tipologia : MANDATORY Avaluos_V2_2_1.COL_TipologiaTipo;
@@ -695,7 +695,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Valor_M2_Construccion : LADM_COL_V1_1.LADM_Nucleo.Peso;
       /** Año en el que fue construída la unidad de construcción.
        */
-      Anio_Construction : MANDATORY INTERLIS.XMLDate;
+      Anio_Construccion : MANDATORY INTERLIS.XMLDate;
       /** Estado de la construcción, desde el punto de vista estructural.
        */
       Estado_Conservacion : MANDATORY Avaluos_V2_2_1.COL_EstadoConservacionTipo;

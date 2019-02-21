@@ -9,11 +9,12 @@ INTERLIS 2.3;
  * 17.09.2018/ fm: cambio en el orden de los roles de la asociación PredioFicha_Predio para evitar la creación de la tabla de paso en el modelo físico cuando hay dependencia de topics
  * 17.09.2018/ (AT): Cambio en los nombres de los dominios COL_PredioTipoPublicoTipo y COL_PredioTipo para evitar redundancias
  * 18.02.2019/ (AT): Cambio en la longitud de algunos atributos de las clases Predio_Ficha y NucreoFamiliar para soportar datos levantados.
+ * 21.02.2019/ (AT): Se elimina la dependencia entre el modelo Ficha y modelo de Avalúos
  */
 MODEL Ficha_Predial_V2_2_1 (es)
 AT "http://www.proadmintierra.info/"
 VERSION "V2.2.1"  // 2018-02-01 // =
-  IMPORTS Catastro_Registro_Nucleo_V2_2_1,Avaluos_V2_2_1,LADM_COL_V1_1;
+  IMPORTS Catastro_Registro_Nucleo_V2_2_1,LADM_COL_V1_1;
 
   DOMAIN
 
@@ -189,7 +190,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
   STRUCTURE COL_ServicioPublicoTipo_Predio_Ficha_Servicio_Publico = value : MANDATORY COL_ServicioPublicoTipo; END COL_ServicioPublicoTipo_Predio_Ficha_Servicio_Publico;
 
   TOPIC Ficha =
-    DEPENDS ON Avaluos_V2_2_1.Avaluos,Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro;
+    DEPENDS ON Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro;
 
     /** Persona jurídica que actúa como interesado. REVISAR DEFINICIÓN RESPECTO AL NÚCLEO
      */
