@@ -20,6 +20,7 @@ INTERLIS 2.3;
  * 10.08.2018/fm : Se eliminan los atributos ai_local_id y ai_espacio_de_nombres de la clase LA_Agrupacion_Interesados
  * 27.08.2018/fm : Ajuste a la cardinalidad de asociacion puntoFuente de 1..* a 0..*
  * 25.09.2018/at: Se ajusta la longitud del atributo Codigo_Registral_Transaccion en la clase COL_FuenteAdministrativa a 5 caracteres de acuerdo a la Resolución 3973 de 2018
+ * 17.04.2019/fm-gc: cambio de geometrias xy a xy(z)
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -712,7 +713,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       Etiqueta : CharacterString;
       /** Corresponde al atributo referencePoint de la clase en LADM.
        */
-      Punto_Referencia : ISO19107_V1_MAGNABOG.GM_Point2D;
+      Punto_Referencia : ISO19107_V1_MAGNABOG.GM_Point3D;
       /** Corresponde al atributo surfaceRelation de la clase en LADM.
        */
       Relacion_Superficie : LA_RelacionSuperficieTipo;
@@ -727,7 +728,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       su_Local_Id : MANDATORY CharacterString;
       /** Materializacion del metodo createArea(). Almacena de forma permanente la geometría de tipo poligonal.
        */
-      poligono_creado : ISO19107_V1_MAGNABOG.GM_MultiSurface2D;
+      poligono_creado : ISO19107_V1_MAGNABOG.GM_MultiSurface3D;
     END LA_UnidadEspacial;
 
     /** Agrupa unidades espaciales, es decir, representaciones geográficas de las unidades administrativas básicas (clase LA_BAUnit) para representar otras unidades espaciales que se forman en base a estas, como puede ser el caso de los polígonos catastrales.
@@ -745,7 +746,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       Nombre : CharacterString;
       /** Punto de referencia de toda la agrupación, a modo de centro de masas.
        */
-      Punto_Referencia : ISO19107_V1_MAGNABOG.GM_Point2D;
+      Punto_Referencia : ISO19107_V1_MAGNABOG.GM_Point3D;
       /** Identificar único global de la agrupación.
        */
       sug_Espacio_De_Nombres : MANDATORY CharacterString;
@@ -912,7 +913,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       Exactitud_Estimada : LADM_COL_V1_1.LADM_Nucleo.DQ_PositionalAccuracy;
       Posicion_Interpolacion : LA_InterpolacionTipo;
       Monumentacion : LA_MonumentacionTipo;
-      Localizacion_Original : MANDATORY ISO19107_V1_MAGNABOG.GM_Point2D;
+      Localizacion_Original : MANDATORY ISO19107_V1_MAGNABOG.GM_Point3D;
       PuntoTipo : MANDATORY LA_PuntoTipo;
       MetodoProduccion : LADM_COL_V1_1.LADM_Nucleo.LI_Lineaje;
       Transformacion_Y_Resultado : LIST {0..*} OF LADM_COL_V1_1.LADM_Nucleo.LA_Transformacion;
@@ -937,7 +938,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
     EXTENDS ObjetoVersionado =
       /** Geometría lineal que define el lindero. Puede estar asociada a geometrías de tipo punto que definen sus vértices o ser una entidad lineal independiente.
        */
-      Geometria : ISO19107_V1_MAGNABOG.GM_Curve2D;
+      Geometria : ISO19107_V1_MAGNABOG.GM_Curve3D;
       /** Descripción de la localización, cuando esta se basa en texto.
        */
       Localizacion_Textual : CharacterString;
