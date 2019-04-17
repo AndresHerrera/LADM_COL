@@ -49,6 +49,7 @@ INTERLIS 2.3;
  * 18.12.2018/fm: adicion de constraints para validación logica de valores numericos mayores a 0
  * 19.12.2018/fm-at: ajuste a constraint construccion area_construccion solo evaluar cuando sea diferente de nulo; Unión de dominios "Posesion" y "Ocupacion" para tipo de derecho; Unión de dominios "Desplazamiento Forzado" y "Victima o Restitucion" en tipo de Publicidad
  * 21.12.2018/at: Modificación del tipo de String 'single line String' a 'multi line String' en los atributos 'Primer_Nombre', 'Segundo_Nombre', 'Primer_Apellido', 'Segundo_Apellido' y 'Razon_Social' de la clase COL_Interesado; para soportar caracteres especiales comunes en la información jurídica
+ * 17.04.2019/at: Se eliminan las validaciones de superposición en las clases lindero, punto_lindero y terreno
  * -----------------------------------------------------------
  * 
  * (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -59,8 +60,6 @@ CONTRACTED MODEL Catastro_Registro_Nucleo_V2_2_1 (es)
 AT "http://www.proadmintierra.info/"
 VERSION "V2.2.1"  // 2018-02-19 // =
   IMPORTS ISO19107_V1_MAGNABOG,LADM_COL_V1_1;
-
-  FUNCTION no_overlaps(Objects: OBJECTS OF ANYCLASS; SurfaceAttr : ATTRIBUTE OF @ Objects RESTRICTION ( SURFACE )): BOOLEAN;
 
   DOMAIN
 
@@ -419,8 +418,6 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       /** Lóngitud en m del lindero.
        */
       Longitud : MANDATORY 0.0 .. 10000.0 [INTERLIS.m];
-      !!@name="no_overlaps"
-      SET CONSTRAINT no_overlaps(ALL,>> Geometria);
     END Lindero;
 
     /** Clase especializada de BaUnit, que describe la unidad administrativa básica para el caso de Colombia.
@@ -530,8 +527,6 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       /** Nombre o codigo del punto lindero
        */
       Nombre_Punto : TEXT*10;
-      !!@name="no_overlaps"
-      SET CONSTRAINT no_overlaps(ALL,>> Localizacion_Original);
     END PuntoLindero;
 
     /** Porción de tierra con una extensión geográfica definida.
@@ -568,11 +563,6 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       /** Corresponde a la figura geometrica vectorial poligonal, generada a partir de los linderos del predio.
        */
       poligono_creado (EXTENDED) : MANDATORY ISO19107_V1_MAGNABOG.GM_MultiSurface2D;
-      !!@name="Validar Area"
-      !!@ilivalid.msg="el objeto {su_Espacio_De_Nombres} - {su_Local_Id} no forma un area continua y sin superposisciones"
-      SET CONSTRAINT INTERLIS.areAreas(ALL, UNDEFINED, >> poligono_creado);
-      !!@name="no_overlaps"
-      SET CONSTRAINT no_overlaps(ALL,>> poligono_creado);
       !!@name="Area calculada"
       !!@ilivalid.msg="El area calculada debe ser mayor a cero ({t_id}) {su_Espacio_De_Nombres} - {su_Local_Id} "
       SET CONSTRAINT Area_Calculada > 0;
