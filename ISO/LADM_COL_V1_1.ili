@@ -21,6 +21,7 @@ INTERLIS 2.3;
  * 27.08.2018/fm : Ajuste a la cardinalidad de asociacion puntoFuente de 1..* a 0..*
  * 25.09.2018/at: Se ajusta la longitud del atributo Codigo_Registral_Transaccion en la clase COL_FuenteAdministrativa a 5 caracteres de acuerdo a la Resolución 3973 de 2018
  * 17.04.2019/fm-gc: cambio de geometrias xy a xy(z)
+ * 22.04.2019/at: Asignación de clases LA_BAUnit y LA_UnidadEspacial como clases abstractas
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -701,7 +702,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
 
     /** Traducción al español de la clase LA_SpatialUnit de LADM.
      */
-    CLASS LA_UnidadEspacial
+    CLASS LA_UnidadEspacial (ABSTRACT)
     EXTENDS ObjetoVersionado =
       Area : LIST {0..*} OF LADM_COL_V1_1.LADM_Nucleo.COL_AreaValor;
       Dimension : LA_DimensionTipo;
@@ -851,7 +852,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
 
     /** De forma genérica, representa el objeto territorial legal (Catastro 2014) que se gestiona en el modelo, en este caso, la parcela catastral o predio. Es independiente del conocimiento de su realidad espacial y se centra en su existencia conocida y reconocida.
      */
-    CLASS LA_BAUnit
+    CLASS LA_BAUnit (ABSTRACT)
     EXTENDS ObjetoVersionado =
       /** Nombre que recibe la unidad administrativa básica, en muchos casos toponímico, especialmente en terrenos rústicos.
        */
