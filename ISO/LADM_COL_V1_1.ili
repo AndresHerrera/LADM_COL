@@ -22,6 +22,7 @@ INTERLIS 2.3;
  * 25.09.2018/at: Se ajusta la longitud del atributo Codigo_Registral_Transaccion en la clase COL_FuenteAdministrativa a 5 caracteres de acuerdo a la Resolución 3973 de 2018
  * 17.04.2019/fm-gc: cambio de geometrias xy a xy(z)
  * 22.04.2019/at: Asignación de clases LA_BAUnit y LA_UnidadEspacial como clases abstractas
+ * 22.04.2019/at: Eliminación del atributo punto_referencia de la clase LA_UnidadEspacial para evitar doble geometría en clases espaciales
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -712,9 +713,6 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       /** Corresponde al atributo label de la clase en LADM.
        */
       Etiqueta : CharacterString;
-      /** Corresponde al atributo referencePoint de la clase en LADM.
-       */
-      Punto_Referencia : ISO19107_V1_MAGNABOG.GM_Point3D;
       /** Corresponde al atributo surfaceRelation de la clase en LADM.
        */
       Relacion_Superficie : LA_RelacionSuperficieTipo;
