@@ -23,6 +23,7 @@ INTERLIS 2.3;
  * 17.04.2019/fm-gc: cambio de geometrias xy a xy(z)
  * 22.04.2019/at: Asignación de clases LA_BAUnit y LA_UnidadEspacial como clases abstractas
  * 22.04.2019/at: Eliminación del atributo punto_referencia de la clase LA_UnidadEspacial para evitar doble geometría en clases espaciales
+ * 22.04.2019/at: Eliminación de las relaciones ueJerarquia y relacionUe de la tabla LA_UnidadEspacial para evitar generación de relaciones entre cada una de sus clases especializadas
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -766,6 +767,11 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       Tipo : LA_UnidadEdificacionTipo;
     END LA_EspacioJuridicoUnidadEdificacion;
 
+    ASSOCIATION ueJerarquiaGrupo =
+      set -<> {0..1} LA_AgrupacionUnidadesEspaciales;
+      element -- {0..*} LA_AgrupacionUnidadesEspaciales;
+    END ueJerarquiaGrupo;
+
     /** Traducción al español de la clase LA_LegalSpaceUtilityNetwork. Representa un tipo de unidad espacial (LA_UNidadEspacial) cuyas instancias son las redes de servicios.
      */
     CLASS LA_EspacioJuridicoRedServicios
@@ -780,6 +786,11 @@ VERSION "V1.1.0"  // 2018-04-19 // =
        */
       Tipo : LA_RedServiciosTipo;
     END LA_EspacioJuridicoRedServicios;
+
+    ASSOCIATION ueUeGrupo =
+      parte -- {0..*} LA_UnidadEspacial;
+      todo -- {0..*} LA_AgrupacionUnidadesEspaciales;
+    END ueUeGrupo;
 
     /** Traducción de la calse LA_Level de LADM.
      */
@@ -798,26 +809,6 @@ VERSION "V1.1.0"  // 2018-04-19 // =
     EXTENDS ObjetoVersionado =
       Relacion : MANDATORY ISO19125_Tipo;
     END LA_RelacionNecesariaUnidadesEspaciales;
-
-    ASSOCIATION relacionUe =
-      rue1 -- {0..*} LA_UnidadEspacial;
-      rue2 -- {0..*} LA_UnidadEspacial;
-    END relacionUe;
-
-    ASSOCIATION ueJerarquia =
-      uej1 -- {0..*} LA_UnidadEspacial;
-      uej2 -<> {0..1} LA_UnidadEspacial;
-    END ueJerarquia;
-
-    ASSOCIATION ueJerarquiaGrupo =
-      set -<> {0..1} LA_AgrupacionUnidadesEspaciales;
-      element -- {0..*} LA_AgrupacionUnidadesEspaciales;
-    END ueJerarquiaGrupo;
-
-    ASSOCIATION ueUeGrupo =
-      parte -- {0..*} LA_UnidadEspacial;
-      todo -- {0..*} LA_AgrupacionUnidadesEspaciales;
-    END ueUeGrupo;
 
     ASSOCIATION ueNivel =
       ue -- {0..*} LA_UnidadEspacial;
