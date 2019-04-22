@@ -21,6 +21,7 @@ INTERLIS 2.3;
  * 23.08.2018/ : (AT) Se cambia el nombre de la relación y de los roles entre unidad_construccion y calificacion_unidad_construccion
  * 18.02.2019/ : (AT) Cambio en el orden de roles de las relaciones en las clases que se relacionan con el modelo catastro-registro
  * 21.02.2019/: (AT)  Cambio en el nombre de los atributos "Destino_Econo" y "Anio_Construction" de la clase "Unidad_Construccion" por "Destino_Economico" y "Anio_Construccion" respectivamente.
+ * 22.04.2019/ (AT-FM): Se habilita soporte para identificador interno tipo uuid en el "Topic"
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -537,6 +538,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
   /** Este Topic agrupa a las clases específicas del avalúo, así como sus atributos.
    */
   TOPIC Avaluos =
+    OID AS INTERLIS.UUIDOID;
     DEPENDS ON Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro;
 
     CLASS Calificacion_Unidad_Construccion (ABSTRACT) =

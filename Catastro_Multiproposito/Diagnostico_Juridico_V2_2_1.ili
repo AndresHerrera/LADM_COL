@@ -6,6 +6,7 @@ INTERLIS 2.3;
  * 08.11.2017: FM/ Ajuste de las variables del Predio_Juridico conforme al anexo 'Informe de la realidad física y jurídica del barrido predial'
  * 02.08.2018: FM/ Actualizacion de dependencia a la version 2.2.1 del nucleo y LADM 1.1
  * 15.02.2019: AT/ Creación de estructuras FMI_Duplicado y Folio_Segregado para almacenar multiples valores en estos campos
+ * 22.04.2019/ AT-FM: Se habilita soporte para identificador interno tipo uuid en el "Topic"
  */
 MODEL Diagnostico_Juridico_V2_2_1 (es)
 AT "http://www.proadmintierra.info/"
@@ -13,6 +14,7 @@ VERSION "V2.2.1"  // 2018-02-08 // =
   IMPORTS Catastro_Registro_Nucleo_V2_2_1,LADM_COL_V1_1;
 
   TOPIC Diagnostico_Juridico =
+    OID AS INTERLIS.UUIDOID;
     DEPENDS ON Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro;
 
     DOMAIN

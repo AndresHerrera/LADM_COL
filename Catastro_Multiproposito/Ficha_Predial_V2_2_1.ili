@@ -10,6 +10,7 @@ INTERLIS 2.3;
  * 17.09.2018/ (AT): Cambio en los nombres de los dominios COL_PredioTipoPublicoTipo y COL_PredioTipo para evitar redundancias
  * 18.02.2019/ (AT): Cambio en la longitud de algunos atributos de las clases Predio_Ficha y NucreoFamiliar para soportar datos levantados.
  * 21.02.2019/ (AT): Se elimina la dependencia entre el modelo Ficha y modelo de Avalúos
+ * 22.04.2019/ (AT-FM): Se habilita soporte para identificador interno tipo uuid en el "Topic"
  */
 MODEL Ficha_Predial_V2_2_1 (es)
 AT "http://www.proadmintierra.info/"
@@ -190,6 +191,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
   STRUCTURE COL_ServicioPublicoTipo_Predio_Ficha_Servicio_Publico = value : MANDATORY COL_ServicioPublicoTipo; END COL_ServicioPublicoTipo_Predio_Ficha_Servicio_Publico;
 
   TOPIC Ficha =
+    OID AS INTERLIS.UUIDOID;
     DEPENDS ON Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro;
 
     /** Persona jurídica que actúa como interesado. REVISAR DEFINICIÓN RESPECTO AL NÚCLEO

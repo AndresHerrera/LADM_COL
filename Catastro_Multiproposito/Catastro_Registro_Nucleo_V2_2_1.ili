@@ -50,6 +50,7 @@ INTERLIS 2.3;
  * 19.12.2018/fm-at: ajuste a constraint construccion area_construccion solo evaluar cuando sea diferente de nulo; Unión de dominios "Posesion" y "Ocupacion" para tipo de derecho; Unión de dominios "Desplazamiento Forzado" y "Victima o Restitucion" en tipo de Publicidad
  * 21.12.2018/at: Modificación del tipo de String 'single line String' a 'multi line String' en los atributos 'Primer_Nombre', 'Segundo_Nombre', 'Primer_Apellido', 'Segundo_Apellido' y 'Razon_Social' de la clase COL_Interesado; para soportar caracteres especiales comunes en la información jurídica
  * 17.04.2019/at: Se eliminan las validaciones de superposición en las clases lindero, punto_lindero y terreno
+ * 22.04.2019/at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
  * -----------------------------------------------------------
  * 
  * (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -338,6 +339,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
 
   TOPIC Catastro_Registro
   EXTENDS LADM_COL_V1_1.LADM_Nucleo =
+    OID AS INTERLIS.UUIDOID;
     DEPENDS ON LADM_COL_V1_1.LADM_Nucleo;
 
     /** Clase que registra las instancias de los derechos que un interesado ejerce sobre un predio. Es una especialización de la clase LA_RRR del propio modelo.
