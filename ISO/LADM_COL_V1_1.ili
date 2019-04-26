@@ -21,9 +21,11 @@ INTERLIS 2.3;
  * 27.08.2018/fm : Ajuste a la cardinalidad de asociacion puntoFuente de 1..* a 0..*
  * 25.09.2018/at: Se ajusta la longitud del atributo Codigo_Registral_Transaccion en la clase COL_FuenteAdministrativa a 5 caracteres de acuerdo a la Resolución 3973 de 2018
  * 17.04.2019/fm-gc: cambio de geometrias xy a xy(z)
- * 22.04.2019/at: Asignación de clases LA_BAUnit y LA_UnidadEspacial como clases abstractas
+ * 22.04.2019/at: Cambio de clases LA_BAUnit y LA_UnidadEspacial a clases abstractas
  * 22.04.2019/at: Eliminación del atributo punto_referencia de la clase LA_UnidadEspacial para evitar doble geometría en clases espaciales
  * 22.04.2019/at: Eliminación de las relaciones ueJerarquia y relacionUe de la tabla LA_UnidadEspacial para evitar generación de relaciones entre cada una de sus clases especializadas
+ * 23.04.2019/at: Cambio de clases LA_Punto, LA_CadenaCarasLimite, LA_CarasLindero a clases abstractas
+ * 26.04.2019/at: Cambio de clase LA_EspacioJuridicoUnidadEdificacion a clase abstracta/ Cambio en el nombre de las relaciones entre LA_CadenaCarasLimite y LA_UnidadEspacial a masCcl y menosCcl/ Cambio en el nombre de las relaciones entre LA_CarasLindero y LA_UnidadEspacial a mascl y menoscl
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -757,7 +759,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
 
     /** Traducción al español de la clase LA_LegalSpaceBuildingUnit. Sus intancias son las unidades de edificación
      */
-    CLASS LA_EspacioJuridicoUnidadEdificacion
+    CLASS LA_EspacioJuridicoUnidadEdificacion (ABSTRACT)
     EXTENDS LA_UnidadEspacial =
       /** Identificador de la unidad de edificación.
        */
@@ -896,7 +898,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
 
     /** Traducción al español de la clase LA_Point de LADM.
      */
-    CLASS LA_Punto
+    CLASS LA_Punto (ABSTRACT)
     EXTENDS ObjetoVersionado =
       /** Atributo no usado, se materializa sobre los atributos Extactitud horizontal y vertical
        */
@@ -924,7 +926,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
 
     /** Traducción al español de la clase LA_BoundaryFaceString de LADM. Define los linderos y a su vez puede estar definida por una descrición textual o por dos o más puntos. Puede estar asociada a una fuente espacial o más.
      */
-    CLASS LA_CadenaCarasLimite
+    CLASS LA_CadenaCarasLimite (ABSTRACT)
     EXTENDS ObjetoVersionado =
       /** Geometría lineal que define el lindero. Puede estar asociada a geometrías de tipo punto que definen sus vértices o ser una entidad lineal independiente.
        */
@@ -942,7 +944,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
 
     /** Traducción de la clase LA_BoundaryFace de LADM. De forma similar a LA_CadenaCarasLindero, representa los límites, pero en este caso permite representación 3D.
      */
-    CLASS LA_CarasLindero
+    CLASS LA_CarasLindero (ABSTRACT)
     EXTENDS ObjetoVersionado =
       /** Geometría en 3D del límite o lindero, asociada a putos o a descripciones textuales.
        */
@@ -988,14 +990,14 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       lfuente -- {0..*} COL_FuenteEspacial;
     END cclFuente;
 
-    ASSOCIATION menos =
-      ccl -- {0..*} LA_CadenaCarasLimite;
-      eu (EXTERNAL) -- {0..*} LA_UnidadEspacial;
-    END menos;
+    ASSOCIATION menosCcl =
+      ccl_menos -- {0..*} LA_CadenaCarasLimite;
+      ue_menos (EXTERNAL) -- {0..*} LA_UnidadEspacial;
+    END menosCcl;
 
     ASSOCIATION masCcl =
-      cclP -- {0..*} LA_CadenaCarasLimite;
-      ueP (EXTERNAL) -- {0..*} LA_UnidadEspacial;
+      ccl_mas -- {0..*} LA_CadenaCarasLimite;
+      ue_mas (EXTERNAL) -- {0..*} LA_UnidadEspacial;
     END masCcl;
 
     ASSOCIATION puntoCcl =
@@ -1008,15 +1010,15 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       cfuente -- {0..*} COL_FuenteEspacial;
     END clFuente;
 
-    ASSOCIATION menosf =
-      cl -- {0..*} LA_CarasLindero;
-      ue (EXTERNAL) -- {0..*} LA_UnidadEspacial;
-    END menosf;
+    ASSOCIATION menoscl =
+      cl_menos -- {0..*} LA_CarasLindero;
+      ue_menos (EXTERNAL) -- {0..*} LA_UnidadEspacial;
+    END menoscl;
 
-    ASSOCIATION mas =
-      clP -- {0..*} LA_CarasLindero;
-      ueP (EXTERNAL) -- {0..*} LA_UnidadEspacial;
-    END mas;
+    ASSOCIATION mascl =
+      cl_mas -- {0..*} LA_CarasLindero;
+      ue_mas (EXTERNAL) -- {0..*} LA_UnidadEspacial;
+    END mascl;
 
     ASSOCIATION puntoCl =
       punto -- {3..*} LA_Punto;
