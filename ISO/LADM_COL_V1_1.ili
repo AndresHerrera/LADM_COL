@@ -27,6 +27,7 @@ INTERLIS 2.3;
  * 23.04.2019/at: Cambio de clases LA_Punto, LA_CadenaCarasLimite, LA_CarasLindero a clases abstractas
  * 26.04.2019/at: Cambio de clase LA_EspacioJuridicoUnidadEdificacion a clase abstracta/ Cambio en el nombre de las relaciones entre LA_CadenaCarasLimite y LA_UnidadEspacial a masCcl y menosCcl/ Cambio en el nombre de las relaciones entre LA_CarasLindero y LA_UnidadEspacial a mascl y menoscl
  * 03.05.2019/at: Paso del dominio COL_UnidadEdificacionTipo del modelo Catastro-Registro al modelo LADM_Nucleo para poder ser usado por la clase LA_EspacioJuridicoUnidadEdificacion
+ * 03.05.2019/at: Se elimina el atributo Ext_Unidad_Edificacion_Fisica_ID de la clase LA_EspacioJuridicoUnidadEdificacion
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -767,9 +768,6 @@ VERSION "V1.1.0"  // 2018-04-19 // =
      */
     CLASS LA_EspacioJuridicoUnidadEdificacion (ABSTRACT)
     EXTENDS LA_UnidadEspacial =
-      /** Identificador de la unidad de edificación.
-       */
-      Ext_Unidad_Edificacion_Fisica_ID : LADM_COL_V1_1.LADM_Nucleo.ExtUnidadEdificacionFisica;
       /** Tipo de unidad de edificación de la que se trata.
        */
       Tipo : COL_UnidadEdificacionTipo;
