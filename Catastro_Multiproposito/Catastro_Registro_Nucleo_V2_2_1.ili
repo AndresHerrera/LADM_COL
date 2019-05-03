@@ -51,6 +51,7 @@ INTERLIS 2.3;
  * 21.12.2018/at: Modificación del tipo de String 'single line String' a 'multi line String' en los atributos 'Primer_Nombre', 'Segundo_Nombre', 'Primer_Apellido', 'Segundo_Apellido' y 'Razon_Social' de la clase COL_Interesado; para soportar caracteres especiales comunes en la información jurídica
  * 17.04.2019/at: Se eliminan las validaciones de superposición en las clases lindero, punto_lindero y terreno
  * 22.04.2019/at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
+ * 03.05.2019/at: Paso del dominio COL_UnidadEdificacionTipo del modelo Catastro-Registro al modelo LADM_Nucleo para poder ser usado por la clase LA_EspacioJuridicoUnidadEdificacion
  * -----------------------------------------------------------
  * 
  * (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -177,6 +178,13 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Bodega
     );
 
+    COL_RedServiciosTipo = (
+      Petroleo,
+      Quimicos,
+      Red_Termica,
+      Telecomunicacion
+    );
+
     COL_ServidumbreTipo = (
       Vial,
       Petrolera,
@@ -193,11 +201,6 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       TierraPrepodesc,
       AreaAgriHetero,
       Pasto
-    );
-
-    COL_UnidadEdificacionTipo = (
-      Compartido,
-      individual
     );
 
     COL_DefPuntoTipo = (
@@ -227,13 +230,6 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Apoyo
     );
 
-    COL_RedServiciosTipo = (
-      Petroleo,
-      Quimicos,
-      Red_Termica,
-      Telecomunicacion
-    );
-
     COL_ResponsabilidadTipo = (
       Constitucional,
       Legal,
@@ -241,6 +237,25 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Administrativa,
       Judicial,
       Otros
+    );
+
+    COL_ViaTipo = (
+      Arteria,
+      Autopista,
+      Carreteable,
+      Cicloruta,
+      Colectora,
+      Departamental,
+      Ferrea,
+      Local,
+      Metro_o_Metrovia,
+      Nacional,
+      Ordinaria,
+      Peatonal,
+      Principal,
+      Privada,
+      Secundaria,
+      Troncal
     );
 
     COL_DescripcionPuntoTipo = (
@@ -272,25 +287,6 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Proteccion_Familia,
       Servidumbre,
       No_Registrada
-    );
-
-    COL_ViaTipo = (
-      Arteria,
-      Autopista,
-      Carreteable,
-      Cicloruta,
-      Colectora,
-      Departamental,
-      Ferrea,
-      Local,
-      Metro_o_Metrovia,
-      Nacional,
-      Ordinaria,
-      Peatonal,
-      Principal,
-      Privada,
-      Secundaria,
-      Troncal
     );
 
     COL_HipotecaTipo = (

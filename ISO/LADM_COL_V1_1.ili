@@ -26,6 +26,7 @@ INTERLIS 2.3;
  * 22.04.2019/at: Eliminación de las relaciones ueJerarquia y relacionUe de la tabla LA_UnidadEspacial para evitar generación de relaciones entre cada una de sus clases especializadas
  * 23.04.2019/at: Cambio de clases LA_Punto, LA_CadenaCarasLimite, LA_CarasLindero a clases abstractas
  * 26.04.2019/at: Cambio de clase LA_EspacioJuridicoUnidadEdificacion a clase abstracta/ Cambio en el nombre de las relaciones entre LA_CadenaCarasLimite y LA_UnidadEspacial a masCcl y menosCcl/ Cambio en el nombre de las relaciones entre LA_CarasLindero y LA_UnidadEspacial a mascl y menoscl
+ * 03.05.2019/at: Paso del dominio COL_UnidadEdificacionTipo del modelo Catastro-Registro al modelo LADM_Nucleo para poder ser usado por la clase LA_EspacioJuridicoUnidadEdificacion
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -95,6 +96,11 @@ VERSION "V1.1.0"  // 2018-04-19 // =
         Responsabilidad,
         Restriccion_Derecho_Publico,
         Restriction_Derecho_Privado
+      );
+
+      COL_UnidadEdificacionTipo = (
+        Compartido,
+        Individual
       );
 
       Integer = 0 .. 999999999;
@@ -766,7 +772,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       Ext_Unidad_Edificacion_Fisica_ID : LADM_COL_V1_1.LADM_Nucleo.ExtUnidadEdificacionFisica;
       /** Tipo de unidad de edificación de la que se trata.
        */
-      Tipo : LA_UnidadEdificacionTipo;
+      Tipo : COL_UnidadEdificacionTipo;
     END LA_EspacioJuridicoUnidadEdificacion;
 
     ASSOCIATION ueJerarquiaGrupo =
