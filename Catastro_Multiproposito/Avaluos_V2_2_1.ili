@@ -22,6 +22,7 @@ INTERLIS 2.3;
  * 18.02.2019/ : (AT) Cambio en el orden de roles de las relaciones en las clases que se relacionan con el modelo catastro-registro
  * 21.02.2019/: (AT)  Cambio en el nombre de los atributos "Destino_Econo" y "Anio_Construction" de la clase "Unidad_Construccion" por "Destino_Economico" y "Anio_Construccion" respectivamente.
  * 22.04.2019/ (AT-FM): Se habilita soporte para identificador interno tipo uuid en el "Topic"
+ * 07.05.2019/ (AT): Cambio en el tipo de geometria de las clases Zona_Homogenea_Fisica y Zona_Homogenea_Geoeconomica para soportar 3D; Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -31,7 +32,7 @@ INTERLIS 2.3;
 MODEL Avaluos_V2_2_1 (es)
 AT "http://www.proadmintierra.info/"
 VERSION "V2.2.1"  // 2018-02-01 // =
-  IMPORTS ISO19107_V1_MAGNABOG,Catastro_Registro_Nucleo_V2_2_1,LADM_COL_V1_1;
+  IMPORTS Catastro_Registro_Nucleo_V2_2_1,LADM_COL_V1_1,MAGNA_SIRGAS_V0_1;
 
   DOMAIN
 
@@ -844,7 +845,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Identificador : MANDATORY TEXT*20;
       /** Definición de la geometría espacial georreferenciada de la zona homogénea física, delimitada mediante un polígono que contiene sus linderos y la superficie ocupada.
        */
-      Geometria : MANDATORY ISO19107_V1_MAGNABOG.GM_MultiSurface2D;
+      Geometria : MANDATORY MAGNA_SIRGAS_V0_1.GM_MultiSurface3D;
     END Zona_Homogenea_Fisica;
 
     /** Esta clase permite gestionar las zonas con características económicas y de localización geográfica similares, definidas para caracterizar el avalúo.
@@ -858,7 +859,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Valor : MANDATORY LADM_COL_V1_1.LADM_Nucleo.Integer;
       /** Definición de la geometría espacial georreferenciada de la zona homogénea geoeconómica, delimitada mediante un polígono que contiene sus linderos y la superficie ocupada.
        */
-      Geometria : MANDATORY ISO19107_V1_MAGNABOG.GM_MultiSurface2D;
+      Geometria : MANDATORY MAGNA_SIRGAS_V0_1.GM_MultiSurface3D;
     END Zona_Homogenea_Geoeconomica;
 
   END Avaluos;
