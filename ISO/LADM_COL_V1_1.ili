@@ -28,6 +28,7 @@ INTERLIS 2.3;
  * 26.04.2019/at: Cambio de clase LA_EspacioJuridicoUnidadEdificacion a clase abstracta/ Cambio en el nombre de las relaciones entre LA_CadenaCarasLimite y LA_UnidadEspacial a masCcl y menosCcl/ Cambio en el nombre de las relaciones entre LA_CarasLindero y LA_UnidadEspacial a mascl y menoscl
  * 03.05.2019/at: Paso del dominio COL_UnidadEdificacionTipo del modelo Catastro-Registro al modelo LADM_Nucleo para poder ser usado por la clase LA_EspacioJuridicoUnidadEdificacion
  * 03.05.2019/at: Se elimina el atributo Ext_Unidad_Edificacion_Fisica_ID de la clase LA_EspacioJuridicoUnidadEdificacion
+ * 07.05.2019/at: Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -37,7 +38,7 @@ INTERLIS 2.3;
 MODEL LADM_COL_V1_1 (es)
 AT "http://www.proadmintierra.info/"
 VERSION "V1.1.0"  // 2018-04-19 // =
-  IMPORTS ISO19107_V1_MAGNABOG;
+  IMPORTS MAGNA_SIRGAS_V0_1;
 
   UNIT
 
@@ -512,7 +513,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       Transformacion : MANDATORY LADM_COL_V1_1.LADM_Nucleo.CC_MetodoOperacion;
       /** Geometría una vez realizado el proceso de transformación.
        */
-      Localizacion_Transformada : MANDATORY ISO19107_V1_MAGNABOG.GM_Point2D;
+      Localizacion_Transformada : MANDATORY MAGNA_SIRGAS_V0_1.GM_Point2D;
     END LA_Transformacion;
 
     /** Estructura que pone a disposición del modelo la clase OM_Observation de la ISO 19156 y de la que sólo implementa un atributo de los cinco que tiene la clase origina: resultQuality.
@@ -546,7 +547,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       Nombre_Area_Direccion : CharacterString;
       /** Par de valores georreferenciados (x,y) en la que se encuentra la dirección.
        */
-      Coordenada_Direccion : ISO19107_V1_MAGNABOG.GM_Point2D;
+      Coordenada_Direccion : MAGNA_SIRGAS_V0_1.GM_Point2D;
       /** Identificador local de la dirección.
        */
       Direccion_ID : MANDATORY LADM_COL_V1_1.LADM_Nucleo.Oid;
@@ -737,7 +738,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       su_Local_Id : MANDATORY CharacterString;
       /** Materializacion del metodo createArea(). Almacena de forma permanente la geometría de tipo poligonal.
        */
-      poligono_creado : ISO19107_V1_MAGNABOG.GM_MultiSurface3D;
+      poligono_creado : MAGNA_SIRGAS_V0_1.GM_MultiSurface3D;
     END LA_UnidadEspacial;
 
     /** Agrupa unidades espaciales, es decir, representaciones geográficas de las unidades administrativas básicas (clase LA_BAUnit) para representar otras unidades espaciales que se forman en base a estas, como puede ser el caso de los polígonos catastrales.
@@ -755,7 +756,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       Nombre : CharacterString;
       /** Punto de referencia de toda la agrupación, a modo de centro de masas.
        */
-      Punto_Referencia : ISO19107_V1_MAGNABOG.GM_Point3D;
+      Punto_Referencia : MAGNA_SIRGAS_V0_1.GM_Point3D;
       /** Identificar único global de la agrupación.
        */
       sug_Espacio_De_Nombres : MANDATORY CharacterString;
@@ -909,7 +910,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       Exactitud_Estimada : LADM_COL_V1_1.LADM_Nucleo.DQ_PositionalAccuracy;
       Posicion_Interpolacion : LA_InterpolacionTipo;
       Monumentacion : LA_MonumentacionTipo;
-      Localizacion_Original : MANDATORY ISO19107_V1_MAGNABOG.GM_Point3D;
+      Localizacion_Original : MANDATORY MAGNA_SIRGAS_V0_1.GM_Point3D;
       PuntoTipo : MANDATORY LA_PuntoTipo;
       MetodoProduccion : LADM_COL_V1_1.LADM_Nucleo.LI_Lineaje;
       Transformacion_Y_Resultado : LIST {0..*} OF LADM_COL_V1_1.LADM_Nucleo.LA_Transformacion;
@@ -934,7 +935,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
     EXTENDS ObjetoVersionado =
       /** Geometría lineal que define el lindero. Puede estar asociada a geometrías de tipo punto que definen sus vértices o ser una entidad lineal independiente.
        */
-      Geometria : ISO19107_V1_MAGNABOG.GM_Curve3D;
+      Geometria : MAGNA_SIRGAS_V0_1.GM_Curve3D;
       /** Descripción de la localización, cuando esta se basa en texto.
        */
       Localizacion_Textual : CharacterString;
@@ -952,7 +953,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
     EXTENDS ObjetoVersionado =
       /** Geometría en 3D del límite o lindero, asociada a putos o a descripciones textuales.
        */
-      Geometria : ISO19107_V1_MAGNABOG.GM_MultiSurface3D;
+      Geometria : MAGNA_SIRGAS_V0_1.GM_MultiSurface3D;
       /** Cuando la localización del límte está dada por una descripción textual, aquí se recoge esta.
        */
       Localizacion_Textual : CharacterString;

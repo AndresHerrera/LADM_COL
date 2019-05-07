@@ -1,0 +1,65 @@
+INTERLIS 2.3;
+
+TYPE MODEL MAGNA_SIRGAS_V0_1 (en)
+AT "https://repositorio.proadmintierra.info/"
+VERSION "2016-03-07"  =
+
+  UNIT
+    DEGREE = 180 / PI[INTERLIS.rad];
+
+  DOMAIN
+
+    !!@CRS=EPSG:4686
+    GM_Point2D = COORD -81.76562785 .. -66.64654986 [DEGREE], -4.20532720 .. 13.39096466 [DEGREE] ,ROTATION 2 -> 1;
+
+    GM_Curve2D = POLYLINE WITH (ARCS,STRAIGHTS) VERTEX GM_Point2D WITHOUT OVERLAPS>0.001;
+
+    GM_Surface2D = SURFACE WITH (ARCS,STRAIGHTS) VERTEX GM_Point2D WITHOUT OVERLAPS>0.001;
+
+    !!@CRS=EPSG:4686
+    GM_Point3D = COORD -81.76562785 .. -66.64654986 [DEGREE], -4.20532720 .. 13.39096466 [DEGREE], -1000.000 .. 6000.000 [INTERLIS.m] ,ROTATION 2 -> 1;
+
+    GM_Curve3D = POLYLINE WITH (ARCS,STRAIGHTS) VERTEX GM_Point3D WITHOUT OVERLAPS>0.001;
+
+    GM_Surface3D = SURFACE WITH (ARCS,STRAIGHTS) VERTEX GM_Point3D WITHOUT OVERLAPS>0.001;
+
+  STRUCTURE GM_Geometry2DListValue (ABSTRACT) =
+  END GM_Geometry2DListValue;
+
+  STRUCTURE GM_Curve2DListValue =
+    value : MANDATORY GM_Curve2D;
+  END GM_Curve2DListValue;
+
+  STRUCTURE GM_Surface2DListValue =
+    value : MANDATORY GM_Surface2D;
+  END GM_Surface2DListValue;
+
+  !!@ ili2db.mapping = "MultiLine"
+STRUCTURE GM_MultiCurve2D =
+    geometry : LIST {1..*} OF MAGNA_SIRGAS_V0_1.GM_Curve2DListValue;
+  END GM_MultiCurve2D;
+
+  !!@ ili2db.mapping = "MultiSurface"
+STRUCTURE GM_MultiSurface2D =
+    geometry : LIST {1..*} OF MAGNA_SIRGAS_V0_1.GM_Surface2DListValue;
+  END GM_MultiSurface2D;
+
+  STRUCTURE GM_Curve3DListValue =
+    value : MANDATORY GM_Curve3D;
+  END GM_Curve3DListValue;
+
+  STRUCTURE GM_Surface3DListValue =
+    value : MANDATORY GM_Surface3D;
+  END GM_Surface3DListValue;
+
+  !!@ ili2db.mapping = "MultiLine"
+STRUCTURE GM_MultiCurve3D =
+    geometry : LIST {1..*} OF MAGNA_SIRGAS_V0_1.GM_Curve3DListValue;
+  END GM_MultiCurve3D;
+
+  !!@ ili2db.mapping = "MultiSurface"
+STRUCTURE GM_MultiSurface3D =
+    geometry : LIST {1..*} OF MAGNA_SIRGAS_V0_1.GM_Surface3DListValue;
+  END GM_MultiSurface3D;
+
+END MAGNA_SIRGAS_V0_1.

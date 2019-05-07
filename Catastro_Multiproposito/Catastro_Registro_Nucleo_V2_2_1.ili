@@ -52,6 +52,7 @@ INTERLIS 2.3;
  * 17.04.2019/at: Se eliminan las validaciones de superposición en las clases lindero, punto_lindero y terreno
  * 22.04.2019/at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
  * 03.05.2019/at: Paso del dominio COL_UnidadEdificacionTipo del modelo Catastro-Registro al modelo LADM_Nucleo para poder ser usado por la clase LA_EspacioJuridicoUnidadEdificacion
+ * 07.05.2019/at: Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
  * -----------------------------------------------------------
  * 
  * (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -61,7 +62,7 @@ INTERLIS 2.3;
 CONTRACTED MODEL Catastro_Registro_Nucleo_V2_2_1 (es)
 AT "http://www.proadmintierra.info/"
 VERSION "V2.2.1"  // 2018-02-19 // =
-  IMPORTS ISO19107_V1_MAGNABOG,LADM_COL_V1_1;
+  IMPORTS LADM_COL_V1_1,MAGNA_SIRGAS_V0_1;
 
   DOMAIN
 
@@ -560,7 +561,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Servidumbre : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.COL_ServidumbreTipo_Terreno_Servidumbre;
       /** Corresponde a la figura geometrica vectorial poligonal, generada a partir de los linderos del predio.
        */
-      poligono_creado (EXTENDED) : MANDATORY ISO19107_V1_MAGNABOG.GM_MultiSurface3D;
+      poligono_creado (EXTENDED) : MANDATORY MAGNA_SIRGAS_V0_1.GM_MultiSurface3D;
       !!@name="Area calculada"
       !!@ilivalid.msg="El area calculada debe ser mayor a cero ({t_id}) {su_Espacio_De_Nombres} - {su_Local_Id} "
       SET CONSTRAINT Area_Calculada > 0;
