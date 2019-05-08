@@ -53,6 +53,7 @@ INTERLIS 2.3;
  * 22.04.2019/at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
  * 03.05.2019/at: Paso del dominio COL_UnidadEdificacionTipo del modelo Catastro-Registro al modelo LADM_Nucleo para poder ser usado por la clase LA_EspacioJuridicoUnidadEdificacion
  * 07.05.2019/at: Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
+ * 08.05.2019/at: Se Cambia la cardinalidad del atributo Tipo en la clase Predio de obligatorio a opcional; Corrección del nombre del atributo Bosque_Area_Seminatural y su dominio asociado
  * -----------------------------------------------------------
  * 
  * (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -85,7 +86,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Otra
     );
 
-    COL_BosqueAreaSemi = (
+    COL_BosqueAreaSeminatural = (
       /** Área Boscosa
        */
       AreaBoscosa,
@@ -328,7 +329,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       PH
     );
   STRUCTURE COL_Afectacion_Terreno_Afectacion = value : MANDATORY COL_Afectacion; END COL_Afectacion_Terreno_Afectacion;
-  STRUCTURE COL_BosqueAreaSemi_Terreno_Bosque_Area_Seminaturale = value : MANDATORY COL_BosqueAreaSemi; END COL_BosqueAreaSemi_Terreno_Bosque_Area_Seminaturale;
+  STRUCTURE COL_BosqueAreaSeminatural_Terreno_Bosque_Area_Seminatural = value : MANDATORY COL_BosqueAreaSeminatural; END COL_BosqueAreaSeminatural_Terreno_Bosque_Area_Seminatural;
   STRUCTURE COL_CuerpoAgua_Terreno_Evidencia_Cuerpo_Agua = value : MANDATORY COL_CuerpoAgua; END COL_CuerpoAgua_Terreno_Evidencia_Cuerpo_Agua;
   STRUCTURE COL_ExplotacionTipo_Terreno_Explotacion = value : MANDATORY COL_ExplotacionTipo; END COL_ExplotacionTipo_Terreno_Explotacion;
   STRUCTURE COL_ServidumbreTipo_Terreno_Servidumbre = value : MANDATORY COL_ServidumbreTipo; END COL_ServidumbreTipo_Terreno_Servidumbre;
@@ -448,7 +449,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       /** Valor de cada predio, obtenido mediante investigación y análisis estadistico del mercado inmobiliario y la metodología de aplicación  correspondiente. El avalúo  catastral de cada predio se determina a partir de la adición de los avalúos parciales practicados independientemente para los terrenos y para las edificaciones en el comprendidos.
        */
       Avaluo_Predio : LADM_COL_V1_1.LADM_Nucleo.Peso;
-      Tipo (EXTENDED) : MANDATORY Catastro_Registro_Nucleo_V2_2_1.COL_PredioTipo;
+      Tipo (EXTENDED) : Catastro_Registro_Nucleo_V2_2_1.COL_PredioTipo;
       UNIQUE NUPRE; 
     END Predio;
 
@@ -546,7 +547,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Territorio_Agricola : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.COL_TerritorioAgricola_Terreno_Territorio_Agricola;
       /** Se describe si en el predio existe presencia de bosques o áreas seminaturales, corresponde a la pregunta 5.4 del anexo 5.1 de los estandares de catastro multiproposito versión 2.1.1
        */
-      Bosque_Area_Seminaturale : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.COL_BosqueAreaSemi_Terreno_Bosque_Area_Seminaturale;
+      Bosque_Area_Seminatural : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.COL_BosqueAreaSeminatural_Terreno_Bosque_Area_Seminatural;
       /** En esta clase se identifican los valores de la pregunta 5.5. Especifique si evidencia en el terreno del Anexo 5, Versión 2.1.1 de Catastro Multiproposito
        */
       Evidencia_Cuerpo_Agua : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.COL_CuerpoAgua_Terreno_Evidencia_Cuerpo_Agua;
