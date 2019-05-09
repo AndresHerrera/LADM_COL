@@ -6,54 +6,55 @@ INTERLIS 2.3;
  * revision history
  * -----------------------------------------------------------
  * 
- * 10.05.2016/mg: EJEMPLO INTERLIS POR OFERTAS
- * 16.06.2016/mg: Taller IGAC/SNR
- * 23.08.2016/mg: Relaciones
- * 15.09.2016/mg: Comentarios Modelo
- * 20.11.2016/aa: Topic Ficha
- * 25.11.2016/aa: Ajustes FichaPredio
- * 02.12.2016/ss: Nuevas clases, atributos y tipos
- * 15.12.2016/lj: Ajuste tipos (IGAC/SNR), BAUnit GM_surface
- * 31.03.2017/fm: Simplificación de herencia
- * 25.05.2017/fm: Se elimina la relacion HipotecaDerecho, se elimina la clase InteresadoBAUnit, se elimina marca abstract en las clases derivadas de RRR
- * 26.05.2017/fm: Se cambian las clases terreno servidumbre de paso y construccion al paquete de unidades espaciales. Se acorta el nombre del Modelo. ajuste al diseño del diagrama de clases. Se elimina InteresadoNacion
- * 09.06.2017/vm: Referido al modelo LADM traducido al español
- * 09.06.2017/vm: cambio de version a 2.1.1, incluye cambios por LADM en español y de  nombres de atributo por no seguir las convenciones adoptadas.
- * 15.06.2017/fm: cambio de version a 2.1.2, se quita el atributo geometría de la clase predio. se reemplaza el atributo OID por los atributos atributos namespace y localId. Se añaden atributos folio matriz y segregados al predio. se elimina el dominio transaccion_registral_tipo
- * 20.06.2017/fm: Ajuste a nombres de las clases y atributos LA_
+ * 10.05.2016/ mg: EJEMPLO INTERLIS POR OFERTAS
+ * 16.06.2016/ mg: Taller IGAC/SNR
+ * 23.08.2016/ mg: Relaciones
+ * 15.09.2016/ mg: Comentarios Modelo
+ * 20.11.2016/ aa: Topic Ficha
+ * 25.11.2016/ aa: Ajustes FichaPredio
+ * 02.12.2016/ ss: Nuevas clases, atributos y tipos
+ * 15.12.2016/ lj: Ajuste tipos (IGAC/SNR), BAUnit GM_surface
+ * 31.03.2017/ fm: Simplificación de herencia
+ * 25.05.2017/ fm: Se elimina la relacion HipotecaDerecho, se elimina la clase InteresadoBAUnit, se elimina marca abstract en las clases derivadas de RRR
+ * 26.05.2017/ fm: Se cambian las clases terreno servidumbre de paso y construccion al paquete de unidades espaciales. Se acorta el nombre del Modelo. ajuste al diseño del diagrama de clases. Se elimina InteresadoNacion
+ * 09.06.2017/ vm: Referido al modelo LADM traducido al español
+ * 09.06.2017/ vm: cambio de version a 2.1.1, incluye cambios por LADM en español y de  nombres de atributo por no seguir las convenciones adoptadas.
+ * 15.06.2017/ fm: cambio de version a 2.1.2, se quita el atributo geometría de la clase predio. se reemplaza el atributo OID por los atributos atributos namespace y localId. Se añaden atributos folio matriz y segregados al predio. se elimina el dominio transaccion_registral_tipo
+ * 20.06.2017/ fm: Ajuste a nombres de las clases y atributos LA_
  * 04.07.2017/sr: Ajuste de nombres de clases y atributos, creacion de relaciones, ajuste subdominios
- * 04.07.2017/fm: Se unifican los modelos LADM_ES y Catastro_COL, se eliminan las clases que extienden de responsabilidad, restriccion, derecho, hipoteca, fuente_administrativa y fuente espacial. eliminan atributos opcionales no usados de la clase hipoteca
- * 11.07.2017/fm: se adiciona el atributo poligono_creado
- * 12.07.2017/fm: se adiciona el atributo Estado_Nupre en la clase predio
- * 17.07.2017/fm: poligono creado debe ser obligatorio para la clase terreno.
- * 28.09.2017/fm : Cambio del nombre en la clase alerta por publicidad, Publicidad Extiende de objeto versionado, se elimita atributo fecha de vigencia. Ajuste al atributo plantacion comercial de la clase terreno. Se extraen los atributos de la clase predio e interesados a los modelos extendidos de ficha y registro. version 2.2.0
- * 20.10.2017/ag : Ajustes a atributos de la clase terreno, cambio a dominio multivalorado, se crean dominios, col_servidumbre, col_afectacion, col_explotacion, col_territorioAgricula, col_cuerpoAgua, se elimina la obligatoriedad del rol responsable en las relaciones responsableFuente y topografoFuente
- * 28.10.2017/gc : Soporte de geometrías multi-parte para LA_UnidadEspacial (y las clases que la extienden) y Terreno.
+ * 04.07.2017/ fm: Se unifican los modelos LADM_ES y Catastro_COL, se eliminan las clases que extienden de responsabilidad, restriccion, derecho, hipoteca, fuente_administrativa y fuente espacial. eliminan atributos opcionales no usados de la clase hipoteca
+ * 11.07.2017/ fm: se adiciona el atributo poligono_creado
+ * 12.07.2017/ fm: se adiciona el atributo Estado_Nupre en la clase predio
+ * 17.07.2017/ fm: poligono creado debe ser obligatorio para la clase terreno.
+ * 28.09.2017/ fm : Cambio del nombre en la clase alerta por publicidad, Publicidad Extiende de objeto versionado, se elimita atributo fecha de vigencia. Ajuste al atributo plantacion comercial de la clase terreno. Se extraen los atributos de la clase predio e interesados a los modelos extendidos de ficha y registro. version 2.2.0
+ * 20.10.2017/ ag : Ajustes a atributos de la clase terreno, cambio a dominio multivalorado, se crean dominios, col_servidumbre, col_afectacion, col_explotacion, col_territorioAgricula, col_cuerpoAgua, se elimina la obligatoriedad del rol responsable en las relaciones responsableFuente y topografoFuente
+ * 28.10.2017/ gc : Soporte de geometrías multi-parte para LA_UnidadEspacial (y las clases que la extienden) y Terreno.
  * 02.11.2017/ : Cambio del nombre del modelo de Catastro_COL_ES a Catastro_Registro_Nucleo
- * 07.11.2017/fm: Cambio de nombre a la clase CadenaCarasLindero a CadenaCarasLimite 
- * 14.11.2017/fm : taducción del dominio COL_BuildingUnitTipo
- * 14.12.2017/fm : definicion de extends entre topics catastro registro nucleo y Ladm_nucleo
- * 30.01.2018/fm : Cambio del tipo de dato del atributo Ext_Direccion de la clase Unidad Espacial a ExtDireccion; atributo ext_PID de la calse LA_Interesado cambia de OID a ExtInteresado; Cambio de cardinalidad en relacion miembros entre LA_Interesado y LA_Agrupacion_Interesados de 0..1 a 0..*
- * 19.02.2018/fm : Cambio en longitud de atributo DocumentoIdentidad de 10 a 12 posiciones
- * 17.07.2018/fm : cambio en cardinalidad asociación ConstruccionUnidadConstruccion de 1..* a 0..*; ampliación del tamaño para campo de nombre en Interesado Natural; se incluyen los valores nuip, cedula militar, registro civil, cedula militar, secuencial SRN y secuencial IGAC al dominio COL_InteresadoDocumentoTipo
- * 30.07.2018/fm : Cambio obligatoriedad atributo area_registral de clase terreno de 1 a 0..1
- * 31.07.2018/fm: Creación de la clase COL_Interesado integrando los atributos de interesado natural e interesado jurídico; se agrega area en la clase construcción; se adiciona valor Carta_Venta al dominio COL_FuenteAdministrativaTipo; inclusion de atributo nombre en la clase COL_FuenteAdministrativa
+ * 07.11.2017/ fm: Cambio de nombre a la clase CadenaCarasLindero a CadenaCarasLimite 
+ * 14.11.2017/ fm : taducción del dominio COL_BuildingUnitTipo
+ * 14.12.2017/ fm : definicion de extends entre topics catastro registro nucleo y Ladm_nucleo
+ * 30.01.2018/ fm : Cambio del tipo de dato del atributo Ext_Direccion de la clase Unidad Espacial a ExtDireccion; atributo ext_PID de la calse LA_Interesado cambia de OID a ExtInteresado; Cambio de cardinalidad en relacion miembros entre LA_Interesado y LA_Agrupacion_Interesados de 0..1 a 0..*
+ * 19.02.2018/ fm : Cambio en longitud de atributo DocumentoIdentidad de 10 a 12 posiciones
+ * 17.07.2018/ fm : cambio en cardinalidad asociación ConstruccionUnidadConstruccion de 1..* a 0..*; ampliación del tamaño para campo de nombre en Interesado Natural; se incluyen los valores nuip, cedula militar, registro civil, cedula militar, secuencial SRN y secuencial IGAC al dominio COL_InteresadoDocumentoTipo
+ * 30.07.2018/ fm : Cambio obligatoriedad atributo area_registral de clase terreno de 1 a 0..1
+ * 31.07.2018/ fm: Creación de la clase COL_Interesado integrando los atributos de interesado natural e interesado jurídico; se agrega area en la clase construcción; se adiciona valor Carta_Venta al dominio COL_FuenteAdministrativaTipo; inclusion de atributo nombre en la clase COL_FuenteAdministrativa
  * 10.08.2018/fm: Eliminado clase Interesado Natural e Interesado Juridico
- * 28.08.2018/fm: Ajuste a cardinalidad en la composición predio_copropiedad, se elimina el requerido.
- * 28.08.2018/fm-at: Se incluye el tipo de predio conforme a la resolucion 070 de 2011; Se elimina el atributo tipo_construccion de la clase Unidad_Construcción ya que el dominio hace referencia a tipos de predios y no a tipos de construcciones
- * 10.09.2018/fm-at: Ajuste a los tipos de Predio conforme a la resolucion 070
- * 21.09.2018/at: Se agrega el valor "Hipoteca" al dominio COL_RestriccionTipo, se ajusta la longitud del atributo Codigo_Registral en las clases especializadas de LA_RRR de 3 a 4 caracteres
- * 25.09.2018/at: Se ajusta la longitud del atributo Codigo_Registral en las clases especializadas de LA_RRR a 5 caracteres de acuerdo a la Resolución 3973 de 2018
- * 18.10.2018/at: Se agregan los atributos p_Espacio_De_Nombres y p_Local_Id a la clase Publicidad
- * 29.10.2018/fm: se amplia el tamaño de campo FMI en la clase predio para almacenar cadenas como 'LIBRO 2 TOMO 1/961 FOLIO 37/46 PARTIDA N 58'
- * 18.12.2018/fm: adicion de constraints para validación logica de valores numericos mayores a 0
- * 19.12.2018/fm-at: ajuste a constraint construccion area_construccion solo evaluar cuando sea diferente de nulo; Unión de dominios "Posesion" y "Ocupacion" para tipo de derecho; Unión de dominios "Desplazamiento Forzado" y "Victima o Restitucion" en tipo de Publicidad
- * 21.12.2018/at: Modificación del tipo de String 'single line String' a 'multi line String' en los atributos 'Primer_Nombre', 'Segundo_Nombre', 'Primer_Apellido', 'Segundo_Apellido' y 'Razon_Social' de la clase COL_Interesado; para soportar caracteres especiales comunes en la información jurídica
- * 17.04.2019/at: Se eliminan las validaciones de superposición en las clases lindero, punto_lindero y terreno
- * 22.04.2019/at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
- * 03.05.2019/at: Paso del dominio COL_UnidadEdificacionTipo del modelo Catastro-Registro al modelo LADM_Nucleo para poder ser usado por la clase LA_EspacioJuridicoUnidadEdificacion
- * 07.05.2019/at: Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
- * 08.05.2019/at: Se Cambia la cardinalidad del atributo Tipo en la clase Predio de obligatorio a opcional; Corrección del nombre del atributo Bosque_Area_Seminatural y su dominio asociado
+ * 28.08.2018/ fm: Ajuste a cardinalidad en la composición predio_copropiedad, se elimina el requerido.
+ * 28.08.2018/ fm-at: Se incluye el tipo de predio conforme a la resolucion 070 de 2011; Se elimina el atributo tipo_construccion de la clase Unidad_Construcción ya que el dominio hace referencia a tipos de predios y no a tipos de construcciones
+ * 10.09.2018/ fm-at: Ajuste a los tipos de Predio conforme a la resolucion 070
+ * 21.09.2018/ at: Se agrega el valor "Hipoteca" al dominio COL_RestriccionTipo, se ajusta la longitud del atributo Codigo_Registral en las clases especializadas de LA_RRR de 3 a 4 caracteres
+ * 25.09.2018/ at: Se ajusta la longitud del atributo Codigo_Registral en las clases especializadas de LA_RRR a 5 caracteres de acuerdo a la Resolución 3973 de 2018
+ * 18.10.2018/ at: Se agregan los atributos p_Espacio_De_Nombres y p_Local_Id a la clase Publicidad
+ * 29.10.2018/ fm: se amplia el tamaño de campo FMI en la clase predio para almacenar cadenas como 'LIBRO 2 TOMO 1/961 FOLIO 37/46 PARTIDA N 58'
+ * 18.12.2018/ fm: adicion de constraints para validación logica de valores numericos mayores a 0
+ * 19.12.2018/ fm-at: ajuste a constraint construccion area_construccion solo evaluar cuando sea diferente de nulo; Unión de dominios "Posesion" y "Ocupacion" para tipo de derecho; Unión de dominios "Desplazamiento Forzado" y "Victima o Restitucion" en tipo de Publicidad
+ * 21.12.2018/ at: Modificación del tipo de String 'single line String' a 'multi line String' en los atributos 'Primer_Nombre', 'Segundo_Nombre', 'Primer_Apellido', 'Segundo_Apellido' y 'Razon_Social' de la clase COL_Interesado; para soportar caracteres especiales comunes en la información jurídica
+ * 17.04.2019/ at: Se eliminan las validaciones de superposición en las clases lindero, punto_lindero y terreno
+ * 22.04.2019/ at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
+ * 03.05.2019/ at: Paso del dominio COL_UnidadEdificacionTipo del modelo Catastro-Registro al modelo LADM_Nucleo para poder ser usado por la clase LA_EspacioJuridicoUnidadEdificacion
+ * 07.05.2019/ at: Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
+ * 08.05.2019/ at: Se Cambia la cardinalidad del atributo Tipo en la clase Predio de obligatorio a opcional; Corrección del nombre del atributo Bosque_Area_Seminatural y su dominio asociado
+ * 09.05.2019/ at: Se elimina el dominio COL_ZonaTipo; Se pasa el dominio COL_ViaTipo al modelo Ficha Predial; Asignación del prefijo CRG a todas las clases y dominios del modelo para facilitar legibilidad
  * -----------------------------------------------------------
  * 
  * (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -67,9 +68,30 @@ VERSION "V2.2.1"  // 2018-02-19 // =
 
   DOMAIN
 
+    COL_EstructuraTipo = (
+      Croquis,
+      Linea_no_Estructurada,
+      Texto,
+      Topologico
+    );
+
+    COL_RedServiciosTipo = (
+      Petroleo,
+      Quimicos,
+      Red_Termica,
+      Telecomunicacion
+    );
+
+    COL_TipoConstruccionTipo = (
+      Anexo,
+      No_PH,
+      Parque_Cementerio,
+      PH
+    );
+
     /** !! ajustar en el Catalogo de Objetos
      */
-    COL_AcuerdoTipo = (
+    CRG_AcuerdoTipo = (
       /** Existe un acuerdo sobre la posición del punto
        */
       Acuerdo,
@@ -78,7 +100,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Desacuerdo
     );
 
-    COL_Afectacion = (
+    CRG_AfectacionTipo = (
       Inundacion,
       /** Remocion en Masa
        */
@@ -86,7 +108,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Otra
     );
 
-    COL_BosqueAreaSeminatural = (
+    CRG_BosqueAreaSeminaturalTipo = (
       /** Área Boscosa
        */
       AreaBoscosa,
@@ -95,7 +117,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       PlantaForestal
     );
 
-    COL_CuerpoAgua = (
+    CRG_CuerpoAgua = (
       NacimientoAgua,
       /** Cuerpo de agua natural o artificial
        */
@@ -103,7 +125,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       ZonaPantanosa
     );
 
-    COL_DerechoTipo = (
+    CRG_DerechoTipo = (
       Derecho_Propiedad_Colectiva,
       Mineria_Derecho,
       Nuda_Propiedad,
@@ -115,26 +137,19 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Dominio
     );
 
-    COL_EstructuraTipo = (
-      Croquis,
-      Linea_no_Estructurada,
-      Texto,
-      Topologico
-    );
-
-    COL_ExplotacionTipo = (
+    CRG_ExplotacionTipo = (
       Minera,
       Hidrocarburo,
       Otra
     );
 
-    COL_GeneroTipo = (
+    CRG_GeneroTipo = (
       Femenino,
       Masculino,
       Otro
     );
 
-    COL_InteresadoDocumentoTipo = (
+    CRG_InteresadoDocumentoTipo = (
       Cedula_Ciudadania,
       Cedula_Extranjeria,
       NIT,
@@ -148,17 +163,9 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Secuencial_IGAC
     );
 
-    COL_MonumentacionTipo = (
-      Incrustacion,
-      Mojon,
-      No_Materializado,
-      Otros,
-      Pilastra
-    );
-
     /** Tipos de predios de acuerdo a la resolucion 070 de 2011
      */
-    COL_PredioTipo = (
+    CRG_PredioTipo = (
       NPH,
       PropiedadHorizontal(
         Matriz,
@@ -180,21 +187,21 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Bodega
     );
 
-    COL_RedServiciosTipo = (
-      Petroleo,
-      Quimicos,
-      Red_Termica,
-      Telecomunicacion
+    /** Conjunto de valores para indicar si se trata de un punto de control de referencia (un punto principal) o de apoyo (uso para levantamientos locales con estación total)
+     */
+    CRG_PuntoControlTipo = (
+      Control,
+      Apoyo
     );
 
-    COL_ServidumbreTipo = (
+    CRG_ServidumbreTipo = (
       Vial,
       Petrolera,
       Electrica,
       Otra
     );
 
-    COL_TerritorioAgricola = (
+    CRG_TerritorioAgricolaTipo = (
       CultTransitorio,
       CultPermanente,
       Confinado,
@@ -205,12 +212,12 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Pasto
     );
 
-    COL_DefPuntoTipo = (
+    CRG_DefPuntoTipo = (
       Bien_Definido,
       No_Bien_Definido
     );
 
-    COL_InstitucionTipo = (
+    CRG_InstitucionTipo = (
       Registraduria_Nacional,
       Registro_Propiedad,
       Catastro_IGAC,
@@ -219,20 +226,13 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       ANT
     );
 
-    COL_InteresadoJuridicoTipo = (
+    CRG_InteresadoJuridicoTipo = (
       Publico,
       Privado,
       Mixto
     );
 
-    /** Conjunto de valores para indicar si se trata de un punto de control de referencia (un punto principal) o de apoyo (uso para levantamientos locales con estación total)
-     */
-    COL_PuntoControlTipo = (
-      Control,
-      Apoyo
-    );
-
-    COL_ResponsabilidadTipo = (
+    CRG_ResponsabilidadTipo = (
       Constitucional,
       Legal,
       Contractual,
@@ -241,26 +241,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Otros
     );
 
-    COL_ViaTipo = (
-      Arteria,
-      Autopista,
-      Carreteable,
-      Cicloruta,
-      Colectora,
-      Departamental,
-      Ferrea,
-      Local,
-      Metro_o_Metrovia,
-      Nacional,
-      Ordinaria,
-      Peatonal,
-      Principal,
-      Privada,
-      Secundaria,
-      Troncal
-    );
-
-    COL_DescripcionPuntoTipo = (
+    CRG_DescripcionPuntoTipo = (
       Esquina_Construccion,
       Interseccion_Cerca_De_Piedra,
       Interseccion_Cerca_Viva,
@@ -272,13 +253,13 @@ VERSION "V2.2.1"  // 2018-02-19 // =
 
     /** Punto de leventamiento planimetrico que se identifican en el marco de la identificación de las construcciones, los linderos o puntos auxiliares levantado para el apoyo en la mediciión
      */
-    COL_PuntoLevTipo = (
+    CRG_PuntoLevTipo = (
       Auxiliar,
       Construccion,
       Servidumbre
     );
 
-    COL_RestriccionTipo = (
+    CRG_RestriccionTipo = (
       Afectaciones_Interes_General,
       Ambientales,
       Desplazamiento_Forzado_Restitucion,
@@ -291,75 +272,69 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       No_Registrada
     );
 
-    COL_HipotecaTipo = (
+    CRG_HipotecaTipo = (
       Abierta,
       Cerrada
     );
 
-    /** Si ha sido situado por interpolación, de qué manera se ha hecho.
-     */
-    COL_InterpolacionTipo = (
-      Aislado,
-      Intermedio_Arco,
-      Intermedio_Linea
-    );
-
-    COL_ZonaTipo = (
-      Perimetro_Urbano,
-      Rural,
-      Corregimiento,
-      Caserios,
-      Inspecion_Policia
-    );
-
     /** Dominio con la descripción de la tipologia de los codigos registrales que se inscriben y que publicitan alguna caracteristica especial del predio
      */
-    COL_PublicidadTipo = (
+    CRG_PublicidadTipo = (
       Demanda,
       Inicio_de_Proceso_Administrativo,
       Cancelacion,
       Desplazamiento_Forzado_Victima_o_Restitucion,
       Publicidad_de_Acto_Juridico
     );
-
-    COL_TipoConstruccionTipo = (
-      Anexo,
-      No_PH,
-      Parque_Cementerio,
-      PH
-    );
-  STRUCTURE COL_Afectacion_Terreno_Afectacion = value : MANDATORY COL_Afectacion; END COL_Afectacion_Terreno_Afectacion;
-  STRUCTURE COL_BosqueAreaSeminatural_Terreno_Bosque_Area_Seminatural = value : MANDATORY COL_BosqueAreaSeminatural; END COL_BosqueAreaSeminatural_Terreno_Bosque_Area_Seminatural;
-  STRUCTURE COL_CuerpoAgua_Terreno_Evidencia_Cuerpo_Agua = value : MANDATORY COL_CuerpoAgua; END COL_CuerpoAgua_Terreno_Evidencia_Cuerpo_Agua;
-  STRUCTURE COL_ExplotacionTipo_Terreno_Explotacion = value : MANDATORY COL_ExplotacionTipo; END COL_ExplotacionTipo_Terreno_Explotacion;
-  STRUCTURE COL_ServidumbreTipo_Terreno_Servidumbre = value : MANDATORY COL_ServidumbreTipo; END COL_ServidumbreTipo_Terreno_Servidumbre;
-  STRUCTURE COL_TerritorioAgricola_Terreno_Territorio_Agricola = value : MANDATORY COL_TerritorioAgricola; END COL_TerritorioAgricola_Terreno_Territorio_Agricola;
+  STRUCTURE CRG_AfectacionTipo_CRG_Terreno_Afectacion = value : MANDATORY CRG_AfectacionTipo; END CRG_AfectacionTipo_CRG_Terreno_Afectacion;
+  STRUCTURE CRG_BosqueAreaSeminaturalTipo_CRG_Terreno_Bosque_Area_Seminatural = value : MANDATORY CRG_BosqueAreaSeminaturalTipo; END CRG_BosqueAreaSeminaturalTipo_CRG_Terreno_Bosque_Area_Seminatural;
+  STRUCTURE CRG_CuerpoAgua_CRG_Terreno_Evidencia_Cuerpo_Agua = value : MANDATORY CRG_CuerpoAgua; END CRG_CuerpoAgua_CRG_Terreno_Evidencia_Cuerpo_Agua;
+  STRUCTURE CRG_ExplotacionTipo_CRG_Terreno_Explotacion = value : MANDATORY CRG_ExplotacionTipo; END CRG_ExplotacionTipo_CRG_Terreno_Explotacion;
+  STRUCTURE CRG_ServidumbreTipo_CRG_Terreno_Servidumbre = value : MANDATORY CRG_ServidumbreTipo; END CRG_ServidumbreTipo_CRG_Terreno_Servidumbre;
+  STRUCTURE CRG_TerritorioAgricolaTipo_CRG_Terreno_Territorio_Agricola = value : MANDATORY CRG_TerritorioAgricolaTipo; END CRG_TerritorioAgricolaTipo_CRG_Terreno_Territorio_Agricola;
 
   TOPIC Catastro_Registro
   EXTENDS LADM_COL_V1_1.LADM_Nucleo =
     OID AS INTERLIS.UUIDOID;
     DEPENDS ON LADM_COL_V1_1.LADM_Nucleo;
 
+    /** Es un tipo de espacio jurídico de la unidad de edificación del modelo LADM que almacena datos específicos del avalúo resultante del mismo.
+     */
+    CLASS CRG_Construccion
+    EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_EspacioJuridicoUnidadEdificacion =
+      /** Rsultado del cálculo de su avalúo mediante la metodología legalmente establecida.
+       */
+      Avaluo_Construccion : MANDATORY LADM_COL_V1_1.LADM_Nucleo.Peso;
+      Area_Construccion : 0.0 .. 99999999999999.9;
+      !!@name="Avaluo Construccion"
+      !!@ilivalid.msg="El Avaluo Construccion debe ser mayor a cero"
+      SET CONSTRAINT Avaluo_Construccion > 0;
+      !!@name="Area Construccion"
+      !!@ilivalid.msg="El Area Construccion debe ser mayor a cero"
+      SET CONSTRAINT WHERE DEFINED(Area_Construccion):  
+        Area_Construccion > 0;
+    END CRG_Construccion;
+
     /** Clase que registra las instancias de los derechos que un interesado ejerce sobre un predio. Es una especialización de la clase LA_RRR del propio modelo.
      */
-    CLASS COL_Derecho
+    CLASS CRG_Derecho
     EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_RRR =
       /** Derecho que se ejerce.
        */
-      Tipo : MANDATORY Catastro_Registro_Nucleo_V2_2_1.COL_DerechoTipo;
+      Tipo : MANDATORY Catastro_Registro_Nucleo_V2_2_1.CRG_DerechoTipo;
       /** Código con el que el derecho se registra en el Registro de la Propiedad.
        */
       Codigo_Registral_Derecho : TEXT*5;
-    END COL_Derecho;
+    END CRG_Derecho;
 
-    CLASS COL_Interesado
+    CLASS CRG_Interesado
     EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_Interesado =
       /** Documento de identidad del interesado.
        */
       Documento_Identidad : MANDATORY TEXT*12;
       /** Tipo de documento del que se trata.
        */
-      Tipo_Documento : MANDATORY Catastro_Registro_Nucleo_V2_2_1.COL_InteresadoDocumentoTipo;
+      Tipo_Documento : MANDATORY Catastro_Registro_Nucleo_V2_2_1.CRG_InteresadoDocumentoTipo;
       /** Quien ha emitido el documento de identidad.
        */
       Organo_Emisor : TEXT*20;
@@ -381,49 +356,32 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       /** Nombre con el que está inscrito.
        */
       Razon_Social : MTEXT*250;
-      Genero : Catastro_Registro_Nucleo_V2_2_1.COL_GeneroTipo;
-      Tipo_Interesado_Juridico : Catastro_Registro_Nucleo_V2_2_1.COL_InteresadoJuridicoTipo;
-    END COL_Interesado;
+      Genero : Catastro_Registro_Nucleo_V2_2_1.CRG_GeneroTipo;
+      Tipo_Interesado_Juridico : Catastro_Registro_Nucleo_V2_2_1.CRG_InteresadoJuridicoTipo;
+    END CRG_Interesado;
 
-    /** Es un tipo de espacio jurídico de la unidad de edificación del modelo LADM que almacena datos específicos del avalúo resultante del mismo.
-     */
-    CLASS Construccion
-    EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_EspacioJuridicoUnidadEdificacion =
-      /** Rsultado del cálculo de su avalúo mediante la metodología legalmente establecida.
-       */
-      Avaluo_Construccion : MANDATORY LADM_COL_V1_1.LADM_Nucleo.Peso;
-      Area_Construccion : 0.0 .. 99999999999999.9;
-      !!@name="Avaluo Construccion"
-      !!@ilivalid.msg="El Avaluo Construccion debe ser mayor a cero"
-      SET CONSTRAINT Avaluo_Construccion > 0;
-      !!@name="Area Construccion"
-      !!@ilivalid.msg="El Area Construccion debe ser mayor a cero"
-      SET CONSTRAINT WHERE DEFINED(Area_Construccion):  
-        Area_Construccion > 0;
-    END Construccion;
-
-    CLASS Interesado_Contacto =
+    CLASS CRG_Interesado_Contacto =
       Telefono1 : TEXT*20;
       Telefono2 : TEXT*20;
       Domicilio_Notificacion : TEXT*500;
       Correo_Electronico : TEXT*100;
-      Origen_Datos : Catastro_Registro_Nucleo_V2_2_1.COL_InstitucionTipo;
-    END Interesado_Contacto;
+      Origen_Datos : Catastro_Registro_Nucleo_V2_2_1.CRG_InstitucionTipo;
+    END CRG_Interesado_Contacto;
 
     /** Clase especializada de LA_CadenaCarasLindero que permite registrar los linderos.
      * Dos linderos no pueden cruzarse ni superponerse.
      */
-    CLASS Lindero
+    CLASS CRG_Lindero
     EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_CadenaCarasLimite =
       /** Lóngitud en m del lindero.
        */
       Longitud : MANDATORY 0.0 .. 10000.0 [INTERLIS.m];
-    END Lindero;
+    END CRG_Lindero;
 
     /** Clase especializada de BaUnit, que describe la unidad administrativa básica para el caso de Colombia.
      * El predio es la unidad territorial legal propia de Catastro. Esta formada por el terreno y puede o no tener construcciones asociadas.
      */
-    CLASS Predio
+    CLASS CRG_Predio
     EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_BAUnit =
       /** Corresponde al codigo del departamento al cual pertenece el predio. Es asignado por DIVIPOLA y tiene 2 dígitos.
        */
@@ -449,17 +407,17 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       /** Valor de cada predio, obtenido mediante investigación y análisis estadistico del mercado inmobiliario y la metodología de aplicación  correspondiente. El avalúo  catastral de cada predio se determina a partir de la adición de los avalúos parciales practicados independientemente para los terrenos y para las edificaciones en el comprendidos.
        */
       Avaluo_Predio : LADM_COL_V1_1.LADM_Nucleo.Peso;
-      Tipo (EXTENDED) : Catastro_Registro_Nucleo_V2_2_1.COL_PredioTipo;
+      Tipo (EXTENDED) : Catastro_Registro_Nucleo_V2_2_1.CRG_PredioTipo;
       UNIQUE NUPRE; 
-    END Predio;
+    END CRG_Predio;
 
     /** Clase especial del perfil colombiano de la norma ISO 19152:2012. Pretenden generar publicidad sobre el predio a partir del almacenamiento de los codigos registrales que se inscriben el FMI. No se genera ningún tipo de derecho, ni limita la propiedad.
      */
-    CLASS Publicidad
+    CLASS CRG_Publicidad
     EXTENDS LADM_COL_V1_1.LADM_Nucleo.ObjetoVersionado =
       /** Indica la característica por la que se hace público.
        */
-      Tipo : MANDATORY Catastro_Registro_Nucleo_V2_2_1.COL_PublicidadTipo;
+      Tipo : MANDATORY Catastro_Registro_Nucleo_V2_2_1.CRG_PublicidadTipo;
       /** Código registral del FMI que se hace público.
        */
       Codigo_Registral_Publicidad : MANDATORY TEXT*5;
@@ -469,11 +427,11 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       /** Identificador único local.
        */
       p_Local_Id : MANDATORY LADM_COL_V1_1.LADM_Nucleo.CharacterString;
-    END Publicidad;
+    END CRG_Publicidad;
 
     /** Clase especializada de LA_Punto que representa puntos de la densificación de la red local, que se utiliza en la operación catastral para el levantamiento de información fisica de los objetos territoriales, como puntos de control.
      */
-    CLASS PuntoControl
+    CLASS CRG_PuntoControl
     EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_Punto =
       /** Nombre que recibe el punto.
        */
@@ -486,29 +444,29 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Exactitud_Horizontal : MANDATORY 0 .. 1000 [LADM_COL_V1_1.cm];
       /** Se describe la posición del punto con relación a su estructura, si es un punto aislado, o si hace parte de un Arco o de una linea.
        */
-      Posicion_Interpolacion (EXTENDED) : Catastro_Registro_Nucleo_V2_2_1.COL_InterpolacionTipo;
-      Monumentacion (EXTENDED) : MANDATORY Catastro_Registro_Nucleo_V2_2_1.COL_MonumentacionTipo;
+      Posicion_Interpolacion (EXTENDED) : LADM_COL_V1_1.LADM_Nucleo.COL_InterpolacionTipo;
+      Monumentacion (EXTENDED) : MANDATORY LADM_COL_V1_1.LADM_Nucleo.COL_MonumentacionTipo;
       /** Si se trata deun punto de control o de apoyo.
        */
-      Tipo_Punto_Control : Catastro_Registro_Nucleo_V2_2_1.COL_PuntoControlTipo;
+      Tipo_Punto_Control : Catastro_Registro_Nucleo_V2_2_1.CRG_PuntoControlTipo;
       /** Si el punto es o no fiable.
        */
       Confiabilidad : BOOLEAN;
-    END PuntoControl;
+    END CRG_PuntoControl;
 
     /** Clase especializada de LA_Punto que almacena puntos que definen un lindero, instancia de la clase LA_CadenaCarasLindero y sus especializaciones.
      */
-    CLASS PuntoLindero
+    CLASS CRG_PuntoLindero
     EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_Punto =
       /** Se Indica si existe acuerdo o no entre los colindantes en relación al punto lindero que se está midiendo.
        */
-      Acuerdo : MANDATORY Catastro_Registro_Nucleo_V2_2_1.COL_AcuerdoTipo;
+      Acuerdo : MANDATORY Catastro_Registro_Nucleo_V2_2_1.CRG_AcuerdoTipo;
       /** Se caracteriza si el punto de levantamiento corresponde a un punto bien definido o no bien definido
        */
-      Definicion_Punto : MANDATORY Catastro_Registro_Nucleo_V2_2_1.COL_DefPuntoTipo;
+      Definicion_Punto : MANDATORY Catastro_Registro_Nucleo_V2_2_1.CRG_DefPuntoTipo;
       /** Es la descripción del tipo de punto lindero y las caracteristicas del vertice
        */
-      Descripcion_Punto : Catastro_Registro_Nucleo_V2_2_1.COL_DescripcionPuntoTipo;
+      Descripcion_Punto : Catastro_Registro_Nucleo_V2_2_1.CRG_DescripcionPuntoTipo;
       /** Corresponde a la exactitud vertical del punto lindero
        */
       Exactitud_Vertical : 0 .. 1000 [LADM_COL_V1_1.cm];
@@ -520,18 +478,18 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Confiabilidad : BOOLEAN;
       /** Se describe la posición del punto con relación a su estructura, si es un punto aislado, o si hace parte de un Arco o de una linea.
        */
-      Posicion_Interpolacion (EXTENDED) : Catastro_Registro_Nucleo_V2_2_1.COL_InterpolacionTipo;
+      Posicion_Interpolacion (EXTENDED) : LADM_COL_V1_1.LADM_Nucleo.COL_InterpolacionTipo;
       /** Si se trata de un monumento geodésico, el tipo.
        */
-      Monumentacion (EXTENDED) : MANDATORY Catastro_Registro_Nucleo_V2_2_1.COL_MonumentacionTipo;
+      Monumentacion (EXTENDED) : MANDATORY LADM_COL_V1_1.LADM_Nucleo.COL_MonumentacionTipo;
       /** Nombre o codigo del punto lindero
        */
       Nombre_Punto : TEXT*10;
-    END PuntoLindero;
+    END CRG_PuntoLindero;
 
     /** Porción de tierra con una extensión geográfica definida.
      */
-    CLASS Terreno
+    CLASS CRG_Terreno
     EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_UnidadEspacial =
       /** Área del predio que se encuentra inscrita en el Folio de Matricula Inmobiliaria
        */
@@ -544,22 +502,22 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Avaluo_Terreno : MANDATORY LADM_COL_V1_1.LADM_Nucleo.Peso;
       /** se caracterizan los diferentes tipos de cultivos o territorios agricolas que conforman el predio, corresponde a la pregunta 5.3 del anexo 5.1 de los estandares de catastro multiproposito versión 2.1.1
        */
-      Territorio_Agricola : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.COL_TerritorioAgricola_Terreno_Territorio_Agricola;
+      Territorio_Agricola : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.CRG_TerritorioAgricolaTipo_CRG_Terreno_Territorio_Agricola;
       /** Se describe si en el predio existe presencia de bosques o áreas seminaturales, corresponde a la pregunta 5.4 del anexo 5.1 de los estandares de catastro multiproposito versión 2.1.1
        */
-      Bosque_Area_Seminatural : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.COL_BosqueAreaSeminatural_Terreno_Bosque_Area_Seminatural;
+      Bosque_Area_Seminatural : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.CRG_BosqueAreaSeminaturalTipo_CRG_Terreno_Bosque_Area_Seminatural;
       /** En esta clase se identifican los valores de la pregunta 5.5. Especifique si evidencia en el terreno del Anexo 5, Versión 2.1.1 de Catastro Multiproposito
        */
-      Evidencia_Cuerpo_Agua : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.COL_CuerpoAgua_Terreno_Evidencia_Cuerpo_Agua;
+      Evidencia_Cuerpo_Agua : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.CRG_CuerpoAgua_CRG_Terreno_Evidencia_Cuerpo_Agua;
       /** Se caracteriza si en el predio existe algún tipo de explotación, corresponde a la pregunta 5.6 del anexo 5.1 de los estandares de catastro multiproposito versión 2.1.1
        */
-      Explotacion : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.COL_ExplotacionTipo_Terreno_Explotacion;
+      Explotacion : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.CRG_ExplotacionTipo_CRG_Terreno_Explotacion;
       /** Se describe si en el predio existe alguna afectación natural de tipo inundación o de remoción en masa, corresponde a la pregunta 5.7 del anexo 5.1 de los estandares de catastro multiproposito versión 2.1.1
        */
-      Afectacion : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.COL_Afectacion_Terreno_Afectacion;
+      Afectacion : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.CRG_AfectacionTipo_CRG_Terreno_Afectacion;
       /** Tipo de derecho que limita el dominio de una porción del predio, corresponde a la pregunta 5.8 del anexo 5.1 de los estandares de catastro multiproposito versión 2.1.1
        */
-      Servidumbre : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.COL_ServidumbreTipo_Terreno_Servidumbre;
+      Servidumbre : BAG {0..*} OF Catastro_Registro_Nucleo_V2_2_1.CRG_ServidumbreTipo_CRG_Terreno_Servidumbre;
       /** Corresponde a la figura geometrica vectorial poligonal, generada a partir de los linderos del predio.
        */
       poligono_creado (EXTENDED) : MANDATORY MAGNA_SIRGAS_V0_1.GM_MultiSurface3D;
@@ -569,33 +527,18 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       !!@name="Avaluo terreno"
       !!@ilivalid.msg="El Avaluo terreno debe ser mayor a cero"
       SET CONSTRAINT Avaluo_Terreno > 0;
-    END Terreno;
-
-    /** Restricciones a las que está sometido un predio y que inciden sobre los derechos que pueden ejercerse sobre él.
-     */
-    CLASS COL_Restriccion
-    EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_RRR =
-      /** Indica si es preciso o no que un interesado esté asociado a la restricción.
-       */
-      Interesado_Requerido : BOOLEAN;
-      /** Define el tipo de restricción.
-       */
-      Tipo : MANDATORY Catastro_Registro_Nucleo_V2_2_1.COL_RestriccionTipo;
-      /** Código con el que la responsabilidad se registra en el Registro de la Propiedad.
-       */
-      Codigo_Registral_Restriccion : TEXT*5;
-    END COL_Restriccion;
+    END CRG_Terreno;
 
     /** Clase especializada de LA_Punto que representa puntos demarcados que representan la posición horizontal de un vértice de construcción, servidumbre o auxiliare.
      */
-    CLASS PuntoLevantamiento
+    CLASS CRG_PuntoLevantamiento
     EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_Punto =
       /** Se caracterizan los diferentes tipos de punto levantamiento, estos son punto de construccción, punto de servidumbre o punto auxiliar
        */
-      Tipo_Punto_Levantamiento : Catastro_Registro_Nucleo_V2_2_1.COL_PuntoLevTipo;
+      Tipo_Punto_Levantamiento : Catastro_Registro_Nucleo_V2_2_1.CRG_PuntoLevTipo;
       /** Se caracteriza si el punto de levantamiento corresponde a un punto bien definido o no bien definido
        */
-      Definicion_Punto : MANDATORY Catastro_Registro_Nucleo_V2_2_1.COL_DefPuntoTipo;
+      Definicion_Punto : MANDATORY Catastro_Registro_Nucleo_V2_2_1.CRG_DefPuntoTipo;
       /** Corresponde a la exactitud vertical del punto levantamiento
        */
       Exactitud_Vertical : 0 .. 1000 [LADM_COL_V1_1.cm];
@@ -604,78 +547,93 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Exactitud_Horizontal : 0 .. 1000 [LADM_COL_V1_1.cm];
       /** Se describe la posición del punto con relación a su estructura, si es un punto aislado, o si hace parte de un Arco o de una linea.
        */
-      Posicion_Interpolacion (EXTENDED) : Catastro_Registro_Nucleo_V2_2_1.COL_InterpolacionTipo;
+      Posicion_Interpolacion (EXTENDED) : LADM_COL_V1_1.LADM_Nucleo.COL_InterpolacionTipo;
       /** Definición sobre si el punto de levantamiento se encuentra monumentado o no y los tipos de monumentación especificos para el perfil nacional
        */
-      Monumentacion (EXTENDED) : MANDATORY Catastro_Registro_Nucleo_V2_2_1.COL_MonumentacionTipo;
+      Monumentacion (EXTENDED) : MANDATORY LADM_COL_V1_1.LADM_Nucleo.COL_MonumentacionTipo;
       /** Nombre que recibe el punto.
        */
       Nombre_Punto : TEXT*10;
-    END PuntoLevantamiento;
+    END CRG_PuntoLevantamiento;
+
+    /** Restricciones a las que está sometido un predio y que inciden sobre los derechos que pueden ejercerse sobre él.
+     */
+    CLASS CRG_Restriccion
+    EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_RRR =
+      /** Indica si es preciso o no que un interesado esté asociado a la restricción.
+       */
+      Interesado_Requerido : BOOLEAN;
+      /** Define el tipo de restricción.
+       */
+      Tipo : MANDATORY Catastro_Registro_Nucleo_V2_2_1.CRG_RestriccionTipo;
+      /** Código con el que la responsabilidad se registra en el Registro de la Propiedad.
+       */
+      Codigo_Registral_Restriccion : TEXT*5;
+    END CRG_Restriccion;
 
     ASSOCIATION InteresadoContacto =
-      contacto -- {0..*} Interesado_Contacto;
-      interesado -- {1} COL_Interesado;
+      contacto -- {0..*} CRG_Interesado_Contacto;
+      interesado -- {1} CRG_Interesado;
     END InteresadoContacto;
 
     ASSOCIATION predio_copropiedad =
-      predio -- {0..*} Predio;
-      copropiedad -<> {0..1} Predio;
+      predio -- {0..*} CRG_Predio;
+      copropiedad -<> {0..1} CRG_Predio;
       coeficiente : LADM_COL_V1_1.LADM_Nucleo.Fraccion;
     END predio_copropiedad;
 
     ASSOCIATION PublicidadBAUnit =
-      pubicidad -- {0..*} Publicidad;
+      pubicidad -- {0..*} CRG_Publicidad;
       baunit (EXTERNAL) -- {1} LADM_COL_V1_1.LADM_Nucleo.LA_BAUnit;
     END PublicidadBAUnit;
 
     ASSOCIATION PublicidadFuente =
-      publicidad -- {0..1} Publicidad;
+      publicidad -- {0..1} CRG_Publicidad;
       fuente (EXTERNAL) -- {1..*} LADM_COL_V1_1.LADM_Nucleo.COL_FuenteAdministrativa;
     END PublicidadFuente;
 
     ASSOCIATION PublicidadInteresado =
-      publicidad -- {0..*} Publicidad;
+      publicidad -- {0..*} CRG_Publicidad;
       interesado (EXTERNAL) -- {0..1} LADM_COL_V1_1.LADM_Nucleo.LA_Interesado;
     END PublicidadInteresado;
 
     /** Clase de tipo LA_RRR que registra las responsabilidades que las instancias de los interesados tienen sobre los predios.
      */
-    CLASS COL_Responsabilidad
+    CLASS CRG_Responsabilidad
     EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_RRR =
       /** Definición del tipo de responsabilidad que se tiene.
        */
-      Tipo : MANDATORY Catastro_Registro_Nucleo_V2_2_1.COL_ResponsabilidadTipo;
+      Tipo : MANDATORY Catastro_Registro_Nucleo_V2_2_1.CRG_ResponsabilidadTipo;
       /** Código con el que la responsabilidad se registra en el Registro de la Propiedad.
        */
       Codigo_Registral_Responsabilidad : TEXT*5;
-    END COL_Responsabilidad;
+    END CRG_Responsabilidad;
 
     /** Tipo de unidad espacial que permite la representación de una servidumbre de paso asociada a una LA_BAUnit.
      */
-    CLASS ServidumbrePaso
+    CLASS CRG_ServidumbrePaso
     EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_UnidadEspacial =
       Identificador : MANDATORY TEXT*20;
       /** Fecha de inscripción de la servidumbre en el Catastro.
        */
       Fecha_Inscripcion_Catastral : INTERLIS.XMLDate;
-    END ServidumbrePaso;
+    END CRG_ServidumbrePaso;
 
     /** Clase que representa un tipo de restricción heredando de COL_Restricción, asociada a un derecho y que permite gestionar las hipotecas constituídas sobre un bien inmueble, considerando las cuestiones legales nacionales.
      */
-    CLASS COL_Hipoteca
-    EXTENDS COL_Restriccion =
+    CLASS CRG_Hipoteca
+    EXTENDS CRG_Restriccion =
       /** Tipo de hipoteca constituida, conforme a la legislación colombiana.
        */
-      h_Tipo : Catastro_Registro_Nucleo_V2_2_1.COL_HipotecaTipo;
+      h_Tipo : Catastro_Registro_Nucleo_V2_2_1.CRG_HipotecaTipo;
       /** Código con el que la hipoteca se registra en el Registro de la Propiedad Inmobiliaria en el momento de ser constituida.
        */
       Codigo_Registral_Hipoteca : TEXT*5;
-    END COL_Hipoteca;
+    END CRG_Hipoteca;
 
     /** Es cada conjunto de materiales consolidados dentro de un predio que tiene una caracteristicas especificas en cuanto a elementos constitutivos físicos y usos de los mismos.
      */
-    CLASS UnidadConstruccion
+    CLASS CRG_UnidadConstruccion
     EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_EspacioJuridicoUnidadEdificacion =
       /** Corresponde al valor catastral determinado mediante el metodo economico definido, para cada unidad de contrucción del predio
        */
@@ -689,16 +647,16 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       /** Área privada de la unidad de construcción para el caso en que las construcciones tienen regimen de propiedad horizontal.
        */
       Area_Privada_Construida : 0.0 .. 99999999999999.9 [LADM_COL_V1_1.m2];
-    END UnidadConstruccion;
+    END CRG_UnidadConstruccion;
 
     ASSOCIATION ConstruccionUnidadConstruccion =
-      unidadconstruccion -- {0..*} UnidadConstruccion;
-      construccion -<> {1} Construccion;
+      unidadconstruccion -- {0..*} CRG_UnidadConstruccion;
+      construccion -<> {1} CRG_Construccion;
     END ConstruccionUnidadConstruccion;
 
     ASSOCIATION hipotecaDerecho =
-      hipoteca -- {0..*} COL_Hipoteca;
-      derecho -- {0..*} COL_Derecho;
+      hipoteca -- {0..*} CRG_Hipoteca;
+      derecho -- {0..*} CRG_Derecho;
     END hipotecaDerecho;
 
   END Catastro_Registro;

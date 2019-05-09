@@ -89,6 +89,14 @@ VERSION "V1.1.0"  // 2018-04-19 // =
         Grupo_Etnico
       );
 
+      /** Si ha sido situado por interpolación, de qué manera se ha hecho.
+       */
+      COL_InterpolacionTipo = (
+        Aislado,
+        Intermedio_Arco,
+        Intermedio_Linea
+      );
+
       COL_LevelContentTipo = (
         Construccion_Convencional,
         Construccion_No_Convencional,
@@ -175,6 +183,14 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       );
 
       Peso = 0.0 .. 999999999999999.0 [LADM_COL_V1_1.COP];
+
+      COL_MonumentacionTipo = (
+        Incrustacion,
+        Mojon,
+        No_Materializado,
+        Otros,
+        Pilastra
+      );
 
       LA_Agrupacion_Interesados_Tipo = (
         Asociacion,

@@ -2,8 +2,9 @@ INTERLIS 2.3;
 
 /** iNFORME TECNICO JURIDICO PRELIMINAR - ANT
  * 
- * 08.02.2019/fm: Version inicial del modelo informe tecnico-jurídico preliminar
- * 18.02.2019/fm: Inclusion variables de correspondencia en la inscripción del predio en la entidad catastral
+ * 08.02.2019/ fm: Version inicial del modelo informe tecnico-jurídico preliminar
+ * 18.02.2019/ fm: Inclusion variables de correspondencia en la inscripción del predio en la entidad catastral
+ * 09.05.2019/ at: Asignación del prefijo ITJP a todas las clases y dominios del modelo para facilitar legibilidad
  */
 MODEL ITJP_V1_0 (es)
 AT "http://www.proadmintierra.info/"
@@ -13,7 +14,7 @@ VERSION "V2.2.1"  // 2019-02-08 // =
   TOPIC ITJP =
     DEPENDS ON Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro;
 
-    CLASS Predio_ITJP =
+    CLASS ITJP_Predio =
       Consecutivo_ITJP : 0 .. 999999999999;
       Numero_FIso : 0 .. 999999999999;
       /** Nombre del propietario o poseedor registrado en el IGAC
@@ -50,11 +51,11 @@ VERSION "V2.2.1"  // 2019-02-08 // =
       /** LAS PORCIONES DE TIERRA SE ENCUENTRAN INSCRITAS EN LAS ENTIDADES CATASTRALES CORRESPONDIENTES.
        */
       Correspondencia_Entidades_Catastrales : BOOLEAN;
-    END Predio_ITJP;
+    END ITJP_Predio;
 
     ASSOCIATION PredioITJP_PredioCatastro =
-      Predio_Catastro (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.Predio;
-      Predio_ITJP -- {0..1} Predio_ITJP;
+      Predio_Catastro (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.CRG_Predio;
+      Predio_ITJP -- {0..1} ITJP_Predio;
     END PredioITJP_PredioCatastro;
 
   END ITJP;

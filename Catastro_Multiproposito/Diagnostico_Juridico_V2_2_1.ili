@@ -2,11 +2,12 @@ INTERLIS 2.3;
 
 /** Diagnostico Juridico.
  * 
- * 07.11.2017/fm: Version inicial del modelo de Diagnóstico jurídico
- * 08.11.2017: FM/ Ajuste de las variables del Predio_Juridico conforme al anexo 'Informe de la realidad física y jurídica del barrido predial'
- * 02.08.2018: FM/ Actualizacion de dependencia a la version 2.2.1 del nucleo y LADM 1.1
- * 15.02.2019: AT/ Creación de estructuras FMI_Duplicado y Folio_Segregado para almacenar multiples valores en estos campos
- * 22.04.2019/ AT-FM: Se habilita soporte para identificador interno tipo uuid en el "Topic"
+ * 07.11.2017/ fm: Version inicial del modelo de Diagnóstico jurídico
+ * 08.11.2017/ fm: Ajuste de las variables del Predio_Juridico conforme al anexo 'Informe de la realidad física y jurídica del barrido predial'
+ * 02.08.2018/ fm: Actualizacion de dependencia a la version 2.2.1 del nucleo y LADM 1.1
+ * 15.02.2019/ at: Creación de estructuras FMI_Duplicado y Folio_Segregado para almacenar multiples valores en estos campos
+ * 22.04.2019/ at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
+ * 09.05.2019/ at: Asignación del prefijo DJU a todas las clases y dominios del modelo para facilitar legibilidad
  */
 MODEL Diagnostico_Juridico_V2_2_1 (es)
 AT "http://www.proadmintierra.info/"
@@ -19,7 +20,7 @@ VERSION "V2.2.1"  // 2018-02-08 // =
 
     DOMAIN
 
-      COL_ErrorRegistralTipo = (
+      DJU_ErrorRegistralTipo = (
         /** Hallazgo de falsa tradición inscrita como pleno dominio
          */
         !!@ ili2db.dispName = "Falsa Tradición como pleno dominio"
@@ -41,7 +42,7 @@ VERSION "V2.2.1"  // 2018-02-08 // =
         Alfanumerico
       );
 
-      COL_JustificacionCierreFMITipo = (
+      DJU_JustificacionCierreFMITipo = (
         /** Agotamiento de área por compraventas parciales
          */
         !!@ ili2db.dispName = "Agotamiento de área"
@@ -63,23 +64,23 @@ VERSION "V2.2.1"  // 2018-02-08 // =
         !!@ ili2db.dispName = "No Existe Físicamente"
         No_Existe_Fisicamente
       );
-    STRUCTURE COL_ErrorRegistralTipo_Predio_Juridico_Error_Registral = value : MANDATORY COL_ErrorRegistralTipo; END COL_ErrorRegistralTipo_Predio_Juridico_Error_Registral;
+    STRUCTURE DJU_ErrorRegistralTipo_DJU_Predio_Juridico_Error_Registral = value : MANDATORY DJU_ErrorRegistralTipo; END DJU_ErrorRegistralTipo_DJU_Predio_Juridico_Error_Registral;
 
     /** Estructura para almacenar multiples valores del atributo "FMI_Duplicados" de la tabla Predio_Juridico
      */
-    STRUCTURE FMI_Duplicado =
+    STRUCTURE DJU_FMI_Duplicado =
       value : MANDATORY TEXT*80;
-    END FMI_Duplicado;
+    END DJU_FMI_Duplicado;
 
     /** Estructura para almacenar multiples valores del atributo "Folio_Segregado" de la tabla Predio_Juridico
      */
-    STRUCTURE Folio_Segregado =
+    STRUCTURE DJU_Folio_Segregado =
       value : MANDATORY TEXT*80;
-    END Folio_Segregado;
+    END DJU_Folio_Segregado;
 
     /** La clase Predio es una agrupación de atributos específicos de interés específico para el Registro de la Propiedad Inmobiliaria. Por tanto, representa lo mismo que en el caso de los modelos de Catastro y de Avalúos, pero sus atributos almacenan los datos relativos a aquella información de caracter legal que es necesario conocer con fines registrales.
      */
-    CLASS Predio_Juridico =
+    CLASS DJU_Predio_Juridico =
       /** Descripción del estado del Folio de Matrícula Inmobiliaria.
        */
       Estado_FMI : TEXT*20;
@@ -88,25 +89,25 @@ VERSION "V2.2.1"  // 2018-02-08 // =
       Folio_Matriz : TEXT*20;
       /** Indicación de los folios segregados del predio.
        */
-      Folios_Segregados : BAG {0..*} OF Diagnostico_Juridico_V2_2_1.Diagnostico_Juridico.Folio_Segregado;
+      Folios_Segregados : BAG {0..*} OF Diagnostico_Juridico_V2_2_1.Diagnostico_Juridico.DJU_Folio_Segregado;
       /** Si el folio de matricula inmobiliaria debería estar cerrado, detalla por que raznón
        */
-      Justificacion_Cierre_FMI : COL_JustificacionCierreFMITipo;
+      Justificacion_Cierre_FMI : DJU_JustificacionCierreFMITipo;
       /** El folio presenta duplicidad
        */
       Duplicidad_FMI : BOOLEAN;
       /** Listado de FMI con los que hay duplicidad
        */
-      FMI_Duplicados : BAG {0..*} OF Diagnostico_Juridico_V2_2_1.Diagnostico_Juridico.FMI_Duplicado;
-      Error_Registral : BAG {0..*} OF COL_ErrorRegistralTipo_Predio_Juridico_Error_Registral;
-    END Predio_Juridico;
+      FMI_Duplicados : BAG {0..*} OF Diagnostico_Juridico_V2_2_1.Diagnostico_Juridico.DJU_FMI_Duplicado;
+      Error_Registral : BAG {0..*} OF DJU_ErrorRegistralTipo_DJU_Predio_Juridico_Error_Registral;
+    END DJU_Predio_Juridico;
 
     /** Relación entre las clases "Predio" de Catastro y de Registro. La cardinalidad es 1-1, lo que indica que son representaciones diferentes de un mismo elemento de la realidad.
      * En efecto, una es la agrupación de atributos que caracterizan el predio desde el punto de vista de Catastro (físico) y la otra agrupa atributos de interés para el Registro (legal).
      */
     ASSOCIATION PredioRegistro_PredioCatastro =
-      predio_catastro (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.Predio;
-      predio_registro -- {0..1} Predio_Juridico;
+      predio_catastro (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.CRG_Predio;
+      predio_registro -- {0..1} DJU_Predio_Juridico;
     END PredioRegistro_PredioCatastro;
 
   END Diagnostico_Juridico;

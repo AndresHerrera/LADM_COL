@@ -9,20 +9,21 @@ INTERLIS 2.3;
  *  2017.06.29 vbp: Extraidos dominios de valores de atributos de las clases --> integridad estructural, facilidad de lectura, unicidad de criterio en todos los modelos.
  * -----------------------------------------------------------
  * 
- *  02.06.2017/vb: Generacion del modelo extraido a partir de version anterior del modelo de Catastro, donde aparecia como TOPIC
+ *  02.06.2017/ vb: Generacion del modelo extraido a partir de version anterior del modelo de Catastro, donde aparecia como TOPIC
  *  09.11.2017/ : cambio de nombre al dominio COL_DestinoEconomicoTipo
  *  01.02.2018/ : Cambio en cardinalidad en asociacion avaluoPredio de 1 a 0..1
  *  05.02.2018/ : Cambio en cardinalidad en asociaciones avaluoConstruccion y AvaluoUnidadConstruccion de 1 a 0..1
- *  07.03.2018/fm-gc : Cambio en tipo de geometria de las clases Zona_Homogenea_Fisica y Zona_Homogenea_Geoeconomica de GM_Surface2D a GM_MultiSurface2D
- *  08.03.2018/fm-gc: se ajusta la cardinalidad de atributo Comun_Uso_Exclusivo en la clase Predio
+ *  07.03.2018/ fm-gc : Cambio en tipo de geometria de las clases Zona_Homogenea_Fisica y Zona_Homogenea_Geoeconomica de GM_Surface2D a GM_MultiSurface2D
+ *  08.03.2018/ fm-gc: se ajusta la cardinalidad de atributo Comun_Uso_Exclusivo en la clase Predio
  *  09.07.2018/ : Cambio en cardinalidad en asociaciones avaluoConstruccion y AvaluoUnidadConstruccion de 1 a 0..1
- * 08.08.2018/ : (AT) Se agrega la clase abstracta Calificacion_Unidad_Construccion con clases especializadas Calificacion_No_Convencional y Calificacion_Convencional; Cambio en la cardinalidad de relación entre Unidad_Construccion y Calificacion_Unidad_Construccion pasa de 1 - 1..* a 1 - 1; Cambio en los valores del dominio COL_AccesoTipo; Se agrega el atributo numérico Nivel_de_Acceso en clase Unidad_Construccion; Cambio en el nombre del atributo Actividad_Econo por Uso; Se agrega el dominio COL_UsoConstruccionTipo para que tengan correspondencia con dominios SNC; Cambio en tipo de dato Material de manera que se quita el dominio y se deja abierto para el operador; Cambio en los valores del dominio COL_DestinoEconomicoTipo; Se elimina el atributo numero_total_pisos de clase Unidad_Construccion; Se cambia la cardinalidad de los atributos de Unidad_Construccion y Predio; Cambio de nombre en los atributos Conservacion_Cubierta y Puntos_Cubierta_Conservacion de la clase Calificacion_Convencional por Conservacion_Estructura y Puntos_Estructura_Conservacion; Ajuste de valores de los dominio COL_TipoCalificarTipo, COL_ArmazonTipo, COL_MurosTipo, COL_CubiertaTipo, COL_CubrimientoMurosTipo, COL_CalidadEnchapeTipo; Se agregan los dominios COL_ConservacionCalificacion y COL_AnexoTipo; Se adiciona el atributo Num_Sotanos en la clase Predio_Matriz_PH
- * 21.08.2018/ : (AT) Se modifica el atributo Cercania_Hitos de la clase Predio dejandolo de tipo String
- * 23.08.2018/ : (AT) Se cambia el nombre de la relación y de los roles entre unidad_construccion y calificacion_unidad_construccion
- * 18.02.2019/ : (AT) Cambio en el orden de roles de las relaciones en las clases que se relacionan con el modelo catastro-registro
- * 21.02.2019/: (AT)  Cambio en el nombre de los atributos "Destino_Econo" y "Anio_Construction" de la clase "Unidad_Construccion" por "Destino_Economico" y "Anio_Construccion" respectivamente.
- * 22.04.2019/ (AT-FM): Se habilita soporte para identificador interno tipo uuid en el "Topic"
- * 07.05.2019/ (AT): Cambio en el tipo de geometria de las clases Zona_Homogenea_Fisica y Zona_Homogenea_Geoeconomica para soportar 3D; Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
+ * 08.08.2018/ at: Se agrega la clase abstracta Calificacion_Unidad_Construccion con clases especializadas Calificacion_No_Convencional y Calificacion_Convencional; Cambio en la cardinalidad de relación entre Unidad_Construccion y Calificacion_Unidad_Construccion pasa de 1 - 1..* a 1 - 1; Cambio en los valores del dominio COL_AccesoTipo; Se agrega el atributo numérico Nivel_de_Acceso en clase Unidad_Construccion; Cambio en el nombre del atributo Actividad_Econo por Uso; Se agrega el dominio COL_UsoConstruccionTipo para que tengan correspondencia con dominios SNC; Cambio en tipo de dato Material de manera que se quita el dominio y se deja abierto para el operador; Cambio en los valores del dominio COL_DestinoEconomicoTipo; Se elimina el atributo numero_total_pisos de clase Unidad_Construccion; Se cambia la cardinalidad de los atributos de Unidad_Construccion y Predio; Cambio de nombre en los atributos Conservacion_Cubierta y Puntos_Cubierta_Conservacion de la clase Calificacion_Convencional por Conservacion_Estructura y Puntos_Estructura_Conservacion; Ajuste de valores de los dominio COL_TipoCalificarTipo, COL_ArmazonTipo, COL_MurosTipo, COL_CubiertaTipo, COL_CubrimientoMurosTipo, COL_CalidadEnchapeTipo; Se agregan los dominios COL_ConservacionCalificacion y COL_AnexoTipo; Se adiciona el atributo Num_Sotanos en la clase Predio_Matriz_PH
+ * 21.08.2018/ at: Se modifica el atributo Cercania_Hitos de la clase Predio dejandolo de tipo String
+ * 23.08.2018/ at: Se cambia el nombre de la relación y de los roles entre unidad_construccion y calificacion_unidad_construccion
+ * 18.02.2019/ at: Cambio en el orden de roles de las relaciones en las clases que se relacionan con el modelo catastro-registro
+ * 21.02.2019/ at: Cambio en el nombre de los atributos "Destino_Econo" y "Anio_Construction" de la clase "Unidad_Construccion" por "Destino_Economico" y "Anio_Construccion" respectivamente.
+ * 22.04.2019/ at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
+ * 07.05.2019/ at: Cambio en el tipo de geometria de las clases Zona_Homogenea_Fisica y Zona_Homogenea_Geoeconomica para soportar 3D; Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
+ * 09.05.2019/ at: Asignación del prefijo AVL a todas las clases y dominios del modelo para facilitar legibilidad
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -38,7 +39,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores válidos para indicar cual es el tipo de acceso a una unidad de construcción, que incide sobre su avalúo.
      */
-    COL_AccesoTipo = (
+    AVL_AccesoTipo = (
       Piso,
       Mezanine,
       Semisotano,
@@ -46,7 +47,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Subterraneo
     );
 
-    COL_AnexoTipo = (
+    AVL_AnexoTipo = (
       Enramadas_Cobertizos_Caneyes,
       Galpones_Gallineros,
       Establos_Pesebreras,
@@ -69,7 +70,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores válidos para indicar cual es la calidad del aprovechamiento obtenido en el predio, que incide sobre su avalúo.
      */
-    COL_AprovechamientoTipo = (
+    AVL_AprovechamientoTipo = (
       /** Aprovechamiento por debajo del que se pueda considerar adecuado.
        */
       Aprov_Deficiente,
@@ -89,7 +90,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Tipo de material de construcción del armazón
      */
-    COL_ArmazonTipo = (
+    AVL_ArmazonTipo = (
       Madera,
       Prefabricado,
       /** Ladrillo o bloque.
@@ -99,7 +100,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Concreto_Cuatro_O_Mas_Pisos
     );
 
-    COL_CalidadEnchapeTipo = (
+    AVL_CalidadEnchapeTipo = (
       Sin_Cubrimiento,
       Paniete_BaldosaComunCemento,
       BaldosinUnicolor_PapelComun,
@@ -108,7 +109,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Marmol_EnchapeLujoso
     );
 
-    COL_CalidadMobiliarioTipo = (
+    AVL_CalidadMobiliarioTipo = (
       Pobre,
       Sencillo,
       Regular,
@@ -116,7 +117,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Lujoso
     );
 
-    COL_CerchasTipo = (
+    AVL_CerchasTipo = (
       Madera,
       Metalica_Liviana,
       Metalica_Mediana,
@@ -124,14 +125,14 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Altura
     );
 
-    COL_ConservacionCalificacion = (
+    AVL_ConservacionCalificacion = (
       Malo,
       Regular,
       Bueno,
       Excelente
     );
 
-    COL_CubiertaTipo = (
+    AVL_CubiertaTipo = (
       MaterialesDesecho_TelasAsfalticas,
       Zinc_TejaBarro_EternitRustico,
       Entrepiso_Prefabricado,
@@ -140,7 +141,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Placa_Imperbeabilizada_Cubierta_Lujosa
     );
 
-    COL_CubrimientoMurosTipo = (
+    AVL_CubrimientoMurosTipo = (
       Sin_Cubrimiento,
       Paniete_PapelComun_LadrilloPrensado,
       Estuco_Ceramica_PapelFino,
@@ -150,14 +151,14 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores para indicar si tiene o no vistas al exterior, con incidencia en su avalúo. DOCUMENTAR --> NO SERÍA MEJOR LLAMARLO VISTA EXTERIOR Y QUE SEA DE TIPO BULEANO???
      */
-    COL_DisposicionTipo = (
+    AVL_DisposicionTipo = (
       Vista_Interior,
       Vista_Exterior
     );
 
     /** REVISAR --> TIENE LOS MISMOS VALORES QUE EL DOMINIO CALIDAD DEL MOBILIARIO Y NO TIENE SENTIDO DUPLICARLO. REUTILIZAR EL ANTERIOR, CAMBIANDO LO DE NOMBRE
      */
-    COL_FachadaTipo = (
+    AVL_FachadaTipo = (
       Pobre,
       Sencilla,
       Regular,
@@ -165,7 +166,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Lujosa
     );
 
-    COL_MurosTipo = (
+    AVL_MurosTipo = (
       MaterialesDesecho_Esterilla,
       Bahareque_Adobe_Tapia,
       Madera,
@@ -173,7 +174,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Bloque_Ladrillo
     );
 
-    COL_PisoTipo = (
+    AVL_PisoTipo = (
       Tierra_Pisada,
       Cemento_MaderaBurda,
       BaldosaComunCemento_TablonLadrillo,
@@ -185,7 +186,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Tamaño de los baños.
      */
-    COL_TamanioBanioTipo = (
+    AVL_TamanioBanioTipo = (
       /** Sin baño
        */
       Sin_Banio,
@@ -198,7 +199,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** REVISAR --> SE REPITEN VALORES DEL DOMINIO DE TAMAÑO DE BAÑO. UNIFICAR EN EL ANTERIOR CAMBIANDOLO DE NOMBRE
      */
-    COL_TamanioCocinaTipo = (
+    AVL_TamanioCocinaTipo = (
       Sin_Cocina,
       Pequenia,
       Mediana,
@@ -207,7 +208,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Calificación del suelo.
      */
-    COL_TipoCalificarTipo = (
+    AVL_TipoCalificarTipo = (
       Residencial,
       Industrial,
       Comercial
@@ -215,7 +216,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores válidos para indicar el tipo de la unidad de construcción.
      */
-    COL_TipologiaTipo = (
+    AVL_TipologiaTipo = (
       Almacenamiento,
       Asamblea,
       De_Alto_Riesgo,
@@ -230,7 +231,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores válidos para indicar si hay o no acceso al agua desde un predio y en caso de haberla, como se accede, con indicencia en su avalúo.
      */
-    COL_DisponibilidadAguaTipo = (
+    AVL_DisponibilidadAguaTipo = (
       /** Acueducto municipal.
        */
       A_Acueducto_Mpio,
@@ -253,7 +254,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores válidos para indicar el tipo de equipamiento comunal de un predio matriz de la propiedad horizontal, con incidencia en su avalúo.
      */
-    COL_EquipamientoComunalTipo = (
+    AVL_EquipamientoComunalTipo = (
       Salon_Comunal,
       Piscina,
       /** Aparcamiento específico para visitantes.
@@ -279,7 +280,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Se debe definir por la metodología de los pilotos
      */
-    COL_UsoConstruccionTipo = (
+    AVL_UsoConstruccionTipo = (
       Vivienda_Hasta_3_Pisos,
       Ramadas_Cobertizos_Caneyes,
       Galpones_Gallineros,
@@ -364,7 +365,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores válidos para indicar cual es el destino económico de la unidad de construcción, con incidencia en su avalúo. REVISAR DOCUMENTACIÓN --> OJO, EL NOMBRE DESTINACIÓN DEBERÍA SER DESTINO, ES DECIR COL_DestinoEconomicoTipo.
      */
-    COL_DestinoEconomicoTipo = (
+    AVL_DestinoEconomicoTipo = (
       Residencial,
       Anexo,
       Industrial,
@@ -373,7 +374,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores válidos para indicar si hay o no y el tipo de las obras en el interior de un predio, con incidencia en su avalúo.
      */
-    COL_ObrasAlInteriorTipo = (
+    AVL_ObrasAlInteriorTipo = (
       No_Posee,
       /** Infraestructuras interiores del predio.
        */
@@ -400,7 +401,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores válidos para indicar la cobertura vegetal, que incide sobre su avalúo.
      */
-    COL_CapaVegetalTipo = (
+    AVL_CapaVegetalTipo = (
       /** Formaciones arbóreas, conforme a la legislación forestal nacional. REVISAR DOCUMENTACIÓN
        */
       Bosque,
@@ -426,7 +427,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores válidos para determinar el estilo de la construcción que se aprecia en una unidad de construcción, con incidencia en su avalúo.
      */
-    COL_EstiloTipo = (
+    AVL_EstiloTipo = (
       Clasico,
       Colonial,
       Minimalista,
@@ -439,7 +440,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Valores válidos para indicar el tipo de construcción empleada para levantar una unidad de construcción, con incidencia en su avalúo. REVISAR DOCUMENTACIÓN
      */
-    COL_ConstruccionTipo = (
+    AVL_ConstruccionTipo = (
       /** El tipo de construcción utiliza métodos convencionales. REVISAR DOCUMENTACIÓN
        */
       Convencional,
@@ -450,7 +451,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores válidos para indicar de forma descriptiva la pendiente de un predio, con incidencia en su avalúo.
      */
-    COL_PendienteTipo = (
+    AVL_PendienteTipo = (
       Empinada,
       Escarpada,
       Fuertemente_Inclinada,
@@ -465,7 +466,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores válidos para definir el estado de conservación de una unidad de construcción o de un predio matriz de la propiedad horizontal, con incidencia en su avalúo.
      */
-    COL_EstadoConservacionTipo = (
+    AVL_EstadoConservacionTipo = (
       Bueno,
       Demolicion,
       Intermedio,
@@ -478,21 +479,21 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores válidos para indicar la forma de desarrollo de un predio, respecto a su urbanización, con incidencia en su avalúo.
      */
-    COL_TipoDesarrolloTipo = (
+    AVL_TipoDesarrolloTipo = (
       Auto_Construccion,
       Urbanizacion
     );
 
     /** Conjunto de valores válidos para determinar la forma de un predio, con incidencia en su avalúo.
      */
-    COL_FormaTipo = (
+    AVL_FormaTipo = (
       Irregular,
       Regular
     );
 
     /** Conjunto de valores válidos para determinar la capacidad de cumplir con su función por parte de una unidad de construcción.
      */
-    COL_FuncionalidadTipo = (
+    AVL_FuncionalidadTipo = (
       /** Cumple su función adecuadamente.
        */
       Funcional,
@@ -506,7 +507,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores válidos para indicar qué elemento situado en zona común es de uso exclusivo de un predio, con incidencia en su avalúo.
      */
-    COL_ComunExclusivoTipo = (
+    AVL_ComunExclusivoTipo = (
       /** Saliente de la fachada, a la altura de un vano y protegida por una barandilla.
        */
       Balcon,
@@ -529,7 +530,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Conjunto de valores válidos pra indicar donde se encuentra una unidad de construcción en copropiedad.
      */
-    COL_UbicacionEnCopropiedadTipo = (
+    AVL_UbicacionEnCopropiedadTipo = (
       Otras_Ubicaciones,
       Pasillo_Principal,
       Pasillo_Secundario,
@@ -542,39 +543,39 @@ VERSION "V2.2.1"  // 2018-02-01 // =
     OID AS INTERLIS.UUIDOID;
     DEPENDS ON Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro;
 
-    CLASS Calificacion_Unidad_Construccion (ABSTRACT) =
-    END Calificacion_Unidad_Construccion;
+    CLASS AVL_Calificacion_Unidad_Construccion (ABSTRACT) =
+    END AVL_Calificacion_Unidad_Construccion;
 
     /** La clase Predio es una agrupación de atributos específicos para el avalúo del mismo. Por tanto, representa lo mismo que en el caso de los modelos de Catastro y de Registro, pero sus atributos almacenan los datos relativos a aquellas características que es necesario conocer para realizar el avaluo masivo de los predios catastrales, de acuerdo con la metodología vigente.
      */
-    CLASS Predio =
+    CLASS AVL_Predio =
       /** Almacena el área calculada sobre plano de la zona, en m2
        */
       Area_Calculada_Plano_Local : 0.0 .. 99999999999999.9 [LADM_COL_V1_1.m2];
       /** Calidad del aprovechamiento obtenido en el predio
        */
-      Aprovechamiento : Avaluos_V2_2_1.COL_AprovechamientoTipo;
+      Aprovechamiento : Avaluos_V2_2_1.AVL_AprovechamientoTipo;
       /** Forma en la que hay agua disponible en el predio, o la indicación de que no la hay.
        */
-      Disponibilidad_Agua : Avaluos_V2_2_1.COL_DisponibilidadAguaTipo;
+      Disponibilidad_Agua : Avaluos_V2_2_1.AVL_DisponibilidadAguaTipo;
       /** Distancia a la fuente de agua más cercana.
        */
       Distancia_Fuentes_Agua : LADM_COL_V1_1.LADM_Nucleo.Integer;
       /** Obras existentes en el interior del predio, o la indicación de que no existe.
        */
-      Obra_al_Interior : Avaluos_V2_2_1.COL_ObrasAlInteriorTipo;
+      Obra_al_Interior : Avaluos_V2_2_1.AVL_ObrasAlInteriorTipo;
       /** Tipo de cobertura vegetal con la que cuenta el predio.
        */
-      Capa_Vegetal : Avaluos_V2_2_1.COL_CapaVegetalTipo;
+      Capa_Vegetal : Avaluos_V2_2_1.AVL_CapaVegetalTipo;
       /** Descricpción de la pendiente del terreno general del predio.
        */
-      Pendiente : Avaluos_V2_2_1.COL_PendienteTipo;
+      Pendiente : Avaluos_V2_2_1.AVL_PendienteTipo;
       /** Indicación de la forma en la que se desarrolla el predio, esto es, la forma en la que se está produciendo la urbanización.
        */
-      Tipo_Desarrollo : Avaluos_V2_2_1.COL_TipoDesarrolloTipo;
+      Tipo_Desarrollo : Avaluos_V2_2_1.AVL_TipoDesarrolloTipo;
       /** Regularidad o irregularidad del predio.
        */
-      Forma : Avaluos_V2_2_1.COL_FormaTipo;
+      Forma : Avaluos_V2_2_1.AVL_FormaTipo;
       /** Cantidad de balcones que tiene el predio vivienda.
        */
       Num_Balcones : LADM_COL_V1_1.LADM_Nucleo.Integer;
@@ -586,7 +587,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Num_Mezanines : LADM_COL_V1_1.LADM_Nucleo.Integer;
       /** Elemento situado en zona común que es de uso exclusivo.
        */
-      Comun_Uso_Exclusivo : Avaluos_V2_2_1.COL_ComunExclusivoTipo;
+      Comun_Uso_Exclusivo : Avaluos_V2_2_1.AVL_ComunExclusivoTipo;
       /** Descripción de la distancia a los hitos.
        */
       Cercania_Hitos : TEXT*50;
@@ -599,101 +600,101 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       /** Longitud del fondo del predio. El fondo del predio se considera de acuerdo con su visión desde el acceso al mismo.
        */
       Fondo : LADM_COL_V1_1.LADM_Nucleo.Real;
-    END Predio;
+    END AVL_Predio;
 
     /** Datos para el avalúo de la unidad de construcción.
      */
-    CLASS Calificacion_Convencional
-    EXTENDS Calificacion_Unidad_Construccion =
-      Tipo_Calificar : Avaluos_V2_2_1.COL_TipoCalificarTipo;
-      Armazon : Avaluos_V2_2_1.COL_ArmazonTipo;
+    CLASS AVL_Calificacion_Convencional
+    EXTENDS AVL_Calificacion_Unidad_Construccion =
+      Tipo_Calificar : Avaluos_V2_2_1.AVL_TipoCalificarTipo;
+      Armazon : Avaluos_V2_2_1.AVL_ArmazonTipo;
       Puntos_Armazon : 1 .. 100;
-      Muros : Avaluos_V2_2_1.COL_MurosTipo;
+      Muros : Avaluos_V2_2_1.AVL_MurosTipo;
       Puntos_Muro : 1 .. 100;
-      Cubierta : Avaluos_V2_2_1.COL_CubiertaTipo;
+      Cubierta : Avaluos_V2_2_1.AVL_CubiertaTipo;
       Puntos_Cubierta : 1 .. 100;
-      Conservacion_Estructura : Avaluos_V2_2_1.COL_ConservacionCalificacion;
+      Conservacion_Estructura : Avaluos_V2_2_1.AVL_ConservacionCalificacion;
       Puntos_Estructura_Conservacion : 1 .. 100;
       Sub_Total_Estructura : LADM_COL_V1_1.LADM_Nucleo.Integer;
-      Fachada : Avaluos_V2_2_1.COL_FachadaTipo;
+      Fachada : Avaluos_V2_2_1.AVL_FachadaTipo;
       Puntos_Fachada : 1 .. 100;
-      Cubrimiento_Muros : Avaluos_V2_2_1.COL_CubrimientoMurosTipo;
+      Cubrimiento_Muros : Avaluos_V2_2_1.AVL_CubrimientoMurosTipo;
       Puntos_Cubrimiento_Muros : 1 .. 100;
-      Piso : Avaluos_V2_2_1.COL_PisoTipo;
+      Piso : Avaluos_V2_2_1.AVL_PisoTipo;
       Puntos_Piso : 1 .. 100;
-      Conservacion_Acabados : Avaluos_V2_2_1.COL_ConservacionCalificacion;
+      Conservacion_Acabados : Avaluos_V2_2_1.AVL_ConservacionCalificacion;
       Puntos_Conservacion_Acabados : 1 .. 100;
       Sub_Total_Acabados : LADM_COL_V1_1.LADM_Nucleo.Integer;
-      Tamanio_Banio : Avaluos_V2_2_1.COL_TamanioBanioTipo;
+      Tamanio_Banio : Avaluos_V2_2_1.AVL_TamanioBanioTipo;
       Puntos_Tamanio_Banio : 1 .. 100;
-      Enchape_Banio : Avaluos_V2_2_1.COL_CalidadEnchapeTipo;
+      Enchape_Banio : Avaluos_V2_2_1.AVL_CalidadEnchapeTipo;
       Puntos_Enchape_Banio : 1 .. 100;
-      Mobiliario_Banio : Avaluos_V2_2_1.COL_CalidadMobiliarioTipo;
+      Mobiliario_Banio : Avaluos_V2_2_1.AVL_CalidadMobiliarioTipo;
       Puntos_Mobiliario_Banio : 1 .. 100;
-      Conservacion_Banio : Avaluos_V2_2_1.COL_ConservacionCalificacion;
+      Conservacion_Banio : Avaluos_V2_2_1.AVL_ConservacionCalificacion;
       Puntos_Conservacion_Banio : 1 .. 100;
       Sub_Total_Banio : LADM_COL_V1_1.LADM_Nucleo.Integer;
-      Tamanio_Cocina : Avaluos_V2_2_1.COL_TamanioCocinaTipo;
+      Tamanio_Cocina : Avaluos_V2_2_1.AVL_TamanioCocinaTipo;
       Puntos_Tamanio_Cocina : 1 .. 100;
-      Enchape_Cocina : Avaluos_V2_2_1.COL_CalidadEnchapeTipo;
+      Enchape_Cocina : Avaluos_V2_2_1.AVL_CalidadEnchapeTipo;
       Puntos_Enchape_Cocina : 1 .. 100;
-      Mobiliario_Cocina : Avaluos_V2_2_1.COL_CalidadMobiliarioTipo;
+      Mobiliario_Cocina : Avaluos_V2_2_1.AVL_CalidadMobiliarioTipo;
       Puntos_Mobiliario_Cocina : 1 .. 100;
-      Conservacion_Cocina : Avaluos_V2_2_1.COL_ConservacionCalificacion;
+      Conservacion_Cocina : Avaluos_V2_2_1.AVL_ConservacionCalificacion;
       Puntos_Conservacion_Cocina : 1 .. 100;
       Sub_Total_Cocina : LADM_COL_V1_1.LADM_Nucleo.Integer;
       Total_Residencial_Y_Comercial : LADM_COL_V1_1.LADM_Nucleo.Integer;
-      Cerchas : Avaluos_V2_2_1.COL_CerchasTipo;
+      Cerchas : Avaluos_V2_2_1.AVL_CerchasTipo;
       Puntos_Cerchas : 1 .. 100;
       Total_Industrial : LADM_COL_V1_1.LADM_Nucleo.Integer;
-    END Calificacion_Convencional;
+    END AVL_Calificacion_Convencional;
 
-    CLASS Calificacion_No_Convencional
-    EXTENDS Calificacion_Unidad_Construccion =
-      Tipo_Anexo : Avaluos_V2_2_1.COL_AnexoTipo;
+    CLASS AVL_Calificacion_No_Convencional
+    EXTENDS AVL_Calificacion_Unidad_Construccion =
+      Tipo_Anexo : Avaluos_V2_2_1.AVL_AnexoTipo;
       Descripcion_Anexo : TEXT*256;
       Puntaje_Anexo : TEXT*2;
-    END Calificacion_No_Convencional;
+    END AVL_Calificacion_No_Convencional;
 
     /** Relación entre las clases "Predio" de Catastro y de Avalúo. La cardinalidad es 1-1, lo que indica que son representaciones diferentes de un mismo elemento de la realidad.
      * En efecto, una es la agrupación de atributos que caracterizan el predio desde el punto de vista de Catastro y la otra agrupa atributos de interés para el avalúo del predio.
      */
     ASSOCIATION AvaluoPredio =
-      Predio (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.Predio;
-      APredio -- {0..1} Predio;
+      Predio (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.CRG_Predio;
+      APredio -- {0..1} AVL_Predio;
     END AvaluoPredio;
 
     /** La clase Construccion es una agrupación de atributos específicos para el avalúo de la misma. Por tanto, representa lo mismo que en el caso del modelo de Catastro, pero sus atributos almacenan los datos relativos a aquellas características que es necesario conocer para realizar el avalúo masivo de las construcciones, de acuerdo con la metodología vigente
      */
-    CLASS Construccion =
+    CLASS AVL_Construccion =
       /** Cantidad de plantas que tiene la construcción.
        */
       Numero_Pisos : MANDATORY 1 .. 100;
-    END Construccion;
+    END AVL_Construccion;
 
     /** Relación entre las clases "Construccion" de Catastro y de Avalúo. La cardinalidad es 1-1, lo que indica que son representaciones diferentes de un mismo elemento de la realidad.
      * En efecto, una es la agrupación de atributos que caracterizan la construcción desde el punto de vista de Catastro y la otra agrupa atributos de interés para el avalúo de la construcción.
      */
     ASSOCIATION AvaluoConstruccion =
-      Cons (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.Construccion;
-      ACons -- {0..1} Construccion;
+      Cons (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.CRG_Construccion;
+      ACons -- {0..1} AVL_Construccion;
     END AvaluoConstruccion;
 
     /** La clase UnidadConstruccion es una agrupación de atributos específicos para el avalúo de la misma. Por tanto, representa lo mismo que en el caso del modelo de Catatro, pero sus atributos almacenan los datos relativos a aquellas características que es necesario conocer para realizar el avaluo masivo de las construcciones, de acuerdo a la metodología vigente.
      */
-    CLASS Unidad_Construccion =
+    CLASS AVL_Unidad_Construccion =
       /** Clasificación del tipo de construcción empleada para levantar la unidad de construcción.
        */
-      Construccion_Tipo : MANDATORY Avaluos_V2_2_1.COL_ConstruccionTipo;
+      Construccion_Tipo : MANDATORY Avaluos_V2_2_1.AVL_ConstruccionTipo;
       /** Activiadad económica que se desarrolla en la unidad de construcción.
        */
-      Uso : MANDATORY Avaluos_V2_2_1.COL_UsoConstruccionTipo;
+      Uso : MANDATORY Avaluos_V2_2_1.AVL_UsoConstruccionTipo;
       /** Activiadad económica a la que está destinada la unidad de construcción.
        */
-      Destino_Economico : MANDATORY Avaluos_V2_2_1.COL_DestinoEconomicoTipo;
+      Destino_Economico : MANDATORY Avaluos_V2_2_1.AVL_DestinoEconomicoTipo;
       /** Tipología de unidad de construcción.
        */
-      Tipologia : MANDATORY Avaluos_V2_2_1.COL_TipologiaTipo;
+      Tipologia : MANDATORY Avaluos_V2_2_1.AVL_TipologiaTipo;
       Puntuacion : MANDATORY LADM_COL_V1_1.LADM_Nucleo.Integer;
       Valor_M2_Construccion : LADM_COL_V1_1.LADM_Nucleo.Peso;
       /** Año en el que fue construída la unidad de construcción.
@@ -701,7 +702,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Anio_Construccion : MANDATORY INTERLIS.XMLDate;
       /** Estado de la construcción, desde el punto de vista estructural.
        */
-      Estado_Conservacion : MANDATORY Avaluos_V2_2_1.COL_EstadoConservacionTipo;
+      Estado_Conservacion : MANDATORY Avaluos_V2_2_1.AVL_EstadoConservacionTipo;
       /** Cantidad de estancias habitables de la unidad de construcción.
        */
       Num_Habitaciones : LADM_COL_V1_1.LADM_Nucleo.Integer;
@@ -734,40 +735,40 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Material : MTEXT*255;
       /** Estilo arquitectónico de la construcción.
        */
-      Estilo : Avaluos_V2_2_1.COL_EstiloTipo;
+      Estilo : Avaluos_V2_2_1.AVL_EstiloTipo;
       /** Almacena el tipo de acceso a la unidad de construcción.
        */
-      Acceso : Avaluos_V2_2_1.COL_AccesoTipo;
+      Acceso : Avaluos_V2_2_1.AVL_AccesoTipo;
       Nivel_de_Acceso : 1 .. 100;
       /** En caso de tratarse de una unidad en copropiedad, indicación de dónde se encuentra. REVISAR
        */
-      Ubicacion_en_Copropiedad : Avaluos_V2_2_1.COL_UbicacionEnCopropiedadTipo;
+      Ubicacion_en_Copropiedad : Avaluos_V2_2_1.AVL_UbicacionEnCopropiedadTipo;
       /** Indicación de si tiene o no vistas al exterior.
        */
-      Disposicion : Avaluos_V2_2_1.COL_DisposicionTipo;
+      Disposicion : Avaluos_V2_2_1.AVL_DisposicionTipo;
       /** Almacena información relativa a la capacidad de cumplir con la función que se espera de la unidad de construcción.
        */
-      Funcionalidad : Avaluos_V2_2_1.COL_FuncionalidadTipo;
-    END Unidad_Construccion;
+      Funcionalidad : Avaluos_V2_2_1.AVL_FuncionalidadTipo;
+    END AVL_Unidad_Construccion;
 
     /** Relación entre las clases "UnidadConstruccion" de Catastro y de Avalúo. La cardinalidad es 1-1, lo que indica que son representaciones diferentes de un mismo elemento de la realidad.
      * En efecto, una es la agrupación de atributos que caracterizan la unidad de construcción desde el punto de vista de Catastro y la otra agrupa atributos de interés para el avalúo en el interior de la unidad de construcción.
      */
     ASSOCIATION AvaluoUnidadConstruccion =
-      UCons (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.UnidadConstruccion;
-      AUCons -- {0..1} Unidad_Construccion;
+      UCons (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.CRG_UnidadConstruccion;
+      AUCons -- {0..1} AVL_Unidad_Construccion;
     END AvaluoUnidadConstruccion;
 
     /** Relación entre la clase Unidad_Construccion del modelo de Avalúos y Calificacion_Unidad_Construccion de modelo de Avalúos
      */
     ASSOCIATION CalificacionAvaluoUconstruccion =
-      UnidadConstruccion (EXTERNAL) -- {1} Unidad_Construccion;
-      CalificacionUConstruccion -- {1} Calificacion_Unidad_Construccion;
+      UnidadConstruccion (EXTERNAL) -- {1} AVL_Unidad_Construccion;
+      CalificacionUConstruccion -- {1} AVL_Calificacion_Unidad_Construccion;
     END CalificacionAvaluoUconstruccion;
 
     /** Clase para registrar la información relativa al predio, o unidad básica del terreno, que sirve de matriz a un elemento de propiedad horizontal. REVISAR DOCUMENTACIÓN
      */
-    CLASS Predio_Matriz_PH =
+    CLASS AVL_Predio_Matriz_PH =
       Num_Etapas : LADM_COL_V1_1.LADM_Nucleo.Integer;
       Num_Interiores : LADM_COL_V1_1.LADM_Nucleo.Integer;
       /** Número de torres o construcciones en vertical, como agrupaciones de propiedades horizontales, que hay sobre el predio matriz. REVISAR
@@ -802,55 +803,55 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Anio_Construccion_Etapa : INTERLIS.XMLDate;
       /** Estado en el que se encuentra la estructura de la construcción, referida a la copropiedad.
        */
-      Estado_Conservacion_Copropiedad : Avaluos_V2_2_1.COL_EstadoConservacionTipo;
+      Estado_Conservacion_Copropiedad : Avaluos_V2_2_1.AVL_EstadoConservacionTipo;
       /** Materiales principales presentes en la construcción de las áreas comunes.
        */
       Materiales_Construccion_Areas_Comunes : TEXT*100;
       Disenio_Funcionalidad_Copropiedad : TEXT*100;
-    END Predio_Matriz_PH;
+    END AVL_Predio_Matriz_PH;
 
     /** Relación entre las clases Predio y PredioMatrizPH que permite descubrir los predios que hay en una matriz de propiedad horizontal.
      */
     ASSOCIATION AvaluoPredioMatrizPH =
-      AvPredMatrizPH -- {0..1} Predio_Matriz_PH;
-      predio -- {0..*} Predio;
+      AvPredMatrizPH -- {0..1} AVL_Predio_Matriz_PH;
+      predio -- {0..*} AVL_Predio;
     END AvaluoPredioMatrizPH;
 
     /** Clase para registrar la información relativa al equipamiento comunal del predio matriz de la propiedad horizontal (ver la clase PredioMatrizPH).
      */
-    CLASS Equipamiento_Comunal =
+    CLASS AVL_Equipamiento_Comunal =
       /** Recoge el tipo de equipamiento comunal al que se refiere el registro.
        */
-      Tipo_Equipamiento_Comunal : Avaluos_V2_2_1.COL_EquipamientoComunalTipo;
+      Tipo_Equipamiento_Comunal : Avaluos_V2_2_1.AVL_EquipamientoComunalTipo;
       /** Medición del área y tipo de esa medición del equipamiento comunal considerado.
        */
       Area : LADM_COL_V1_1.LADM_Nucleo.COL_AreaValor;
       /** Categoria del elemento.
        */
       Categoria : TEXT*100;
-    END Equipamiento_Comunal;
+    END AVL_Equipamiento_Comunal;
 
     /** Relación entre las clases PredioMatrizPH y EquipamientoComunal, que permite descubrir los elementos del equipamiento comunal que son de un predio matriz de la propiedad horizontal determinado.
      */
     ASSOCIATION AvaluoEquipamientoPredioMatrizPH =
-      AvPredMatrizPH -- {1} Predio_Matriz_PH;
-      AvEquipComunal -- {0..*} Equipamiento_Comunal;
+      AvPredMatrizPH -- {1} AVL_Predio_Matriz_PH;
+      AvEquipComunal -- {0..*} AVL_Equipamiento_Comunal;
     END AvaluoEquipamientoPredioMatrizPH;
 
     /** Esta clase permite gestionar las zonas físicamente homogéneas definidas para el avalúo y que delimitan las zonas que tienen características físicas similares. REVISAR DOCUMENTACIÓN
      */
-    CLASS Zona_Homogenea_Fisica =
+    CLASS AVL_Zona_Homogenea_Fisica =
       /** Código único del registro de la instancia de ZonaHomegeneaFisca.
        */
       Identificador : MANDATORY TEXT*20;
       /** Definición de la geometría espacial georreferenciada de la zona homogénea física, delimitada mediante un polígono que contiene sus linderos y la superficie ocupada.
        */
       Geometria : MANDATORY MAGNA_SIRGAS_V0_1.GM_MultiSurface3D;
-    END Zona_Homogenea_Fisica;
+    END AVL_Zona_Homogenea_Fisica;
 
     /** Esta clase permite gestionar las zonas con características económicas y de localización geográfica similares, definidas para caracterizar el avalúo.
      */
-    CLASS Zona_Homogenea_Geoeconomica =
+    CLASS AVL_Zona_Homogenea_Geoeconomica =
       /** Código único del registro de la instancia de la zona geoeconómica.
        */
       Identificador : MANDATORY TEXT*20;
@@ -860,7 +861,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       /** Definición de la geometría espacial georreferenciada de la zona homogénea geoeconómica, delimitada mediante un polígono que contiene sus linderos y la superficie ocupada.
        */
       Geometria : MANDATORY MAGNA_SIRGAS_V0_1.GM_MultiSurface3D;
-    END Zona_Homogenea_Geoeconomica;
+    END AVL_Zona_Homogenea_Geoeconomica;
 
   END Avaluos;
 

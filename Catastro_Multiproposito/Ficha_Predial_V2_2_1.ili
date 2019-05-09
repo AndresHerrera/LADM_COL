@@ -3,14 +3,15 @@ INTERLIS 2.3;
 /** Ficha Predial.
  * 
  * 01.02.2018/ : Cambio en cardinalidad en asociacion predioFicha_predio de 1 a 0..1
- * 08.08.2018/ : (AT) Cambio en el nombre del atributo Actividad_Economica por Destinacion_Economica; Cambio en el nombre del dominio COL_UsoTipo por COL_DestinacionEconomicaTipo; Cambio en cardinalidad de atributos en clase Predio_Ficha
- * 10.08.2018/ fm : cambio en el rol de interesado natural y jurídico ahora se asocia a Col_Interesado
- * 21.08.2018/ : (AT) Se agrega el dominio COL_FormalidadTipo para los valores del atributo Formalidad en clase Predio_Ficha
+ * 08.08.2018/ at:Cambio en el nombre del atributo Actividad_Economica por Destinacion_Economica; Cambio en el nombre del dominio COL_UsoTipo por COL_DestinacionEconomicaTipo; Cambio en cardinalidad de atributos en clase Predio_Ficha
+ * 10.08.2018/ fm: cambio en el rol de interesado natural y jurídico ahora se asocia a Col_Interesado
+ * 21.08.2018/ at:Se agrega el dominio COL_FormalidadTipo para los valores del atributo Formalidad en clase Predio_Ficha
  * 17.09.2018/ fm: cambio en el orden de los roles de la asociación PredioFicha_Predio para evitar la creación de la tabla de paso en el modelo físico cuando hay dependencia de topics
- * 17.09.2018/ (AT): Cambio en los nombres de los dominios COL_PredioTipoPublicoTipo y COL_PredioTipo para evitar redundancias
- * 18.02.2019/ (AT): Cambio en la longitud de algunos atributos de las clases Predio_Ficha y NucreoFamiliar para soportar datos levantados.
- * 21.02.2019/ (AT): Se elimina la dependencia entre el modelo Ficha y modelo de Avalúos
- * 22.04.2019/ (AT-FM): Se habilita soporte para identificador interno tipo uuid en el "Topic"
+ * 17.09.2018/ at: Cambio en los nombres de los dominios COL_PredioTipoPublicoTipo y COL_PredioTipo para evitar redundancias
+ * 18.02.2019/ at: Cambio en la longitud de algunos atributos de las clases Predio_Ficha y NucreoFamiliar para soportar datos levantados.
+ * 21.02.2019/ at: Se elimina la dependencia entre el modelo Ficha y modelo de Avalúos
+ * 22.04.2019/ at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
+ * 09.05.2019/ at: Creación del atributo Tipo_Via en la clase Predio; Asignación del prefijo FPR a todas las clases y dominios del modelo para facilitar legibilidad
  */
 MODEL Ficha_Predial_V2_2_1 (es)
 AT "http://www.proadmintierra.info/"
@@ -19,7 +20,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
   DOMAIN
 
-    COL_CategoriaQuienAtendioTipo = (
+    FPR_CategoriaQuienAtendioTipo = (
       Propietario,
       Arrendatario,
       Cuidandero,
@@ -30,14 +31,14 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Categoría de suelo de la clasificación del Plan de Ordenamiento Territorial.
      */
-    COL_CategoriaSueloPOTTipo = (
+    FPR_CategoriaSueloPOTTipo = (
       Suburbano,
       Proteccion
     );
 
     /** Clase de suelo de la clasificación del Plan de Ordenamiento Territorial.
      */
-    COL_ClaseSueloPOTTipo = (
+    FPR_ClaseSueloPOTTipo = (
       Urbano,
       Rural,
       Expansion_Urbana
@@ -45,14 +46,14 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Derecho asociado al Folio de Matrícula Inmobiliaria. REVISAR
      */
-    COL_DerechoFMITipo = (
+    FPR_DerechoFMITipo = (
       Propiedad,
       Falsa_Tradicion
     );
 
     /** Uso económico de la propiedad inmobiliaria.
      */
-    COL_DestinacionEconomicaTipo = (
+    FPR_DestinacionEconomicaTipo = (
       Agricola,
       Agroindustrial,
       Agropecuario,
@@ -82,7 +83,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Infraestructura_Asociada_Explotacion
     );
 
-    COL_EstadoNupreTipo = (
+    FPR_EstadoNupreTipo = (
       /** El código ha sido asignado por el gestor catastral y refiere a un único predio de acuerdo al proceso de conformación o mantenimiento catastral multipropósito.
        */
       G,
@@ -101,12 +102,12 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       E
     );
 
-    COL_FormalidadTipo = (
+    FPR_FormalidadTipo = (
       Formal,
       Informal
     );
 
-    COL_PredioDominioTipo = (
+    FPR_PredioDominioTipo = (
       Privado(
         Individual,
         En_Comunidad,
@@ -124,7 +125,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       )
     );
 
-    COL_ServicioPublicoTipo = (
+    FPR_ServicioPublicoTipo = (
       Internet,
       Telefono,
       Electricidad,
@@ -135,12 +136,31 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Tipo de transacción inmobiliaria que se estudia.
      */
-    COL_TipoOfertaTipo = (
+    FPR_TipoOfertaTipo = (
       Venta,
       Alquiler
     );
 
-    COL_PredioPublicoTipo = (
+    FPR_ViaTipo = (
+      Arteria,
+      Autopista,
+      Carreteable,
+      Cicloruta,
+      Colectora,
+      Departamental,
+      Ferrea,
+      Local,
+      Metro_o_Metrovia,
+      Nacional,
+      Ordinaria,
+      Peatonal,
+      Principal,
+      Privada,
+      Secundaria,
+      Troncal
+    );
+
+    FPR_PredioPublicoTipo = (
       Parque_Nacional,
       Reserva_Natural,
       Ejido,
@@ -179,7 +199,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Otro
     );
 
-    COL_EstratoTipo = (
+    FPR_EstratoTipo = (
       Estrato_0,
       Estrato_1,
       Estrato_2,
@@ -188,7 +208,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Estrato_5,
       Estrato_6
     );
-  STRUCTURE COL_ServicioPublicoTipo_Predio_Ficha_Servicio_Publico = value : MANDATORY COL_ServicioPublicoTipo; END COL_ServicioPublicoTipo_Predio_Ficha_Servicio_Publico;
+  STRUCTURE FPR_ServicioPublicoTipo_FPR_Predio_Servicio_Publico = value : MANDATORY FPR_ServicioPublicoTipo; END FPR_ServicioPublicoTipo_FPR_Predio_Servicio_Publico;
 
   TOPIC Ficha =
     OID AS INTERLIS.UUIDOID;
@@ -196,26 +216,26 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
     /** Persona jurídica que actúa como interesado. REVISAR DEFINICIÓN RESPECTO AL NÚCLEO
      */
-    CLASS Interesado_Juridico =
+    CLASS FPR_Interesado_Juridico =
       Fecha_Constitucion : INTERLIS.XMLDate;
       Lugar_Inscripcion : TEXT*500;
       Nacionalidad : TEXT*20;
-    END Interesado_Juridico;
+    END FPR_Interesado_Juridico;
 
     /** Persona físca que actúa como interesado. REVISAR DEFINICIÓN RESPECTO AL NÚCLEO
      */
-    CLASS Interesado_Natural =
+    CLASS FPR_Interesado_Natural =
       Nacionalidad : TEXT*20;
       Fecha_Nacimiento : INTERLIS.XMLDate;
       Lugar_Nacimiento : TEXT*100;
       Cabeza_Hogar : BOOLEAN;
       Discapacidad : BOOLEAN;
       Etnia : TEXT*20;
-    END Interesado_Natural;
+    END FPR_Interesado_Natural;
 
     /** Esta clase se crea específicamente para almacena la información recogida en la ficha predial sin fines claramente definidos. REVISAR DOCUMENTACION
      */
-    CLASS Predio_Ficha =
+    CLASS FPR_Predio =
       /** corresponde a las posiciones 8 y 9 del codigo predial nacional
        */
       Sector : TEXT*2;
@@ -245,32 +265,35 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Unidad : TEXT*4;
       /** Indica el estado en el que se encuentra el NUPRE (Debe ser definido por la autoridad catastral)
        */
-      Estado_NUPRE : Ficha_Predial_V2_2_1.COL_EstadoNupreTipo;
+      Estado_NUPRE : Ficha_Predial_V2_2_1.FPR_EstadoNupreTipo;
       /** Uso económico que se hace del predio.
        */
-      Destinacion_Economica : Ficha_Predial_V2_2_1.COL_DestinacionEconomicaTipo;
+      Destinacion_Economica : Ficha_Predial_V2_2_1.FPR_DestinacionEconomicaTipo;
       /** Indica si el predio es publico o privado
        */
-      Predio_Tipo : Ficha_Predial_V2_2_1.COL_PredioDominioTipo;
-      Tipo_Predio_Publico : Ficha_Predial_V2_2_1.COL_PredioPublicoTipo;
+      Predio_Tipo : Ficha_Predial_V2_2_1.FPR_PredioDominioTipo;
+      Tipo_Predio_Publico : Ficha_Predial_V2_2_1.FPR_PredioPublicoTipo;
+      /** Indica el tipo de vía para el caso de ser un predio de tipo vía
+       */
+      Tipo_Via : Ficha_Predial_V2_2_1.FPR_ViaTipo;
       /** Describe si el predio es formal o informal
        */
-      Formalidad : Ficha_Predial_V2_2_1.COL_FormalidadTipo;
+      Formalidad : Ficha_Predial_V2_2_1.FPR_FormalidadTipo;
       /** Indica las redes de servicios públicos con los que el inmueble es abastecido.
        */
-      Servicio_Publico : BAG {0..*} OF Ficha_Predial_V2_2_1.COL_ServicioPublicoTipo_Predio_Ficha_Servicio_Publico;
+      Servicio_Publico : BAG {0..*} OF Ficha_Predial_V2_2_1.FPR_ServicioPublicoTipo_FPR_Predio_Servicio_Publico;
       /** caracteriza el estrato socioeconómico del predio
        */
-      Estrato : Ficha_Predial_V2_2_1.COL_EstratoTipo;
+      Estrato : Ficha_Predial_V2_2_1.FPR_EstratoTipo;
       /** Clasificación del suelo según el Plan de Ordenamiento Territorial vigente.
        */
-      Clase_Suelo_POT : Ficha_Predial_V2_2_1.COL_ClaseSueloPOTTipo;
+      Clase_Suelo_POT : Ficha_Predial_V2_2_1.FPR_ClaseSueloPOTTipo;
       /** Categoría del suelo según el Plan de Ordenamiento Territorial vigente.
        */
-      Categoria_Suelo_POT : Ficha_Predial_V2_2_1.COL_CategoriaSueloPOTTipo;
+      Categoria_Suelo_POT : Ficha_Predial_V2_2_1.FPR_CategoriaSueloPOTTipo;
       /** Derecho asociado al FMI (Folio de Matrícula Inmobiliaria). REVISAR DOCUMENTACIÓN
        */
-      Derecho_FMI : Ficha_Predial_V2_2_1.COL_DerechoFMITipo;
+      Derecho_FMI : Ficha_Predial_V2_2_1.FPR_DerechoFMITipo;
       /** Indicación de si el predio está o no inscrito en el RUPTA (Registro Único de Predios y Territorios).
        */
       Inscrito_RUPTA : BOOLEAN;
@@ -322,10 +345,10 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Numero_Documento_Quien_Atendio : TEXT*20;
       /** Relación de la persona que atendió a la recogida de datos de campo con el predio encuestado.
        */
-      Categoria_Quien_Atendio : Ficha_Predial_V2_2_1.COL_CategoriaQuienAtendioTipo;
+      Categoria_Quien_Atendio : Ficha_Predial_V2_2_1.FPR_CategoriaQuienAtendioTipo;
       /** tipo de documento aportado por la persona que atendió a la recogida de datos en campo sobre el predio. Su dominio de valores se encuentra en el modelo de catastro.
        */
-      Tipo_Documento_Quien_Atendio : Catastro_Registro_Nucleo_V2_2_1.COL_InteresadoDocumentoTipo;
+      Tipo_Documento_Quien_Atendio : Catastro_Registro_Nucleo_V2_2_1.CRG_InteresadoDocumentoTipo;
       /** Nombre de la persona que levantó los datos en campo.
        */
       Nombre_Encuestador : TEXT*255;
@@ -334,39 +357,39 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Numero_Documento_Encuestador : TEXT*20;
       /** Tipo de documento aportado por la persona que levantó los datos en campo. Su dominio de valores se encuentra en el modelo de catastro.
        */
-      Tipo_Documento_Encuestador : Catastro_Registro_Nucleo_V2_2_1.COL_InteresadoDocumentoTipo;
-    END Predio_Ficha;
+      Tipo_Documento_Encuestador : Catastro_Registro_Nucleo_V2_2_1.CRG_InteresadoDocumentoTipo;
+    END FPR_Predio;
 
     /** Relación entre las clases Interesado_Juridico de catastro y el Interesado_Juridico de la ficha.
      */
     ASSOCIATION InteresadoJuridicoFichaInteresadoJuridicoCatastro =
-      InteresadoJuridicoCatastro (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.COL_Interesado;
-      InteresadoJuridicoFicha -- {0..1} Interesado_Juridico;
+      InteresadoJuridicoCatastro (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.CRG_Interesado;
+      InteresadoJuridicoFicha -- {0..1} FPR_Interesado_Juridico;
     END InteresadoJuridicoFichaInteresadoJuridicoCatastro;
 
     /** Relación entre las clases Interesado_Natural de catastro y el Interesado_Natural de la ficha.
      */
     ASSOCIATION InteresadoNaturalFichaInteresadoNaturalCatastro =
-      InteresadoNaturalCatastro (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.COL_Interesado;
-      InteresadoNaturalFicha -- {0..1} Interesado_Natural;
+      InteresadoNaturalCatastro (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.CRG_Interesado;
+      InteresadoNaturalFicha -- {0..1} FPR_Interesado_Natural;
     END InteresadoNaturalFichaInteresadoNaturalCatastro;
 
     /** Relación entre el Predio catastral (módulo de catastro) y la clase Ficha_Predial, que permite determinar sobre qué predio se toman los datos específicos de la ficha predial.
      */
     ASSOCIATION PredioFicha_Predio =
-      crPredio (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.Predio;
-      fichaPredio -- {0..1} Predio_Ficha;
+      crPredio (EXTERNAL) -- {1} Catastro_Registro_Nucleo_V2_2_1.Catastro_Registro.CRG_Predio;
+      fichaPredio -- {0..1} FPR_Predio;
     END PredioFicha_Predio;
 
     /** Esta clase permite registrar la información relativa a los núcleos familiares del levantamiento catastral de los pilotos del Catastro Multipropósito. OBSERVAR QUE LA INFORMACIÓN QUE SE PIDE ES INDIVIDUAL Y NO GRUPAL
      */
-    CLASS NucleoFamiliar =
+    CLASS FPR_NucleoFamiliar =
       /** Número de documento de identidad.
        */
       Documento_Identidad : TEXT*20;
       /** Tipo de documento al que se refiere el atributo "Documento_Identidad". El dominio de valores está definido en el modelo de catastro.
        */
-      Tipo_Documento : Catastro_Registro_Nucleo_V2_2_1.COL_InteresadoDocumentoTipo;
+      Tipo_Documento : Catastro_Registro_Nucleo_V2_2_1.CRG_InteresadoDocumentoTipo;
       /** Órgano emisor del documento al que se refiere el atributo "Documento_Identidad".
        */
       Organo_Emisor : TEXT*20;
@@ -399,7 +422,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Discapacidad : BOOLEAN;
       /** Género del titular del documento al que se refiere el atributo "Documento_Identidad".
        */
-      Genero : Catastro_Registro_Nucleo_V2_2_1.COL_GeneroTipo;
+      Genero : Catastro_Registro_Nucleo_V2_2_1.CRG_GeneroTipo;
       /** Si el titular del documento al que se refiere el atributo "Documento_Identidad" habita o no el predio en estudio.
        */
       Habita_Predio : BOOLEAN;
@@ -415,24 +438,24 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       /** Número de teléfono celular del titular del documento al que se refiere el atributo "Documento_Identidad".
        */
       Celular : TEXT*10;
-    END NucleoFamiliar;
+    END FPR_NucleoFamiliar;
 
     /** Relación entre los datos de una instancia del núcleo familiar y la ficha predial en la que se recogen.
      */
     ASSOCIATION NucleoPredio =
-      FichaPredio -- {1} Predio_Ficha;
-      FichaNucleoFamiliar -- {1..*} NucleoFamiliar;
+      FichaPredio -- {1} FPR_Predio;
+      FichaNucleoFamiliar -- {1..*} FPR_NucleoFamiliar;
     END NucleoPredio;
 
     /** Información recabada relativa a las investigaciones de mercado llevadas a cabo, con el objetivo de obtener los valores de mercado más probables, a partir de transacciones inmobiliarias reales llevadas a cabo. Se almacena información de la transacción y se relaciona (ver apartado de relaciones del modelo) con los predios registrados en la clase Predio del presente modelo.
      */
-    CLASS InvestigacionMercado =
+    CLASS FPR_InvestigacionMercado =
       /** Indica si existe o no dato de mercado.
        */
       Disponible_Mercado : BOOLEAN;
       /** Registra si la oferta es de venta o alquiler. Debería registrarse si la oferta se ha sustanciado, o si está vigente.
        */
-      Tipo_Oferta : Ficha_Predial_V2_2_1.COL_TipoOfertaTipo;
+      Tipo_Oferta : Ficha_Predial_V2_2_1.FPR_TipoOfertaTipo;
       /** Valor declarado del predio en pesos colombianos (COP).
        */
       Valor : LADM_COL_V1_1.LADM_Nucleo.Peso;
@@ -445,13 +468,13 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       /** Cualquier observación que se considere oportuna.
        */
       Observaciones : TEXT*100;
-    END InvestigacionMercado;
+    END FPR_InvestigacionMercado;
 
     /** Relación entre un predio del que se recogen los datos en una ficha predial determinada, que incluye una investigación de mercado, y los datos recogidos para esta investigación.
      */
     ASSOCIATION InvestigacionMercadoPredio =
-      FichaPredio -- {1} Predio_Ficha;
-      FichaInvestigacionMercado -- {0..*} InvestigacionMercado;
+      FichaPredio -- {1} FPR_Predio;
+      FichaInvestigacionMercado -- {0..*} FPR_InvestigacionMercado;
     END InvestigacionMercadoPredio;
 
   END Ficha;
