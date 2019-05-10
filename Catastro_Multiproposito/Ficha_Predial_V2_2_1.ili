@@ -208,7 +208,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Estrato_5,
       Estrato_6
     );
-  STRUCTURE FPR_ServicioPublicoTipo_FPR_Predio_Servicio_Publico = value : MANDATORY FPR_ServicioPublicoTipo; END FPR_ServicioPublicoTipo_FPR_Predio_Servicio_Publico;
+  STRUCTURE FPR_ServicioPublicoTipo_ = value : MANDATORY FPR_ServicioPublicoTipo; END FPR_ServicioPublicoTipo_;
 
   TOPIC Ficha =
     OID AS INTERLIS.UUIDOID;
@@ -281,7 +281,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Formalidad : Ficha_Predial_V2_2_1.FPR_FormalidadTipo;
       /** Indica las redes de servicios públicos con los que el inmueble es abastecido.
        */
-      Servicio_Publico : BAG {0..*} OF Ficha_Predial_V2_2_1.FPR_ServicioPublicoTipo_FPR_Predio_Servicio_Publico;
+      Servicio_Publico : BAG {0..*} OF Ficha_Predial_V2_2_1.FPR_ServicioPublicoTipo_;
       /** caracteriza el estrato socioeconómico del predio
        */
       Estrato : Ficha_Predial_V2_2_1.FPR_EstratoTipo;

@@ -64,7 +64,7 @@ VERSION "V2.2.1"  // 2018-02-08 // =
         !!@ ili2db.dispName = "No Existe Físicamente"
         No_Existe_Fisicamente
       );
-    STRUCTURE DJU_ErrorRegistralTipo_DJU_Predio_Juridico_Error_Registral = value : MANDATORY DJU_ErrorRegistralTipo; END DJU_ErrorRegistralTipo_DJU_Predio_Juridico_Error_Registral;
+    STRUCTURE DJU_ErrorRegistralTipo_ = value : MANDATORY DJU_ErrorRegistralTipo; END DJU_ErrorRegistralTipo_;
 
     /** Estructura para almacenar multiples valores del atributo "FMI_Duplicados" de la tabla Predio_Juridico
      */
@@ -99,7 +99,7 @@ VERSION "V2.2.1"  // 2018-02-08 // =
       /** Listado de FMI con los que hay duplicidad
        */
       FMI_Duplicados : BAG {0..*} OF Diagnostico_Juridico_V2_2_1.Diagnostico_Juridico.DJU_FMI_Duplicado;
-      Error_Registral : BAG {0..*} OF DJU_ErrorRegistralTipo_DJU_Predio_Juridico_Error_Registral;
+      Error_Registral : BAG {0..*} OF DJU_ErrorRegistralTipo_;
     END DJU_Predio_Juridico;
 
     /** Relación entre las clases "Predio" de Catastro y de Registro. La cardinalidad es 1-1, lo que indica que son representaciones diferentes de un mismo elemento de la realidad.
