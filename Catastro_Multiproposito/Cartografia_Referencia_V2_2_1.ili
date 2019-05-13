@@ -7,6 +7,7 @@ INTERLIS 2.3;
  * 22.04.2019/ at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
  * 07.05.2019/ at: Cambio en el tipo de geometria de las clases de los Topics LimitesOperativosCatastro y LimitesPoliticoAdministrativos para soportar 3D; Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
  * 09.05.2019/ at: Creación del dominio ZonaTipo; Asignación del prefijo CRF a todas las clases y dominios del modelo para facilitar legibilidad
+ * 13.05.2019/ at: Documentación de los dominios y los nombres para mostrar de sus valores
  */
 MODEL Cartografia_Referencia_V2_2_1 (es)
 AT "http://www.proadmintierra.info/"
@@ -20,11 +21,18 @@ VERSION "V2.2.1"  // 2018-04-19 // =
 
     DOMAIN
 
+      /** Conjunto de valores válidos para indicar el tipo de zona
+       */
       CRF_ZonaTipo = (
+        !!@ ili2db.dispName = "Perímetro urbano"
         Perimetro_Urbano,
+        !!@ ili2db.dispName = "Rural"
         Rural,
+        !!@ ili2db.dispName = "Corregimiento"
         Corregimiento,
+        !!@ ili2db.dispName = "Caserios"
         Caserios,
+        !!@ ili2db.dispName = "Inspección de policía"
         Inspecion_Policia
       );
 
@@ -172,34 +180,63 @@ VERSION "V2.2.1"  // 2018-04-19 // =
 
     DOMAIN
 
+      /** Conjunto de valores válidos para indicar qué representa una estructura lineal
+       */
       CRF_EstructuraLinealTipo = (
+        !!@ ili2db.dispName = "Vía metro o metrovía"
         Via_Metro_o_Metrovia,
+        !!@ ili2db.dispName = "Vía troncal"
         Via_Troncal,
+        !!@ ili2db.dispName = "Vía ferrea"
         Via_Ferrea,
+        !!@ ili2db.dispName = "Autopista"
         Autopista,
+        !!@ ili2db.dispName = "Arteria"
         Arteria,
+        !!@ ili2db.dispName = "Vía principal"
         Via_Principal,
+        !!@ ili2db.dispName = "Vía secundaria"
         Via_Secundaria,
+        !!@ ili2db.dispName = "Vía colectora"
         Via_Colectora,
+        !!@ ili2db.dispName = "Vía ordinaria"
         Via_Ordinaria,
+        !!@ ili2db.dispName = "Vía local"
         Via_Local,
+        !!@ ili2db.dispName = "Vía privada"
         Via_Privada,
+        !!@ ili2db.dispName = "Ciclorruta"
         Ciclorruta,
+        !!@ ili2db.dispName = "Vía peatonal"
         Via_Peatonal,
+        !!@ ili2db.dispName = "Vía carreteable"
         Via_Carreteable,
+        !!@ ili2db.dispName = "Túnel"
         Tunel,
+        !!@ ili2db.dispName = "Pista de aterrizaje"
         Pista_Aterrizaje,
+        !!@ ili2db.dispName = "Puente"
         Puente,
+        !!@ ili2db.dispName = "Carretera elevada viaducto"
         Carretera_Elevada_Viaducto
       );
 
+      /** Conjunto de valores válidos para indicar qué representa un punto como estructura
+       */
       CRF_EstructuraPuntualTipo = (
+        !!@ ili2db.dispName = "Carretera elevada viaducto"
         Carretera_Elevada_Viaducto,
+        !!@ ili2db.dispName = "Pista de aterrizaje"
         Pista_Aterrizaje,
+        !!@ ili2db.dispName = "Puente"
         Puente,
+        !!@ ili2db.dispName = "Puerto vía navegable"
         Puerto_Via_Navegable,
+        !!@ ili2db.dispName = "Represa"
         Represa,
+        !!@ ili2db.dispName = "Sistema de riego"
         Sistema_de_Riego,
+        !!@ ili2db.dispName = "Túnel"
         Tunel
       );
 

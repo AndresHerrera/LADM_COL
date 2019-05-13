@@ -24,6 +24,7 @@ INTERLIS 2.3;
  * 22.04.2019/ at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
  * 07.05.2019/ at: Cambio en el tipo de geometria de las clases Zona_Homogenea_Fisica y Zona_Homogenea_Geoeconomica para soportar 3D; Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
  * 09.05.2019/ at: Asignación del prefijo AVL a todas las clases y dominios del modelo para facilitar legibilidad
+ * 13.05.2019/ at: Documentación de los dominios y los nombres para mostrar de sus valores 
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -40,31 +41,56 @@ VERSION "V2.2.1"  // 2018-02-01 // =
     /** Conjunto de valores válidos para indicar cual es el tipo de acceso a una unidad de construcción, que incide sobre su avalúo.
      */
     AVL_AccesoTipo = (
+      !!@ ili2db.dispName = "Piso"
       Piso,
+      !!@ ili2db.dispName = "Mezanine"
       Mezanine,
+      !!@ ili2db.dispName = "Semisótano"
       Semisotano,
+      !!@ ili2db.dispName = "Sótano"
       Sotano,
+      !!@ ili2db.dispName = "Subterraneo"
       Subterraneo
     );
 
+    /** Conjunto de valores válidos para indicar el tipo de anexo
+     */
     AVL_AnexoTipo = (
+      !!@ ili2db.dispName = "Enramadas, cobertizos, caneyes"
       Enramadas_Cobertizos_Caneyes,
+      !!@ ili2db.dispName = "Galpones, gallineros"
       Galpones_Gallineros,
+      !!@ ili2db.dispName = "Establos, pesebreras"
       Establos_Pesebreras,
+      !!@ ili2db.dispName = "Cocheras, marraneras, porquerizas"
       Cocheras_Marraneras_Porquerizas,
+      !!@ ili2db.dispName = "Silos"
       Silos,
+      !!@ ili2db.dispName = "Piscinas"
       Piscinas,
+      !!@ ili2db.dispName = "Tanques"
       Tanques,
+      !!@ ili2db.dispName = "Beneficiaderos"
       Beneficiaderos,
+      !!@ ili2db.dispName = "Secaderos"
       Secaderos,
+      !!@ ili2db.dispName = "Kioscos"
       Kioscos,
+      !!@ ili2db.dispName = "Albercas, bañaderas"
       Albercas_Baniaderas,
+      !!@ ili2db.dispName = "Corrales"
       Corrales,
+      !!@ ili2db.dispName = "Pozos"
       Pozos,
+      !!@ ili2db.dispName = "Torres de enfriamiento"
       TorresEnfriamiento,
+      !!@ ili2db.dispName = "Muelles"
       Muelles,
+      !!@ ili2db.dispName = "Canchas de tenis"
       CanchasTenis,
+      !!@ ili2db.dispName = "Toboganes"
       Toboganes,
+      !!@ ili2db.dispName = "Marquesinas"
       Marquesinas
     );
 
@@ -73,114 +99,190 @@ VERSION "V2.2.1"  // 2018-02-01 // =
     AVL_AprovechamientoTipo = (
       /** Aprovechamiento por debajo del que se pueda considerar adecuado.
        */
+      !!@ ili2db.dispName = "Aprovechamiento deficiente"
       Aprov_Deficiente,
       /** Aprovechamiento adecuado.
        */
+      !!@ ili2db.dispName = "Aprovechamiento eficiente"
       Aprov_Eficiente,
       /** Aprovechamiento conforme a las mejores posibilidades.
        */
+      !!@ ili2db.dispName = "Aprovechamiento óptimo"
       Aprov_Optimo,
       /** Aprovechamiento mejorable.
        */
+      !!@ ili2db.dispName = "Aprovechamiento regular"
       Aprov_Regular,
       /** No existe ningún aprovechamiento.
        */
+      !!@ ili2db.dispName = "Sin aprovechamiento"
       Sin_Aprovechamiento
     );
 
     /** Tipo de material de construcción del armazón
      */
     AVL_ArmazonTipo = (
+      !!@ ili2db.dispName = "Madera"
       Madera,
+      !!@ ili2db.dispName = "Prefabricado"
       Prefabricado,
       /** Ladrillo o bloque.
        */
+      !!@ ili2db.dispName = "Ladrillo o bloque"
       Ladrillo_Bloque,
+      !!@ ili2db.dispName = "Concreto hasta tres pisos"
       Concreto_Hasta_Tres_Pisos,
+      !!@ ili2db.dispName = "Concreto cuatro o más pisos"
       Concreto_Cuatro_O_Mas_Pisos
     );
 
+    /** Conjunto de valores válidos para indicar la calidad del enchape
+     */
     AVL_CalidadEnchapeTipo = (
+      !!@ ili2db.dispName = "Sin cubrimiento"
       Sin_Cubrimiento,
+      !!@ ili2db.dispName = "Pañete o baldosa común cemento"
       Paniete_BaldosaComunCemento,
+      !!@ ili2db.dispName = "Baldosín unicolor o papel común"
       BaldosinUnicolor_PapelComun,
+      !!@ ili2db.dispName = "Baldosín decorado o papel fino"
       BaldosinDecorado_PapelFino,
+      !!@ ili2db.dispName = "Cerámica, cristanac o granito"
       Ceramica_Cristanac_Granito,
+      !!@ ili2db.dispName = "Marmol o enchape lujoso"
       Marmol_EnchapeLujoso
     );
 
+    /** Conjunto de valores válidos para indicar la calidad del mobiliario
+     */
     AVL_CalidadMobiliarioTipo = (
+      !!@ ili2db.dispName = "Pobre"
       Pobre,
+      !!@ ili2db.dispName = "Sencillo"
       Sencillo,
+      !!@ ili2db.dispName = "Regular"
       Regular,
+      !!@ ili2db.dispName = "Bueno"
       Bueno,
+      !!@ ili2db.dispName = "Lujoso"
       Lujoso
     );
 
+    /** Conjunto de valores válidos para indicar el tipo de cerchas
+     */
     AVL_CerchasTipo = (
+      !!@ ili2db.dispName = "Madera"
       Madera,
+      !!@ ili2db.dispName = "Metalica liviana"
       Metalica_Liviana,
+      !!@ ili2db.dispName = "Metalica mediana"
       Metalica_Mediana,
+      !!@ ili2db.dispName = "Metalica pesada"
       Metalica_Pesada,
+      !!@ ili2db.dispName = "Altura"
       Altura
     );
 
+    /** Conjunto de valores válidos para indicar la calificación de la conservación
+     */
     AVL_ConservacionCalificacion = (
+      !!@ ili2db.dispName = "Malo"
       Malo,
+      !!@ ili2db.dispName = "Regular"
       Regular,
+      !!@ ili2db.dispName = "Bueno"
       Bueno,
+      !!@ ili2db.dispName = "Excelente"
       Excelente
     );
 
+    /** Conjunto de valores válidos para indicar el tipo de cubierta
+     */
     AVL_CubiertaTipo = (
+      !!@ ili2db.dispName = "Materiales de desecho o telas asfálticas"
       MaterialesDesecho_TelasAsfalticas,
+      !!@ ili2db.dispName = "Zinc, teja de barro o eternit rústico"
       Zinc_TejaBarro_EternitRustico,
+      !!@ ili2db.dispName = "Entrepiso prefabricado"
       Entrepiso_Prefabricado,
+      !!@ ili2db.dispName = "Eternit o tejabarro"
       Eternit_O_TejaBarro,
+      !!@ ili2db.dispName = "Azotea, aluminio o placa sencilla"
       Azotea_Aluminio_PlacaSencilla,
+      !!@ ili2db.dispName = "Placa impermeabilizada o cubierta lujosa"
       Placa_Imperbeabilizada_Cubierta_Lujosa
     );
 
+    /** Conjunto de valores válidos para indicar el tipo de cubrimiento de los muros
+     */
     AVL_CubrimientoMurosTipo = (
+      !!@ ili2db.dispName = "Sin cubrimiento"
       Sin_Cubrimiento,
+      !!@ ili2db.dispName = "Pañete, papel común o ladrillo prensado"
       Paniete_PapelComun_LadrilloPrensado,
+      !!@ ili2db.dispName = "Estuco, cerámica o papel fino"
       Estuco_Ceramica_PapelFino,
+      !!@ ili2db.dispName = "Madera o piedra ornamental"
       Madera_PiedraOrnamental,
+      !!@ ili2db.dispName = "Marmol, lujosos, otros"
       Marmol_Lujosos_Otros
     );
 
     /** Conjunto de valores para indicar si tiene o no vistas al exterior, con incidencia en su avalúo. DOCUMENTAR --> NO SERÍA MEJOR LLAMARLO VISTA EXTERIOR Y QUE SEA DE TIPO BULEANO???
      */
     AVL_DisposicionTipo = (
+      !!@ ili2db.dispName = "Vista interior"
       Vista_Interior,
+      !!@ ili2db.dispName = "Vista exterior"
       Vista_Exterior
     );
 
-    /** REVISAR --> TIENE LOS MISMOS VALORES QUE EL DOMINIO CALIDAD DEL MOBILIARIO Y NO TIENE SENTIDO DUPLICARLO. REUTILIZAR EL ANTERIOR, CAMBIANDO LO DE NOMBRE
+    /** Conjunto de valores válidos para indicar el tipo de fachada
      */
     AVL_FachadaTipo = (
+      !!@ ili2db.dispName = "Pobre"
       Pobre,
+      !!@ ili2db.dispName = "Sencilla"
       Sencilla,
+      !!@ ili2db.dispName = "Regular"
       Regular,
+      !!@ ili2db.dispName = "Buena"
       Buena,
+      !!@ ili2db.dispName = "Lujosa"
       Lujosa
     );
 
+    /** Conjunto de valores válidos para indicar el tipo de muros
+     */
     AVL_MurosTipo = (
+      !!@ ili2db.dispName = "Materiales de desecho o esterilla"
       MaterialesDesecho_Esterilla,
+      !!@ ili2db.dispName = "Bahareque, adobe o tapia"
       Bahareque_Adobe_Tapia,
+      !!@ ili2db.dispName = "Madera"
       Madera,
+      !!@ ili2db.dispName = "Concreto prefabricado"
       Concreto_Prefabricado,
+      !!@ ili2db.dispName = "Bloque ladrillo"
       Bloque_Ladrillo
     );
 
+    /** Conjunto de valores válidos para indicar el tipo de piso
+     */
     AVL_PisoTipo = (
+      !!@ ili2db.dispName = "Tierra pisada"
       Tierra_Pisada,
+      !!@ ili2db.dispName = "Cemento o madera burda"
       Cemento_MaderaBurda,
+      !!@ ili2db.dispName = "Baldosa común cemento o tablón ladrillo"
       BaldosaComunCemento_TablonLadrillo,
+      !!@ ili2db.dispName = "Listón machihembrado"
       Liston_Machihembrado,
+      !!@ ili2db.dispName = "Tableta, caucho, acrílico, granito o baldosa fina"
       Tableta_Caucho_Acrilico_Granito_BaldosaFina,
+      !!@ ili2db.dispName = "Parquet alfombra retal marmol"
       Parquet_Alfombra_RetalMarmol,
+      !!@ ili2db.dispName = "Retal marmol, marmol u otros lujosos"
       RetalMarmol_Marmol_OtrosLujosos
     );
 
@@ -189,43 +291,64 @@ VERSION "V2.2.1"  // 2018-02-01 // =
     AVL_TamanioBanioTipo = (
       /** Sin baño
        */
+      !!@ ili2db.dispName = "Sin baño"
       Sin_Banio,
       /** Pequeño
        */
+      !!@ ili2db.dispName = "Pequeño"
       Pequenio,
+      !!@ ili2db.dispName = "Mediano"
       Mediano,
+      !!@ ili2db.dispName = "Grande"
       Grande
     );
 
     /** REVISAR --> SE REPITEN VALORES DEL DOMINIO DE TAMAÑO DE BAÑO. UNIFICAR EN EL ANTERIOR CAMBIANDOLO DE NOMBRE
      */
     AVL_TamanioCocinaTipo = (
+      !!@ ili2db.dispName = "Sin cocina"
       Sin_Cocina,
+      !!@ ili2db.dispName = "Pequeña"
       Pequenia,
+      !!@ ili2db.dispName = "Mediana"
       Mediana,
+      !!@ ili2db.dispName = "Grande"
       Grande
     );
 
     /** Calificación del suelo.
      */
     AVL_TipoCalificarTipo = (
+      !!@ ili2db.dispName = "Residencial"
       Residencial,
+      !!@ ili2db.dispName = "Industrial"
       Industrial,
+      !!@ ili2db.dispName = "Comercial"
       Comercial
     );
 
     /** Conjunto de valores válidos para indicar el tipo de la unidad de construcción.
      */
     AVL_TipologiaTipo = (
+      !!@ ili2db.dispName = "Almacenamiento"
       Almacenamiento,
+      !!@ ili2db.dispName = "Asamblea"
       Asamblea,
+      !!@ ili2db.dispName = "De alto riesgo"
       De_Alto_Riesgo,
+      !!@ ili2db.dispName = "Educativo"
       Educativo,
+      !!@ ili2db.dispName = "Facilidades y otros"
       Facilidades_y_Otros,
+      !!@ ili2db.dispName = "Industrial"
       Industrial,
+      !!@ ili2db.dispName = "Institucional"
       Institucional,
+      !!@ ili2db.dispName = "Mercantil"
       Mercantil,
+      !!@ ili2db.dispName = "Negocios"
       Negocios,
+      !!@ ili2db.dispName = "Residencial"
       Residencial
     );
 
@@ -234,168 +357,281 @@ VERSION "V2.2.1"  // 2018-02-01 // =
     AVL_DisponibilidadAguaTipo = (
       /** Acueducto municipal.
        */
+      !!@ ili2db.dispName = "Acueducto municipal"
       A_Acueducto_Mpio,
       /** Acueducto de la vereda.
        */
+      !!@ ili2db.dispName = "Acueducto veredal"
       A_Acueducto_Veredal,
       /** Acceso a aguas estancadas de caracter no permanente.
        */
+      !!@ ili2db.dispName = "Estancadas no permanentes"
       A_Estancadas_No_Perma,
       /** Acceso a aguas estancadas de caracter permanente.
        */
+      !!@ ili2db.dispName = "Estancadas permanentes"
       A_Estancadas_Perma,
       /** Acceso al agua mediante pozos profundos.
        */
+      !!@ ili2db.dispName = "Pozos profundos"
       A_Pozos_Profundos,
       /** No hay acceso a agua.
        */
+      !!@ ili2db.dispName = "Sin acceso a aguas"
       Sin_Acceso_a_Aguas
     );
 
     /** Conjunto de valores válidos para indicar el tipo de equipamiento comunal de un predio matriz de la propiedad horizontal, con incidencia en su avalúo.
      */
     AVL_EquipamientoComunalTipo = (
+      !!@ ili2db.dispName = "Salón comunal"
       Salon_Comunal,
+      !!@ ili2db.dispName = "Piscina"
       Piscina,
       /** Aparcamiento específico para visitantes.
        */
+      !!@ ili2db.dispName = "Parqueadero visitantes"
       Parqueadero_Visitante,
+      !!@ ili2db.dispName = "Ascensor"
       Ascensor,
       /** Zona para realizar barbacóas.
        */
+      !!@ ili2db.dispName = "Zona BBQ"
       Zona_BBQ,
+      !!@ ili2db.dispName = "Canchas de tenis o squash"
       Canchas_Tenis_Squash,
+      !!@ ili2db.dispName = "Cancha multifuncional"
       Cancha_Multifuncional,
       /** Existe una recepción comunal con empleado que filtra las visitas.
        */
+      !!@ ili2db.dispName = "Portería"
       Porteria,
+      !!@ ili2db.dispName = "Gimnasio"
       Gimnasio,
+      !!@ ili2db.dispName = "Campo de golf"
       Campo_Golf,
+      !!@ ili2db.dispName = "Lago"
       Lago,
+      !!@ ili2db.dispName = "Zona verde"
       Zona_Verde,
+      !!@ ili2db.dispName = "Zona recreativa"
       Zona_Recreativa,
+      !!@ ili2db.dispName = "Club house"
       Club_House,
+      !!@ ili2db.dispName = "Zonas de cargue"
       Zonas_Cargue
     );
 
-    /** Se debe definir por la metodología de los pilotos
+    /** Conjunto de valores válidos para indicar el tipo de uso para la construcción
      */
     AVL_UsoConstruccionTipo = (
+      !!@ ili2db.dispName = "Vivienda hasta 3 pisos"
       Vivienda_Hasta_3_Pisos,
+      !!@ ili2db.dispName = "Ramadas, cobertizos, caneyes"
       Ramadas_Cobertizos_Caneyes,
+      !!@ ili2db.dispName = "Galpones, gallineros"
       Galpones_Gallineros,
+      !!@ ili2db.dispName = "Establos, pesebreras, caballerizas"
       Establos_Pesebreras_Caballerizas,
+      !!@ ili2db.dispName = "Cocheras, marraneras, porquerizas"
       Cocheras_Marraneras_Porquerizas,
+      !!@ ili2db.dispName = "Bodega, casa, bomba"
       Bodega_Casa_Bomba,
+      !!@ ili2db.dispName = "Industrias"
       Industrias,
+      !!@ ili2db.dispName = "Silos"
       Silos,
+      !!@ ili2db.dispName = "Piscinas"
       Piscinas,
+      !!@ ili2db.dispName = "Tanques"
       Tanques,
+      !!@ ili2db.dispName = "Beneficiaderos"
       Beneficiaderos,
+      !!@ ili2db.dispName = "Colegios, universidades"
       Colegio_Universidades,
+      !!@ ili2db.dispName = "Biblioteca"
       Biblioteca,
+      !!@ ili2db.dispName = "Garajes cubiertos"
       Garajes_Cubiertos,
+      !!@ ili2db.dispName = "Bodegas comerciales grandes almacenes"
       Bodegas_Comerciales_Grandes_Almacenes,
+      !!@ ili2db.dispName = "Secaderos"
       Secaderos,
+      !!@ ili2db.dispName = "Clínicas, hospitales, centros médicos"
       Clinicas_Hospitales_Centros_Medicos,
+      !!@ ili2db.dispName = "Pozos"
       Pozos,
+      !!@ ili2db.dispName = "Kioscos"
       Kioscos,
+      !!@ ili2db.dispName = "Albercas, bañaderas"
       Albercas_Banaderas,
+      !!@ ili2db.dispName = "Hoteles en PH"
       Hoteles_En_PH,
+      !!@ ili2db.dispName = "Corrales"
       Corrales,
+      !!@ ili2db.dispName = "Casa elbas"
       Casa_Elbas,
+      !!@ ili2db.dispName = "Comercio"
       Comercio,
+      !!@ ili2db.dispName = "Iglesia"
       Iglesia,
+      !!@ ili2db.dispName = "Hoteles"
       Hoteles,
+      !!@ ili2db.dispName = "Clubes, casinos"
       Clubes_Casinos,
+      !!@ ili2db.dispName = "Oficinas, consultorios"
       Oficinas_Consultorios,
+      !!@ ili2db.dispName = "Apartamentos más de 4 pisos"
       Apartamentos_Mas_4_Pisos,
+      !!@ ili2db.dispName = "Restaurantes"
       Restaurantes,
+      !!@ ili2db.dispName = "Pensiones, residencias"
       Pensiones_Residencias,
+      !!@ ili2db.dispName = "Puestos de salud"
       Puestos_Salud,
+      !!@ ili2db.dispName = "Paqueaderos"
       Parqueaderos,
+      !!@ ili2db.dispName = "Barracas"
       Barracas,
+      !!@ ili2db.dispName = "Teatro, cinemas"
       Teatro_Cinemas,
+      !!@ ili2db.dispName = "Aulas de clases"
       Aulas_Clases,
+      !!@ ili2db.dispName = "Coliseos"
       Coliseos,
+      !!@ ili2db.dispName = "Casas culto"
       Casas_Culto,
+      !!@ ili2db.dispName = "Talleres"
       Talleres,
+      !!@ ili2db.dispName = "Jardín infantil casa"
       Jardin_Infantil_Casa,
+      !!@ ili2db.dispName = "Torres de enfriamiento"
       Torres_Enfriamiento,
+      !!@ ili2db.dispName = "Muelles"
       Muelles,
+      !!@ ili2db.dispName = "Estación de bombeo"
       Estacion_Bombeo,
+      !!@ ili2db.dispName = "Estadios, plaza de toros"
       Estadios_Plaza_Toros,
+      !!@ ili2db.dispName = "Cárceles"
       Carceles,
+      !!@ ili2db.dispName = "Parque cementerios"
       Parque_Cementerios,
+      !!@ ili2db.dispName = "Vivienda colonial"
       Vivienda_Colonial,
+      !!@ ili2db.dispName = "Comercio colonial"
       Comercio_Colonial,
+      !!@ ili2db.dispName = "Oficinas consultorios coloniales"
       Oficinas_Consultorios_Coloniales,
+      !!@ ili2db.dispName = "Apartamentos edificio 4 o 5 pisos"
       Apartamentos_Edificio_4_5_Pisos,
+      !!@ ili2db.dispName = "Centros comerciales"
       Centros_Comerciales,
+      !!@ ili2db.dispName = "Canchas de tenis"
       Canchas_Tenis,
+      !!@ ili2db.dispName = "Invernadero"
       Invernadero,
+      !!@ ili2db.dispName = "Toboganes"
       Toboganes,
+      !!@ ili2db.dispName = "Vivienda recreacional"
       Vivienda_Recreacional,
+      !!@ ili2db.dispName = "Camaroneras"
       Camaroneras,
+      !!@ ili2db.dispName = "Fuertes, castillos"
       Fuertes_Castillos,
+      !!@ ili2db.dispName = "Murallas"
       Murallas,
+      !!@ ili2db.dispName = "Marquesinas, patios cubiertos"
       Marquesinas_Patios_Cubiertos,
+      !!@ ili2db.dispName = "Lagunas oxidación"
       Lagunas_Oxidacion,
+      !!@ ili2db.dispName = "Vivienda hasta 3 pisos PH"
       Vivienda_Hasta_3_Pisos_PH,
+      !!@ ili2db.dispName = "Apartamentos más de 4 pisos PH"
       Apartamentos_Mas_4_Pisos_PH,
+      !!@ ili2db.dispName = "Vivienda recreacional PH"
       Vivienda_Recreacional_PH,
+      !!@ ili2db.dispName = "Bodegas casa bomba PH"
       Bodegas_Casa_Bomba_PH,
+      !!@ ili2db.dispName = "Bodegas comerciales PH"
       Bodegas_Comerciales_PH,
+      !!@ ili2db.dispName = "Comercio PH"
       Comercio_PH,
+      !!@ ili2db.dispName = "Centros comerciales PH"
       Centros_Comerciales_PH,
+      !!@ ili2db.dispName = "Oficinas o consultorios PH"
       Oficinas_Consultorios_PH,
+      !!@ ili2db.dispName = "Parqueaderos PH"
       Parqueaderos_PH,
+      !!@ ili2db.dispName = "Garajes PH"
       Garajes_PH,
+      !!@ ili2db.dispName = "Industrias PH"
       Industrias_PH,
+      !!@ ili2db.dispName = "Vía ferrea"
       Via_Ferrea,
+      !!@ ili2db.dispName = "Carretera"
       Carretera,
+      !!@ ili2db.dispName = "Teatro cinemas PH"
       Teatro_Cinemas_PH,
+      !!@ ili2db.dispName = "Iglesia PH"
       Iglesia_PH,
+      !!@ ili2db.dispName = "Restaurantes PH"
       Restaurantes_PH,
+      !!@ ili2db.dispName = "Hotel colonial"
       Hotel_Colonial,
+      !!@ ili2db.dispName = "Restaurante colonial"
       Restaurante_Colonial,
+      !!@ ili2db.dispName = "Entidad educativa colonial, colegio colonial"
       Entidad_Educativa_Colonial_Colegio_Colonial,
+      !!@ ili2db.dispName = "No especificado"
       No_Especificado
     );
 
     /** Conjunto de valores válidos para indicar cual es el destino económico de la unidad de construcción, con incidencia en su avalúo. REVISAR DOCUMENTACIÓN --> OJO, EL NOMBRE DESTINACIÓN DEBERÍA SER DESTINO, ES DECIR COL_DestinoEconomicoTipo.
      */
     AVL_DestinoEconomicoTipo = (
+      !!@ ili2db.dispName = "Residencial"
       Residencial,
+      !!@ ili2db.dispName = "Anexo"
       Anexo,
+      !!@ ili2db.dispName = "Industrial"
       Industrial,
+      !!@ ili2db.dispName = "Comercial"
       Comercial
     );
 
     /** Conjunto de valores válidos para indicar si hay o no y el tipo de las obras en el interior de un predio, con incidencia en su avalúo.
      */
     AVL_ObrasAlInteriorTipo = (
+      !!@ ili2db.dispName = "No posee"
       No_Posee,
       /** Infraestructuras interiores del predio.
        */
+      !!@ ili2db.dispName = "Obra infraestructura"
       Obra_Infraestructura,
       /** Planta de tratamiento de agua.
        */
+      !!@ ili2db.dispName = "Plata de tratamiento de agua"
       Planta_Trata_Agua,
       /** Planta de tratamiento de residuos.
        */
+      !!@ ili2db.dispName = "Planta de tratamiento de residuos"
       Planta_Trata_Residuo,
       /** Vía adoquinada.
        */
+      !!@ ili2db.dispName = "Vía adoquinada"
       Via_Adoquin,
       /** Vía asfaltada.
        */
+      !!@ ili2db.dispName = "Vía asfaltada"
       Via_Asfaltada,
       /** Vía que recibe rellenos para igualar el firme.
        */
+      !!@ ili2db.dispName = "Vía en recebo"
       Via_en_Recebo,
       /** Zonas duras.
        */
+      !!@ ili2db.dispName = "Zonas duras"
       Zonas_Duras
     );
 
@@ -404,37 +640,52 @@ VERSION "V2.2.1"  // 2018-02-01 // =
     AVL_CapaVegetalTipo = (
       /** Formaciones arbóreas, conforme a la legislación forestal nacional. REVISAR DOCUMENTACIÓN
        */
+      !!@ ili2db.dispName = "Bosque"
       Bosque,
       /** Terreno con pastos procedentes de plantación. REVISAR DOCUMENTACIÓN
        */
+      !!@ ili2db.dispName = "Pastos artificiales"
       Pastos_Artificiales,
       /** Terreno de caracter forestal no arbolado, o arbolado con una baja o muy baja fracción de cabida cubierta (FCC) con vegetación herbácea de calidad diversa, apta para el consumo por el ganado. REVISAR DOCUMENTACIÓN
        */
+      !!@ ili2db.dispName = "Pastos naturales"
       Pastos_Naturales,
       /** Área cubierta por restos de cultivos agrícolas.
        */
+      !!@ ili2db.dispName = "Rastrojos"
       Rastrojos,
       /** Área cubierta por bosque tropical húmedo.
        */
+      !!@ ili2db.dispName = "Selva"
       Selva,
       /** Área no cubierta de vegetación: desiertos, roquedos, cuerpos de agua...
        */
+      !!@ ili2db.dispName = "Sin cobertura vegetal"
       Sin_Cobert_Vegetal,
       /** Áreas agrícolas.
        */
+      !!@ ili2db.dispName = "Tierra de labor"
       Tierra_de_Labor
     );
 
     /** Conjunto de valores válidos para determinar el estilo de la construcción que se aprecia en una unidad de construcción, con incidencia en su avalúo.
      */
     AVL_EstiloTipo = (
+      !!@ ili2db.dispName = "Clásico"
       Clasico,
+      !!@ ili2db.dispName = "Colonial"
       Colonial,
+      !!@ ili2db.dispName = "Minimalista"
       Minimalista,
+      !!@ ili2db.dispName = "Moderno"
       Moderno,
+      !!@ ili2db.dispName = "Otros estilos"
       Otros_Estilos,
+      !!@ ili2db.dispName = "Post moderno"
       Post_Moderno,
+      !!@ ili2db.dispName = "Republicano"
       Republicano,
+      !!@ ili2db.dispName = "Tradicional"
       Tradicional
     );
 
@@ -443,51 +694,75 @@ VERSION "V2.2.1"  // 2018-02-01 // =
     AVL_ConstruccionTipo = (
       /** El tipo de construcción utiliza métodos convencionales. REVISAR DOCUMENTACIÓN
        */
+      !!@ ili2db.dispName = "Convencional"
       Convencional,
       /** El tipo de construcción utiliza métodos no convencionales. REVISAR DOCUMENTACIÓN
        */
+      !!@ ili2db.dispName = "No convencional"
       noConvencional
     );
 
     /** Conjunto de valores válidos para indicar de forma descriptiva la pendiente de un predio, con incidencia en su avalúo.
      */
     AVL_PendienteTipo = (
+      !!@ ili2db.dispName = "Empinada"
       Empinada,
+      !!@ ili2db.dispName = "Escarpada"
       Escarpada,
+      !!@ ili2db.dispName = "Fuertemente inclinada"
       Fuertemente_Inclinada,
+      !!@ ili2db.dispName = "Inclinada"
       Inclinada,
+      !!@ ili2db.dispName = "Ligeramente escarpada"
       Ligeramente_Escarpada,
+      !!@ ili2db.dispName = "Ligeramente inclinada"
       Ligeramente_Inclinada,
+      !!@ ili2db.dispName = "Moderadamente inclinada"
       Moderadamente_Inclinada,
+      !!@ ili2db.dispName = "Muy escarpada"
       Muy_Escarpada,
+      !!@ ili2db.dispName = "PlanaU"
       PlanaU,
+      !!@ ili2db.dispName = "Plano"
       Plano
     );
 
     /** Conjunto de valores válidos para definir el estado de conservación de una unidad de construcción o de un predio matriz de la propiedad horizontal, con incidencia en su avalúo.
      */
     AVL_EstadoConservacionTipo = (
+      !!@ ili2db.dispName = "Bueno"
       Bueno,
+      !!@ ili2db.dispName = "Demolición"
       Demolicion,
+      !!@ ili2db.dispName = "Intermedio"
       Intermedio,
+      !!@ ili2db.dispName = "Malo"
       Malo,
+      !!@ ili2db.dispName = "Muy bueno"
       Muy_Bueno,
+      !!@ ili2db.dispName = "Muy malo"
       Muy_Malo,
+      !!@ ili2db.dispName = "Óptimo"
       Optimo,
+      !!@ ili2db.dispName = "Regular o deficiente"
       Regular_Deficiente
     );
 
     /** Conjunto de valores válidos para indicar la forma de desarrollo de un predio, respecto a su urbanización, con incidencia en su avalúo.
      */
     AVL_TipoDesarrolloTipo = (
+      !!@ ili2db.dispName = "Auto construcción"
       Auto_Construccion,
+      !!@ ili2db.dispName = "Urbanización"
       Urbanizacion
     );
 
     /** Conjunto de valores válidos para determinar la forma de un predio, con incidencia en su avalúo.
      */
     AVL_FormaTipo = (
+      !!@ ili2db.dispName = "Irregular"
       Irregular,
+      !!@ ili2db.dispName = "Regular"
       Regular
     );
 
@@ -496,12 +771,15 @@ VERSION "V2.2.1"  // 2018-02-01 // =
     AVL_FuncionalidadTipo = (
       /** Cumple su función adecuadamente.
        */
+      !!@ ili2db.dispName = "Funcional"
       Funcional,
       /** Cumple su función de manera mejorable.
        */
+      !!@ ili2db.dispName = "Medianamente funcional"
       Medianamente_Funcional,
       /** No cumple su función adecuadamente.
        */
+      !!@ ili2db.dispName = "Poco funcional"
       Poco_Funcional
     );
 
@@ -510,30 +788,40 @@ VERSION "V2.2.1"  // 2018-02-01 // =
     AVL_ComunExclusivoTipo = (
       /** Saliente de la fachada, a la altura de un vano y protegida por una barandilla.
        */
+      !!@ ili2db.dispName = "Balcón"
       Balcon,
       /** Lugar para el almacenamiento.
        */
+      !!@ ili2db.dispName = "Depósito"
       Deposito,
       /** Habitáculo destinado al guardado de vehículos automóviles con capacidad para dos de ellos.
        */
+      !!@ ili2db.dispName = "Garaje doble"
       Garaje_Doble,
       /** Habitáculo destinado al guardado de vehículos automóviles con capacidad para uno de ellos.
        */
+      !!@ ili2db.dispName = "Garaje sencillo"
       Garaje_Sencillo,
       /** Zona sin techar, en el interior de la edificación.
        */
+      !!@ ili2db.dispName = "Patio"
       Patio,
       /** Cubierta plana y practicable de un edificio, o balcón de grandes dimensiones, rodeado de barandillas o muros.
        */
+      !!@ ili2db.dispName = "Terraza"
       Terraza
     );
 
-    /** Conjunto de valores válidos pra indicar donde se encuentra una unidad de construcción en copropiedad.
+    /** Conjunto de valores válidos para indicar donde se encuentra una unidad de construcción en copropiedad.
      */
     AVL_UbicacionEnCopropiedadTipo = (
+      !!@ ili2db.dispName = "Otras ubicaciones"
       Otras_Ubicaciones,
+      !!@ ili2db.dispName = "Pasillo principal"
       Pasillo_Principal,
+      !!@ ili2db.dispName = "Pasillo secundario"
       Pasillo_Secundario,
+      !!@ ili2db.dispName = "Plazoleta de comidas"
       Plazoleta_Comidas
     );
 

@@ -55,6 +55,7 @@ INTERLIS 2.3;
  * 07.05.2019/ at: Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
  * 08.05.2019/ at: Se Cambia la cardinalidad del atributo Tipo en la clase Predio de obligatorio a opcional; Corrección del nombre del atributo Bosque_Area_Seminatural y su dominio asociado
  * 09.05.2019/ at: Se elimina el dominio COL_ZonaTipo; Se pasa el dominio COL_ViaTipo al modelo Ficha Predial; Asignación del prefijo CRG a todas las clases y dominios del modelo para facilitar legibilidad
+ * 10.05.2019/ at: Documentación de los dominios y los nombres para mostrar de sus valores
  * -----------------------------------------------------------
  * 
  * (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -89,201 +90,331 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       PH
     );
 
-    /** !! ajustar en el Catalogo de Objetos
+    /** Valores para indicar el nivel de acuerdo
      */
     CRG_AcuerdoTipo = (
       /** Existe un acuerdo sobre la posición del punto
        */
+      !!@ ili2db.dispName = "Acuerdo"
       Acuerdo,
       /** Existe un desacuerdo sobre la posición del punto
        */
+      !!@ ili2db.dispName = "Desacuerdo"
       Desacuerdo
     );
 
+    /** Valores válidos para indicar el tipo de amenaza natural al que está sometido
+     */
     CRG_AfectacionTipo = (
+      !!@ ili2db.dispName = "Inundación"
       Inundacion,
-      /** Remocion en Masa
-       */
+      !!@ ili2db.dispName = "Remoción en masa"
       RemocionMasa,
+      !!@ ili2db.dispName = "Otra"
       Otra
     );
 
+    /** Conjunto de valores válidos para indicar la naturaleza de un área boscosa
+     */
     CRG_BosqueAreaSeminaturalTipo = (
-      /** Área Boscosa
-       */
+      !!@ ili2db.dispName = "Área boscosa"
       AreaBoscosa,
-      /** Plantación Forestal
-       */
+      !!@ ili2db.dispName = "Plantación forestal"
       PlantaForestal
     );
 
+    /** Conjunto de valores válidos para indicar de qué tipo de cuerpo de agua se trata
+     */
     CRG_CuerpoAgua = (
+      !!@ ili2db.dispName = "Nacimiento de agua"
       NacimientoAgua,
       /** Cuerpo de agua natural o artificial
        */
+      !!@ ili2db.dispName = "Cuerpo de agua"
       CuerpoAgua,
+      !!@ ili2db.dispName = "Zona pantanosa"
       ZonaPantanosa
     );
 
+    /** Conjunto de valores válidos para indicar los tipos de derecho que se pueden ejercer sobre un predio por un interesado
+     */
     CRG_DerechoTipo = (
+      !!@ ili2db.dispName = "Derecho de propiedad colectiva"
       Derecho_Propiedad_Colectiva,
+      !!@ ili2db.dispName = "Derecho de minería"
       Mineria_Derecho,
+      !!@ ili2db.dispName = "Nuda propiedad"
       Nuda_Propiedad,
+      !!@ ili2db.dispName = "Posesión u Ocupación"
       Posesion_Ocupacion,
+      !!@ ili2db.dispName = "Tenencia"
       Tenencia,
+      !!@ ili2db.dispName = "Usufructo"
       Usufructo,
       /** Derecho de dominio o propiedad
        */
+      !!@ ili2db.dispName = "Dominio"
       Dominio
     );
 
+    /** Conjunto de valores válidos para indicar que tipo de explotación se desarrolla
+     */
     CRG_ExplotacionTipo = (
+      !!@ ili2db.dispName = "Minería"
       Minera,
+      !!@ ili2db.dispName = "Hidrocarburo"
       Hidrocarburo,
+      !!@ ili2db.dispName = "Otra"
       Otra
     );
 
+    /** Conjunto de valores válidos para el género de una persona natural
+     */
     CRG_GeneroTipo = (
+      !!@ ili2db.dispName = "Femenino"
       Femenino,
+      !!@ ili2db.dispName = "Masculino"
       Masculino,
+      !!@ ili2db.dispName = "Otro"
       Otro
     );
 
+    /** Conjunto de valores válidos para indicar el tipo de documento que puede registrarse de una persona
+     */
     CRG_InteresadoDocumentoTipo = (
+      !!@ ili2db.dispName = "Cédula de ciudadanía"
       Cedula_Ciudadania,
+      !!@ ili2db.dispName = "Cédula de extranjería"
       Cedula_Extranjeria,
+      !!@ ili2db.dispName = "NIT"
       NIT,
+      !!@ ili2db.dispName = "Pasaporte"
       Pasaporte,
+      !!@ ili2db.dispName = "Tarjeta de identidad"
       Tarjeta_Identidad,
+      !!@ ili2db.dispName = "Libreta militar"
       Libreta_Militar,
+      !!@ ili2db.dispName = "Registro civil"
       Registro_Civil,
+      !!@ ili2db.dispName = "Cédula militar"
       Cedula_Militar,
+      !!@ ili2db.dispName = "NUIP"
       NUIP,
+      !!@ ili2db.dispName = "Secuencial SNR"
       Secuencial_SNR,
+      !!@ ili2db.dispName = "Secuencial IGAC"
       Secuencial_IGAC
     );
 
     /** Tipos de predios de acuerdo a la resolucion 070 de 2011
      */
     CRG_PredioTipo = (
+      !!@ ili2db.dispName = "NPH"
       NPH,
+      !!@ ili2db.dispName = "Propiedad horizontal"
       PropiedadHorizontal(
+        !!@ ili2db.dispName = "Propiedad horizontal > Matriz"
         Matriz,
+        !!@ ili2db.dispName = "Propiedad horizontal > Unidad predial"
         UnidadPredial
       ),
+      !!@ ili2db.dispName = "Condominio"
       Condominio(
+        !!@ ili2db.dispName = "Condominio > Matriz"
         Matriz,
+        !!@ ili2db.dispName = "Condominio > Unidad predial"
         UnidadPredial
       ),
+      !!@ ili2db.dispName = "Mejora"
       Mejora,
+      !!@ ili2db.dispName = "Parque cementerio"
       ParqueCementerio(
+        !!@ ili2db.dispName = "Parque cementerio > Matriz"
         Matriz,
+        !!@ ili2db.dispName = "Parque cementerio > Unidad privada"
         UnidadPrivada
       ),
+      !!@ ili2db.dispName = "Vía"
       Via,
+      !!@ ili2db.dispName = "Bien de uso público"
       BienUsoPublico,
+      !!@ ili2db.dispName = "Depósito"
       Deposito,
+      !!@ ili2db.dispName = "Parqueadero"
       Parqueadero,
+      !!@ ili2db.dispName = "Bodega"
       Bodega
     );
 
     /** Conjunto de valores para indicar si se trata de un punto de control de referencia (un punto principal) o de apoyo (uso para levantamientos locales con estación total)
      */
     CRG_PuntoControlTipo = (
+      !!@ ili2db.dispName = "Control"
       Control,
+      !!@ ili2db.dispName = "Apoyo"
       Apoyo
     );
 
+    /** Conjunto de valores válidos para caracterizar una servidumbre
+     */
     CRG_ServidumbreTipo = (
+      !!@ ili2db.dispName = "Vial"
       Vial,
+      !!@ ili2db.dispName = "Petrolera"
       Petrolera,
+      !!@ ili2db.dispName = "Eléctrica"
       Electrica,
+      !!@ ili2db.dispName = "Otra"
       Otra
     );
 
+    /** Conjunto de valores válidos para indicar el tipo de terreno agrícola del que se trata una unidad espacial
+     */
     CRG_TerritorioAgricolaTipo = (
+      !!@ ili2db.dispName = "Cultivo transitorio"
       CultTransitorio,
+      !!@ ili2db.dispName = "Cultivo permanente"
       CultPermanente,
+      !!@ ili2db.dispName = "Confinado"
       Confinado,
       /** Tierra en preparacion o descanso
        */
+      !!@ ili2db.dispName = "Tierra en preparación o descanso"
       TierraPrepodesc,
+      !!@ ili2db.dispName = "Área agrícola heterogénea"
       AreaAgriHetero,
+      !!@ ili2db.dispName = "Pasto"
       Pasto
     );
 
+    /** Conjunto de valores válidos para indicar si se trata o no de un punto bien definido
+     */
     CRG_DefPuntoTipo = (
+      !!@ ili2db.dispName = "Bien definido"
       Bien_Definido,
+      !!@ ili2db.dispName = "No bien definido"
       No_Bien_Definido
     );
 
+    /** Conjunto de valores válidos par indicar el origen de datos de una persona natural o jurídica
+     */
     CRG_InstitucionTipo = (
+      !!@ ili2db.dispName = "Registraduría nacional"
       Registraduria_Nacional,
+      !!@ ili2db.dispName = "Registro propiedad"
       Registro_Propiedad,
+      !!@ ili2db.dispName = "Catastro IGAC"
       Catastro_IGAC,
+      !!@ ili2db.dispName = "Catastro descentralizado"
       Catastro_Descentralizado,
+      !!@ ili2db.dispName = "URT"
       URT,
+      !!@ ili2db.dispName = "ANT"
       ANT
     );
 
+    /** Conjunto de valores válidos para indicar la naturaleza de un interesado jurídico
+     */
     CRG_InteresadoJuridicoTipo = (
+      !!@ ili2db.dispName = "Público"
       Publico,
+      !!@ ili2db.dispName = "Privado"
       Privado,
+      !!@ ili2db.dispName = "Mixto"
       Mixto
     );
 
+    /** Conjunto de valores válidos para indicar la responsabilidad a la que se está sujeto
+     */
     CRG_ResponsabilidadTipo = (
+      !!@ ili2db.dispName = "Constitucional"
       Constitucional,
+      !!@ ili2db.dispName = "Legal"
       Legal,
+      !!@ ili2db.dispName = "Contractual"
       Contractual,
+      !!@ ili2db.dispName = "Administrativa"
       Administrativa,
+      !!@ ili2db.dispName = "Judicial"
       Judicial,
+      !!@ ili2db.dispName = "Otros"
       Otros
     );
 
+    /** Conjunto de valores válidos para indicar que define un punto de un lindero
+     */
     CRG_DescripcionPuntoTipo = (
+      !!@ ili2db.dispName = "Esquina construcción"
       Esquina_Construccion,
+      !!@ ili2db.dispName = "Intersección cerca de piedra"
       Interseccion_Cerca_De_Piedra,
+      !!@ ili2db.dispName = "Intersección cerca viva"
       Interseccion_Cerca_Viva,
+      !!@ ili2db.dispName = "Poste de cerca"
       Poste_de_Cerca,
       /** !! por definir durante pilotos
        */
+      !!@ ili2db.dispName = "Otros"
       Otros
     );
 
     /** Punto de leventamiento planimetrico que se identifican en el marco de la identificación de las construcciones, los linderos o puntos auxiliares levantado para el apoyo en la mediciión
      */
     CRG_PuntoLevTipo = (
+      !!@ ili2db.dispName = "Auxiliar"
       Auxiliar,
+      !!@ ili2db.dispName = "Construcción"
       Construccion,
+      !!@ ili2db.dispName = "Servidumbre"
       Servidumbre
     );
 
+    /** Conjunto de valores válidos para indicar las restricciones a las que se puede ver sometido un predio
+     */
     CRG_RestriccionTipo = (
+      !!@ ili2db.dispName = "Afectaciones de interés general"
       Afectaciones_Interes_General,
+      !!@ ili2db.dispName = "Ambientales"
       Ambientales,
+      !!@ ili2db.dispName = "Desplazamiento forzado restitución"
       Desplazamiento_Forzado_Restitucion,
+      !!@ ili2db.dispName = "Embargo"
       Embargo,
+      !!@ ili2db.dispName = "Hipoteca"
       Hipoteca,
+      !!@ ili2db.dispName = "Propiedad horizontal y urbanismo"
       Propiedad_Horizontal_y_Urbanismo,
+      !!@ ili2db.dispName = "Prohibiciones expresas"
       Prohibiciones_Expresas,
+      !!@ ili2db.dispName = "Protección familia"
       Proteccion_Familia,
+      !!@ ili2db.dispName = "Servidumbre"
       Servidumbre,
+      !!@ ili2db.dispName = "No registrada"
       No_Registrada
     );
 
+    /** Conjunto de valores válidos para indicar el tipo de la hipoteca
+     */
     CRG_HipotecaTipo = (
+      !!@ ili2db.dispName = "Abierta"
       Abierta,
+      !!@ ili2db.dispName = "Cerrada"
       Cerrada
     );
 
     /** Dominio con la descripción de la tipologia de los codigos registrales que se inscriben y que publicitan alguna caracteristica especial del predio
      */
     CRG_PublicidadTipo = (
+      !!@ ili2db.dispName = "Demanda"
       Demanda,
+      !!@ ili2db.dispName = "Inicio de proceso administrativo"
       Inicio_de_Proceso_Administrativo,
+      !!@ ili2db.dispName = "Cancelación"
       Cancelacion,
+      !!@ ili2db.dispName = "Desplazamiento forzado, víctima o restitución"
       Desplazamiento_Forzado_Victima_o_Restitucion,
+      !!@ ili2db.dispName = "Públicidad de acto jurídico"
       Publicidad_de_Acto_Juridico
     );
   STRUCTURE CRG_AfectacionTipo_ = value : MANDATORY CRG_AfectacionTipo; END CRG_AfectacionTipo_;
@@ -305,6 +436,8 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       /** Rsultado del cálculo de su avalúo mediante la metodología legalmente establecida.
        */
       Avaluo_Construccion : MANDATORY LADM_COL_V1_1.LADM_Nucleo.Peso;
+      /** Área de la construcción
+       */
       Area_Construccion : 0.0 .. 99999999999999.9;
       !!@name="Avaluo Construccion"
       !!@ilivalid.msg="El Avaluo Construccion debe ser mayor a cero"
@@ -327,6 +460,8 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Codigo_Registral_Derecho : TEXT*5;
     END CRG_Derecho;
 
+    /** Persona natural o jurídica que tiene derechos o sobre la que recaen restricciones o responsabilidades referidas a uno o más predios
+     */
     CLASS CRG_Interesado
     EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_Interesado =
       /** Documento de identidad del interesado.
@@ -407,6 +542,8 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       /** Valor de cada predio, obtenido mediante investigación y análisis estadistico del mercado inmobiliario y la metodología de aplicación  correspondiente. El avalúo  catastral de cada predio se determina a partir de la adición de los avalúos parciales practicados independientemente para los terrenos y para las edificaciones en el comprendidos.
        */
       Avaluo_Predio : LADM_COL_V1_1.LADM_Nucleo.Peso;
+      /** Tipo de predio
+       */
       Tipo (EXTENDED) : Catastro_Registro_Nucleo_V2_2_1.CRG_PredioTipo;
       UNIQUE NUPRE; 
     END CRG_Predio;
@@ -461,7 +598,7 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       /** Se Indica si existe acuerdo o no entre los colindantes en relación al punto lindero que se está midiendo.
        */
       Acuerdo : MANDATORY Catastro_Registro_Nucleo_V2_2_1.CRG_AcuerdoTipo;
-      /** Se caracteriza si el punto de levantamiento corresponde a un punto bien definido o no bien definido
+      /** Se caracteriza si el punto de lindero corresponde a un punto bien definido o no bien definido
        */
       Definicion_Punto : MANDATORY Catastro_Registro_Nucleo_V2_2_1.CRG_DefPuntoTipo;
       /** Es la descripción del tipo de punto lindero y las caracteristicas del vertice

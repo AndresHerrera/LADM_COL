@@ -12,6 +12,7 @@ INTERLIS 2.3;
  * 21.02.2019/ at: Se elimina la dependencia entre el modelo Ficha y modelo de Avalúos
  * 22.04.2019/ at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
  * 09.05.2019/ at: Creación del atributo Tipo_Via en la clase Predio; Asignación del prefijo FPR a todas las clases y dominios del modelo para facilitar legibilidad
+ * 10.05.2019/ at: Documentación de los dominios y los nombres para mostrar de sus valores
  */
 MODEL Ficha_Predial_V2_2_1 (es)
 AT "http://www.proadmintierra.info/"
@@ -20,69 +21,113 @@ VERSION "V2.2.1"  // 2018-02-01 // =
 
   DOMAIN
 
+    /** Conjunto de valores válidos para indicar la categoría de quién atendió
+     */
     FPR_CategoriaQuienAtendioTipo = (
+      !!@ ili2db.dispName = "Propietario"
       Propietario,
+      !!@ ili2db.dispName = "Arrendatario"
       Arrendatario,
+      !!@ ili2db.dispName = "Cuidandero"
       Cuidandero,
+      !!@ ili2db.dispName = "Visitante"
       Visitante,
+      !!@ ili2db.dispName = "Visitante ocasional"
       Visitante_Ocasional,
+      !!@ ili2db.dispName = "Otro"
       Otro
     );
 
     /** Categoría de suelo de la clasificación del Plan de Ordenamiento Territorial.
      */
     FPR_CategoriaSueloPOTTipo = (
+      !!@ ili2db.dispName = "Suburbano"
       Suburbano,
+      !!@ ili2db.dispName = "Protección"
       Proteccion
     );
 
     /** Clase de suelo de la clasificación del Plan de Ordenamiento Territorial.
      */
     FPR_ClaseSueloPOTTipo = (
+      !!@ ili2db.dispName = "Urbano"
       Urbano,
+      !!@ ili2db.dispName = "Rural"
       Rural,
+      !!@ ili2db.dispName = "Expansión urbana"
       Expansion_Urbana
     );
 
     /** Derecho asociado al Folio de Matrícula Inmobiliaria. REVISAR
      */
     FPR_DerechoFMITipo = (
+      !!@ ili2db.dispName = "Propiedad"
       Propiedad,
+      !!@ ili2db.dispName = "Falsa tradición"
       Falsa_Tradicion
     );
 
     /** Uso económico de la propiedad inmobiliaria.
      */
     FPR_DestinacionEconomicaTipo = (
+      !!@ ili2db.dispName = "Agrícola"
       Agricola,
+      !!@ ili2db.dispName = "Agroindustrial"
       Agroindustrial,
+      !!@ ili2db.dispName = "Agropecuario"
       Agropecuario,
+      !!@ ili2db.dispName = "Comercial"
       Comercial,
+      !!@ ili2db.dispName = "Cultural"
       Cultural,
+      !!@ ili2db.dispName = "Educativo"
       Educativo,
+      !!@ ili2db.dispName = "Forestal"
       Forestal,
+      !!@ ili2db.dispName = "Habitacional"
       Habitacional,
+      !!@ ili2db.dispName = "Industrial"
       Industrial,
+      !!@ ili2db.dispName = "Institucional"
       Institucional,
+      !!@ ili2db.dispName = "Minero"
       Minero,
+      !!@ ili2db.dispName = "Pecuario"
       Pecuario,
+      !!@ ili2db.dispName = "Recreacional"
       Recreacional,
+      !!@ ili2db.dispName = "Religioso"
       Religioso,
+      !!@ ili2db.dispName = "Salubridad"
       Salubridad,
+      !!@ ili2db.dispName = "Servicios especiales"
       Servicios_Especiales,
+      !!@ ili2db.dispName = "Uso público"
       Uso_Publico,
+      !!@ ili2db.dispName = "Lote urbanizable no urbanizado"
       Lote_Urbanizable_No_Urbanizado,
+      !!@ ili2db.dispName = "Lote urbanizable no construido"
       Lote_Urbanizable_No_Construido,
+      !!@ ili2db.dispName = "Lote no urbanizable"
       Lote_No_Urbanizable,
+      !!@ ili2db.dispName = "Tierras aparentemente inexploradas"
       Tierras_Aparentemente_Inexplotadas,
+      !!@ ili2db.dispName = "Acuícola"
       Acuicola,
-      Infrestructura_Transporte,
-      Infrestructura_Hidraulica,
+      !!@ ili2db.dispName = "Infraestructura de transporte"
+      Infraestructura_Transporte,
+      !!@ ili2db.dispName = "Infraestructura hidráulica"
+      Infraestructura_Hidraulica,
+      !!@ ili2db.dispName = "Infraestructura de saneamiento"
       Infraestructura_Saneamiento,
+      !!@ ili2db.dispName = "Infraestructura de seguridad"
       Infraestructura_Seguridad,
+      !!@ ili2db.dispName = "Infraestructura asociada a explotación"
       Infraestructura_Asociada_Explotacion
     );
 
+    /** Conjunto de valores válidos para indicar el estado del NUPRE
+     */
     FPR_EstadoNupreTipo = (
       /** El código ha sido asignado por el gestor catastral y refiere a un único predio de acuerdo al proceso de conformación o mantenimiento catastral multipropósito.
        */
@@ -102,110 +147,202 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       E
     );
 
+    /** Conjunto de valores válidos para indicar si se trata de un predio formal o informal
+     */
     FPR_FormalidadTipo = (
+      !!@ ili2db.dispName = "Formal"
       Formal,
+      !!@ ili2db.dispName = "Informal"
       Informal
     );
 
+    /** Conjunto de valores válidos para indicar el tipo de predio según su dominio
+     */
     FPR_PredioDominioTipo = (
+      !!@ ili2db.dispName = "Privado"
       Privado(
+        !!@ ili2db.dispName = "Privado > Individual"
         Individual,
+        !!@ ili2db.dispName = "Privado - En comunidad"
         En_Comunidad,
+        !!@ ili2db.dispName = "Privado > Propiedad colectiva"
         Propiedad_Colectiva(
+          !!@ ili2db.dispName = "Privado > Propiedad colectiva > Resguardo indígena"
           Resguardo_Indigena,
+          !!@ ili2db.dispName = "Privado > Propiedad colectiva > Comunidad afrodecendiente"
           Comunidad_Afrodescendiente,
+          !!@ ili2db.dispName = "Privado > Propiedad colectiva > Comunidad raizal"
           Comunidad_Raizal,
+          !!@ ili2db.dispName = "Privado > Propiedad colectiva > Palenquera"
           Comunidad_Palenquera
         )
       ),
+      !!@ ili2db.dispName = "Público"
       Publico(
+        !!@ ili2db.dispName = "Público > Nacional"
         Nacional,
+        !!@ ili2db.dispName = "Público > Departamental"
         Departamental,
+        !!@ ili2db.dispName = "Público > Municipal"
         Municipal
       )
     );
 
+    /** Conjunto de valores válidos para indicar el tipo de servicio público
+     */
     FPR_ServicioPublicoTipo = (
+      !!@ ili2db.dispName = "Internet"
       Internet,
+      !!@ ili2db.dispName = "Teléfono"
       Telefono,
+      !!@ ili2db.dispName = "Electricidad"
       Electricidad,
+      !!@ ili2db.dispName = "Alcantarillado"
       Alcantarillado,
+      !!@ ili2db.dispName = "Acueducto"
       Acueducto,
+      !!@ ili2db.dispName = "Gas"
       Gas
     );
 
     /** Tipo de transacción inmobiliaria que se estudia.
      */
     FPR_TipoOfertaTipo = (
+      !!@ ili2db.dispName = "Venta"
       Venta,
+      !!@ ili2db.dispName = "Alquiler"
       Alquiler
     );
 
+    /** Conjunto de valores válidos para indicar el tipo de vía, en caso en que el predio registrado sea una vía
+     */
     FPR_ViaTipo = (
+      !!@ ili2db.dispName = "Arteria"
       Arteria,
+      !!@ ili2db.dispName = "Autopista"
       Autopista,
+      !!@ ili2db.dispName = "Carreteable"
       Carreteable,
+      !!@ ili2db.dispName = "Cicloruta"
       Cicloruta,
+      !!@ ili2db.dispName = "Colectora"
       Colectora,
+      !!@ ili2db.dispName = "Departamental"
       Departamental,
+      !!@ ili2db.dispName = "Ferrea"
       Ferrea,
+      !!@ ili2db.dispName = "Local"
       Local,
+      !!@ ili2db.dispName = "Metro o metrovía"
       Metro_o_Metrovia,
+      !!@ ili2db.dispName = "Nacional"
       Nacional,
+      !!@ ili2db.dispName = "Ordinaria"
       Ordinaria,
+      !!@ ili2db.dispName = "Peatonal"
       Peatonal,
+      !!@ ili2db.dispName = "Principal"
       Principal,
+      !!@ ili2db.dispName = "Privada"
       Privada,
+      !!@ ili2db.dispName = "Secundaria"
       Secundaria,
+      !!@ ili2db.dispName = "Troncal"
       Troncal
     );
 
+    /** Conjunto de valores válidos para indicar el tipo de predio público
+     */
     FPR_PredioPublicoTipo = (
+      !!@ ili2db.dispName = "Parque nacional"
       Parque_Nacional,
+      !!@ ili2db.dispName = "Reserva natural"
       Reserva_Natural,
+      !!@ ili2db.dispName = "Ejido"
       Ejido,
+      !!@ ili2db.dispName = "Presunto baldío"
       Presunto_Baldio,
+      !!@ ili2db.dispName = "Fiscal patrimonial"
       Fiscal_Patrimonial,
+      !!@ ili2db.dispName = "Bien de uso público"
       Bien_Uso_Publico(
+        !!@ ili2db.dispName = "Bien de uso público > Alameda"
         Alameda,
+        !!@ ili2db.dispName = "Bien de uso público > Andén"
         Anden,
+        !!@ ili2db.dispName = "Bien de uso público > Área de control ambiental"
         Area_Control_Ambiental,
+        !!@ ili2db.dispName = "Bien de uso público > Bahía de estacionamiento"
         Bahia_Estacionamiento,
+        !!@ ili2db.dispName = "Bien de uso público > Berma"
         Berma,
+        !!@ ili2db.dispName = "Bien de uso público > Calzada"
         Calzada,
+        !!@ ili2db.dispName = "Bien de uso público > Cicloruta"
         Ciclo_Ruta,
+        !!@ ili2db.dispName = "Bien de uso público > Escenario cultural"
         Escenario_Cultural,
+        !!@ ili2db.dispName = "Bien de uso público > Escenario deportivo"
         Escenario_Deportivo,
+        !!@ ili2db.dispName = "Bien de uso público > Estacionamiento público"
         Estacionamiento_Publico,
+        !!@ ili2db.dispName = "Bien de uso público > Humedal"
         Humedal,
+        !!@ ili2db.dispName = "Bien de uso público > Lago"
         Lago,
+        !!@ ili2db.dispName = "Bien de uso público > Madre vieja"
         Madre_Vieja,
+        !!@ ili2db.dispName = "Bien de uso público > Malecón"
         Malecon,
+        !!@ ili2db.dispName = "Bien de uso público > Parque urbano"
         Parque_Urbano,
+        !!@ ili2db.dispName = "Bien de uso público > Playa"
         Playa,
+        !!@ ili2db.dispName = "Bien de uso público > Playón"
         Playon,
+        !!@ ili2db.dispName = "Bien de uso público > Plaza"
         Plaza,
+        !!@ ili2db.dispName = "Bien de uso público > Plazoleta"
         Plazoleta,
+        !!@ ili2db.dispName = "Bien de uso público > Puente"
         Puente,
+        !!@ ili2db.dispName = "Bien de uso público > Río"
         Rio,
+        !!@ ili2db.dispName = "Bien de uso público > Sabana comunal"
         Sabana_Comunal,
+        !!@ ili2db.dispName = "Bien de uso público > Sardinel"
         Sardinel,
+        !!@ ili2db.dispName = "Bien de uso público > Separador"
         Separador,
+        !!@ ili2db.dispName = "Bien de uso público > Terreno bajamar"
         Terreno_Bajamar,
+        !!@ ili2db.dispName = "Bien de uso público > Tunel peatonal"
         Tunel_Peatonal,
+        !!@ ili2db.dispName = "Bien de uso público > Vía"
         Via,
+        !!@ ili2db.dispName = "Bien de uso público > Zona de equipamiento comunal"
         Zona_Equipamiento_Comunal
       ),
+      !!@ ili2db.dispName = "Otro"
       Otro
     );
 
+    /** Conjunto de valores válidos para indicar el estrato
+     */
     FPR_EstratoTipo = (
+      !!@ ili2db.dispName = "Estrato 0"
       Estrato_0,
+      !!@ ili2db.dispName = "Estrato 1"
       Estrato_1,
+      !!@ ili2db.dispName = "Estrato 2"
       Estrato_2,
+      !!@ ili2db.dispName = "Estrato 3"
       Estrato_3,
+      !!@ ili2db.dispName = "Estrato 4"
       Estrato_4,
+      !!@ ili2db.dispName = "Estrato 5"
       Estrato_5,
+      !!@ ili2db.dispName = "Estrato 6"
       Estrato_6
     );
   STRUCTURE FPR_ServicioPublicoTipo_ = value : MANDATORY FPR_ServicioPublicoTipo; END FPR_ServicioPublicoTipo_;

@@ -39,6 +39,7 @@ VERSION "V2.2.1"  // 2018-02-08 // =
         No_Relacion_Matriz_Segregados,
         /** Errores de las anotaciones en cuanto a números de cédulas de las partes, nombres, número de los actos objeto de registro, entre otras
          */
+        !!@ ili2db.dispName = "Alfanumérico"
         Alfanumerico
       );
 
