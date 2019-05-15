@@ -57,6 +57,7 @@ INTERLIS 2.3;
  * 09.05.2019/ at: Se elimina el dominio COL_ZonaTipo; Se pasa el dominio COL_ViaTipo al modelo Ficha Predial; Asignación del prefijo CRG a todas las clases y dominios del modelo para facilitar legibilidad
  * 10.05.2019/ at: Documentación de los dominios y los nombres para mostrar de sus valores
  * 14.05.2019/ at: Creación de las clases CRG_FuenteAdministrativa y CRG_FuenteEspacial que implementan las clases del modelo LADM_COL COL_FuenteAdministrativa y COL_FuenteEspacial respectivamente; Se agrega el atributo "Codigo_Registral_Transaccion" en la clase CRG_FuenteAdministrativa para que aplique únicamente para el modelo catastro-registro
+ * 15.05.2019/ at: Creación de la clase CRG_Agrupacion_Interesados que implementa la clase LA_Agrupacion_Interesados del modelo LADM_COL
  * -----------------------------------------------------------
  * 
  * (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -429,6 +430,13 @@ VERSION "V2.2.1"  // 2018-02-19 // =
   EXTENDS LADM_COL_V1_1.LADM_Nucleo =
     OID AS INTERLIS.UUIDOID;
     DEPENDS ON LADM_COL_V1_1.LADM_Nucleo;
+
+    /** Implementación de la clase LA_Agrupacion_Interesados para el modelo Catastro-Registro.
+     * Registra interesados que representan a grupos de personas. Se registra el grupo en si, independientemente de las personas por separado. Es lo que ocurre, por ejemplo, con un grupo étnico.
+     */
+    CLASS CRG_Agrupacion_Interesados
+    EXTENDS LADM_COL_V1_1.LADM_Nucleo.LA_Agrupacion_Interesados =
+    END CRG_Agrupacion_Interesados;
 
     /** Es un tipo de espacio jurídico de la unidad de edificación del modelo LADM que almacena datos específicos del avalúo resultante del mismo.
      */
