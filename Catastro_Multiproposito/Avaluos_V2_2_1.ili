@@ -9,22 +9,22 @@ INTERLIS 2.3;
  *  2017.06.29 vbp: Extraidos dominios de valores de atributos de las clases --> integridad estructural, facilidad de lectura, unicidad de criterio en todos los modelos.
  * -----------------------------------------------------------
  * 
- *  02.06.2017/ vb: Generacion del modelo extraido a partir de version anterior del modelo de Catastro, donde aparecia como TOPIC
+ *  02.06.2017/vb: Generacion del modelo extraido a partir de version anterior del modelo de Catastro, donde aparecia como TOPIC
  *  09.11.2017/ : cambio de nombre al dominio COL_DestinoEconomicoTipo
  *  01.02.2018/ : Cambio en cardinalidad en asociacion avaluoPredio de 1 a 0..1
  *  05.02.2018/ : Cambio en cardinalidad en asociaciones avaluoConstruccion y AvaluoUnidadConstruccion de 1 a 0..1
- *  07.03.2018/ fm-gc : Cambio en tipo de geometria de las clases Zona_Homogenea_Fisica y Zona_Homogenea_Geoeconomica de GM_Surface2D a GM_MultiSurface2D
- *  08.03.2018/ fm-gc: se ajusta la cardinalidad de atributo Comun_Uso_Exclusivo en la clase Predio
+ *  07.03.2018/fm-gc : Cambio en tipo de geometria de las clases Zona_Homogenea_Fisica y Zona_Homogenea_Geoeconomica de GM_Surface2D a GM_MultiSurface2D
+ *  08.03.2018/fm-gc: se ajusta la cardinalidad de atributo Comun_Uso_Exclusivo en la clase Predio
  *  09.07.2018/ : Cambio en cardinalidad en asociaciones avaluoConstruccion y AvaluoUnidadConstruccion de 1 a 0..1
- * 08.08.2018/ at: Se agrega la clase abstracta Calificacion_Unidad_Construccion con clases especializadas Calificacion_No_Convencional y Calificacion_Convencional; Cambio en la cardinalidad de relación entre Unidad_Construccion y Calificacion_Unidad_Construccion pasa de 1 - 1..* a 1 - 1; Cambio en los valores del dominio COL_AccesoTipo; Se agrega el atributo numérico Nivel_de_Acceso en clase Unidad_Construccion; Cambio en el nombre del atributo Actividad_Econo por Uso; Se agrega el dominio COL_UsoConstruccionTipo para que tengan correspondencia con dominios SNC; Cambio en tipo de dato Material de manera que se quita el dominio y se deja abierto para el operador; Cambio en los valores del dominio COL_DestinoEconomicoTipo; Se elimina el atributo numero_total_pisos de clase Unidad_Construccion; Se cambia la cardinalidad de los atributos de Unidad_Construccion y Predio; Cambio de nombre en los atributos Conservacion_Cubierta y Puntos_Cubierta_Conservacion de la clase Calificacion_Convencional por Conservacion_Estructura y Puntos_Estructura_Conservacion; Ajuste de valores de los dominio COL_TipoCalificarTipo, COL_ArmazonTipo, COL_MurosTipo, COL_CubiertaTipo, COL_CubrimientoMurosTipo, COL_CalidadEnchapeTipo; Se agregan los dominios COL_ConservacionCalificacion y COL_AnexoTipo; Se adiciona el atributo Num_Sotanos en la clase Predio_Matriz_PH
- * 21.08.2018/ at: Se modifica el atributo Cercania_Hitos de la clase Predio dejandolo de tipo String
- * 23.08.2018/ at: Se cambia el nombre de la relación y de los roles entre unidad_construccion y calificacion_unidad_construccion
- * 18.02.2019/ at: Cambio en el orden de roles de las relaciones en las clases que se relacionan con el modelo catastro-registro
- * 21.02.2019/ at: Cambio en el nombre de los atributos "Destino_Econo" y "Anio_Construction" de la clase "Unidad_Construccion" por "Destino_Economico" y "Anio_Construccion" respectivamente.
- * 22.04.2019/ at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
- * 07.05.2019/ at: Cambio en el tipo de geometria de las clases Zona_Homogenea_Fisica y Zona_Homogenea_Geoeconomica para soportar 3D; Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
- * 09.05.2019/ at: Asignación del prefijo AVL a todas las clases y dominios del modelo para facilitar legibilidad
- * 13.05.2019/ at: Documentación de los dominios y los nombres para mostrar de sus valores 
+ * 08.08.2018/at: Se agrega la clase abstracta Calificacion_Unidad_Construccion con clases especializadas Calificacion_No_Convencional y Calificacion_Convencional; Cambio en la cardinalidad de relación entre Unidad_Construccion y Calificacion_Unidad_Construccion pasa de 1 - 1..* a 1 - 1; Cambio en los valores del dominio COL_AccesoTipo; Se agrega el atributo numérico Nivel_de_Acceso en clase Unidad_Construccion; Cambio en el nombre del atributo Actividad_Econo por Uso; Se agrega el dominio COL_UsoConstruccionTipo para que tengan correspondencia con dominios SNC; Cambio en tipo de dato Material de manera que se quita el dominio y se deja abierto para el operador; Cambio en los valores del dominio COL_DestinoEconomicoTipo; Se elimina el atributo numero_total_pisos de clase Unidad_Construccion; Se cambia la cardinalidad de los atributos de Unidad_Construccion y Predio; Cambio de nombre en los atributos Conservacion_Cubierta y Puntos_Cubierta_Conservacion de la clase Calificacion_Convencional por Conservacion_Estructura y Puntos_Estructura_Conservacion; Ajuste de valores de los dominio COL_TipoCalificarTipo, COL_ArmazonTipo, COL_MurosTipo, COL_CubiertaTipo, COL_CubrimientoMurosTipo, COL_CalidadEnchapeTipo; Se agregan los dominios COL_ConservacionCalificacion y COL_AnexoTipo; Se adiciona el atributo Num_Sotanos en la clase Predio_Matriz_PH
+ * 21.08.2018/at: Se modifica el atributo Cercania_Hitos de la clase Predio dejandolo de tipo String
+ * 23.08.2018/at: Se cambia el nombre de la relación y de los roles entre unidad_construccion y calificacion_unidad_construccion
+ * 18.02.2019/at: Cambio en el orden de roles de las relaciones en las clases que se relacionan con el modelo catastro-registro
+ * 21.02.2019/at: Cambio en el nombre de los atributos "Destino_Econo" y "Anio_Construction" de la clase "Unidad_Construccion" por "Destino_Economico" y "Anio_Construccion" respectivamente.
+ * 22.04.2019/at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
+ * 07.05.2019/at: Cambio en el tipo de geometria de las clases Zona_Homogenea_Fisica y Zona_Homogenea_Geoeconomica para soportar 3D; Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
+ * 09.05.2019/at: Asignación del prefijo AVL a todas las clases y dominios del modelo para facilitar legibilidad
+ * 13.05.2019/at: Documentación de los dominios y los nombres para mostrar de sus valores 
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza

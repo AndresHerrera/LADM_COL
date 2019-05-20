@@ -2,12 +2,12 @@ INTERLIS 2.3;
 
 /** Diagnostico Juridico.
  * 
- * 07.11.2017/ fm: Version inicial del modelo de Diagnóstico jurídico
- * 08.11.2017/ fm: Ajuste de las variables del Predio_Juridico conforme al anexo 'Informe de la realidad física y jurídica del barrido predial'
- * 02.08.2018/ fm: Actualizacion de dependencia a la version 2.2.1 del nucleo y LADM 1.1
- * 15.02.2019/ at: Creación de estructuras FMI_Duplicado y Folio_Segregado para almacenar multiples valores en estos campos
- * 22.04.2019/ at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
- * 09.05.2019/ at: Asignación del prefijo DJU a todas las clases y dominios del modelo para facilitar legibilidad
+ * 07.11.2017/fm: Version inicial del modelo de Diagnóstico jurídico
+ * 08.11.2017/fm: Ajuste de las variables del Predio_Juridico conforme al anexo 'Informe de la realidad física y jurídica del barrido predial'
+ * 02.08.2018/fm: Actualizacion de dependencia a la version 2.2.1 del nucleo y LADM 1.1
+ * 15.02.2019/at: Creación de estructuras FMI_Duplicado y Folio_Segregado para almacenar multiples valores en estos campos
+ * 22.04.2019/at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
+ * 09.05.2019/at: Asignación del prefijo DJU a todas las clases y dominios del modelo para facilitar legibilidad
  */
 MODEL Diagnostico_Juridico_V2_2_1 (es)
 AT "http://www.proadmintierra.info/"

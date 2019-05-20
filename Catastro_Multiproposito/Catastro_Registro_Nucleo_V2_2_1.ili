@@ -6,58 +6,59 @@ INTERLIS 2.3;
  * revision history
  * -----------------------------------------------------------
  * 
- * 10.05.2016/ mg: EJEMPLO INTERLIS POR OFERTAS
- * 16.06.2016/ mg: Taller IGAC/SNR
- * 23.08.2016/ mg: Relaciones
- * 15.09.2016/ mg: Comentarios Modelo
- * 20.11.2016/ aa: Topic Ficha
- * 25.11.2016/ aa: Ajustes FichaPredio
- * 02.12.2016/ ss: Nuevas clases, atributos y tipos
- * 15.12.2016/ lj: Ajuste tipos (IGAC/SNR), BAUnit GM_surface
- * 31.03.2017/ fm: Simplificación de herencia
- * 25.05.2017/ fm: Se elimina la relacion HipotecaDerecho, se elimina la clase InteresadoBAUnit, se elimina marca abstract en las clases derivadas de RRR
- * 26.05.2017/ fm: Se cambian las clases terreno servidumbre de paso y construccion al paquete de unidades espaciales. Se acorta el nombre del Modelo. ajuste al diseño del diagrama de clases. Se elimina InteresadoNacion
- * 09.06.2017/ vm: Referido al modelo LADM traducido al español
- * 09.06.2017/ vm: cambio de version a 2.1.1, incluye cambios por LADM en español y de  nombres de atributo por no seguir las convenciones adoptadas.
- * 15.06.2017/ fm: cambio de version a 2.1.2, se quita el atributo geometría de la clase predio. se reemplaza el atributo OID por los atributos atributos namespace y localId. Se añaden atributos folio matriz y segregados al predio. se elimina el dominio transaccion_registral_tipo
- * 20.06.2017/ fm: Ajuste a nombres de las clases y atributos LA_
+ * 10.05.2016/mg: EJEMPLO INTERLIS POR OFERTAS
+ * 16.06.2016/mg: Taller IGAC/SNR
+ * 23.08.2016/mg: Relaciones
+ * 15.09.2016/mg: Comentarios Modelo
+ * 20.11.2016/aa: Topic Ficha
+ * 25.11.2016/aa: Ajustes FichaPredio
+ * 02.12.2016/ss: Nuevas clases, atributos y tipos
+ * 15.12.2016/lj: Ajuste tipos (IGAC/SNR), BAUnit GM_surface
+ * 31.03.2017/fm: Simplificación de herencia
+ * 25.05.2017/fm: Se elimina la relacion HipotecaDerecho, se elimina la clase InteresadoBAUnit, se elimina marca abstract en las clases derivadas de RRR
+ * 26.05.2017/fm: Se cambian las clases terreno servidumbre de paso y construccion al paquete de unidades espaciales. Se acorta el nombre del Modelo. ajuste al diseño del diagrama de clases. Se elimina InteresadoNacion
+ * 09.06.2017/vm: Referido al modelo LADM traducido al español
+ * 09.06.2017/vm: cambio de version a 2.1.1, incluye cambios por LADM en español y de  nombres de atributo por no seguir las convenciones adoptadas.
+ * 15.06.2017/fm: cambio de version a 2.1.2, se quita el atributo geometría de la clase predio. se reemplaza el atributo OID por los atributos atributos namespace y localId. Se añaden atributos folio matriz y segregados al predio. se elimina el dominio transaccion_registral_tipo
+ * 20.06.2017/fm: Ajuste a nombres de las clases y atributos LA_
  * 04.07.2017/sr: Ajuste de nombres de clases y atributos, creacion de relaciones, ajuste subdominios
- * 04.07.2017/ fm: Se unifican los modelos LADM_ES y Catastro_COL, se eliminan las clases que extienden de responsabilidad, restriccion, derecho, hipoteca, fuente_administrativa y fuente espacial. eliminan atributos opcionales no usados de la clase hipoteca
- * 11.07.2017/ fm: se adiciona el atributo poligono_creado
- * 12.07.2017/ fm: se adiciona el atributo Estado_Nupre en la clase predio
- * 17.07.2017/ fm: poligono creado debe ser obligatorio para la clase terreno.
- * 28.09.2017/ fm : Cambio del nombre en la clase alerta por publicidad, Publicidad Extiende de objeto versionado, se elimita atributo fecha de vigencia. Ajuste al atributo plantacion comercial de la clase terreno. Se extraen los atributos de la clase predio e interesados a los modelos extendidos de ficha y registro. version 2.2.0
- * 20.10.2017/ ag : Ajustes a atributos de la clase terreno, cambio a dominio multivalorado, se crean dominios, col_servidumbre, col_afectacion, col_explotacion, col_territorioAgricula, col_cuerpoAgua, se elimina la obligatoriedad del rol responsable en las relaciones responsableFuente y topografoFuente
- * 28.10.2017/ gc : Soporte de geometrías multi-parte para LA_UnidadEspacial (y las clases que la extienden) y Terreno.
+ * 04.07.2017/fm: Se unifican los modelos LADM_ES y Catastro_COL, se eliminan las clases que extienden de responsabilidad, restriccion, derecho, hipoteca, fuente_administrativa y fuente espacial. eliminan atributos opcionales no usados de la clase hipoteca
+ * 11.07.2017/fm: se adiciona el atributo poligono_creado
+ * 12.07.2017/fm: se adiciona el atributo Estado_Nupre en la clase predio
+ * 17.07.2017/fm: poligono creado debe ser obligatorio para la clase terreno.
+ * 28.09.2017/fm : Cambio del nombre en la clase alerta por publicidad, Publicidad Extiende de objeto versionado, se elimita atributo fecha de vigencia. Ajuste al atributo plantacion comercial de la clase terreno. Se extraen los atributos de la clase predio e interesados a los modelos extendidos de ficha y registro. version 2.2.0
+ * 20.10.2017/ag : Ajustes a atributos de la clase terreno, cambio a dominio multivalorado, se crean dominios, col_servidumbre, col_afectacion, col_explotacion, col_territorioAgricula, col_cuerpoAgua, se elimina la obligatoriedad del rol responsable en las relaciones responsableFuente y topografoFuente
+ * 28.10.2017/gc : Soporte de geometrías multi-parte para LA_UnidadEspacial (y las clases que la extienden) y Terreno.
  * 02.11.2017/ : Cambio del nombre del modelo de Catastro_COL_ES a Catastro_Registro_Nucleo
- * 07.11.2017/ fm: Cambio de nombre a la clase CadenaCarasLindero a CadenaCarasLimite 
- * 14.11.2017/ fm : taducción del dominio COL_BuildingUnitTipo
- * 14.12.2017/ fm : definicion de extends entre topics catastro registro nucleo y Ladm_nucleo
- * 30.01.2018/ fm : Cambio del tipo de dato del atributo Ext_Direccion de la clase Unidad Espacial a ExtDireccion; atributo ext_PID de la calse LA_Interesado cambia de OID a ExtInteresado; Cambio de cardinalidad en relacion miembros entre LA_Interesado y LA_Agrupacion_Interesados de 0..1 a 0..*
- * 19.02.2018/ fm : Cambio en longitud de atributo DocumentoIdentidad de 10 a 12 posiciones
- * 17.07.2018/ fm : cambio en cardinalidad asociación ConstruccionUnidadConstruccion de 1..* a 0..*; ampliación del tamaño para campo de nombre en Interesado Natural; se incluyen los valores nuip, cedula militar, registro civil, cedula militar, secuencial SRN y secuencial IGAC al dominio COL_InteresadoDocumentoTipo
- * 30.07.2018/ fm : Cambio obligatoriedad atributo area_registral de clase terreno de 1 a 0..1
- * 31.07.2018/ fm: Creación de la clase COL_Interesado integrando los atributos de interesado natural e interesado jurídico; se agrega area en la clase construcción; se adiciona valor Carta_Venta al dominio COL_FuenteAdministrativaTipo; inclusion de atributo nombre en la clase COL_FuenteAdministrativa
+ * 07.11.2017/fm: Cambio de nombre a la clase CadenaCarasLindero a CadenaCarasLimite 
+ * 14.11.2017/fm : taducción del dominio COL_BuildingUnitTipo
+ * 14.12.2017/fm : definicion de extends entre topics catastro registro nucleo y Ladm_nucleo
+ * 30.01.2018/fm : Cambio del tipo de dato del atributo Ext_Direccion de la clase Unidad Espacial a ExtDireccion; atributo ext_PID de la calse LA_Interesado cambia de OID a ExtInteresado; Cambio de cardinalidad en relacion miembros entre LA_Interesado y LA_Agrupacion_Interesados de 0..1 a 0..*
+ * 19.02.2018/fm : Cambio en longitud de atributo DocumentoIdentidad de 10 a 12 posiciones
+ * 17.07.2018/fm : cambio en cardinalidad asociación ConstruccionUnidadConstruccion de 1..* a 0..*; ampliación del tamaño para campo de nombre en Interesado Natural; se incluyen los valores nuip, cedula militar, registro civil, cedula militar, secuencial SRN y secuencial IGAC al dominio COL_InteresadoDocumentoTipo
+ * 30.07.2018/fm : Cambio obligatoriedad atributo area_registral de clase terreno de 1 a 0..1
+ * 31.07.2018/fm: Creación de la clase COL_Interesado integrando los atributos de interesado natural e interesado jurídico; se agrega area en la clase construcción; se adiciona valor Carta_Venta al dominio COL_FuenteAdministrativaTipo; inclusion de atributo nombre en la clase COL_FuenteAdministrativa
  * 10.08.2018/fm: Eliminado clase Interesado Natural e Interesado Juridico
- * 28.08.2018/ fm: Ajuste a cardinalidad en la composición predio_copropiedad, se elimina el requerido.
- * 28.08.2018/ fm-at: Se incluye el tipo de predio conforme a la resolucion 070 de 2011; Se elimina el atributo tipo_construccion de la clase Unidad_Construcción ya que el dominio hace referencia a tipos de predios y no a tipos de construcciones
- * 10.09.2018/ fm-at: Ajuste a los tipos de Predio conforme a la resolucion 070
- * 21.09.2018/ at: Se agrega el valor "Hipoteca" al dominio COL_RestriccionTipo, se ajusta la longitud del atributo Codigo_Registral en las clases especializadas de LA_RRR de 3 a 4 caracteres
- * 25.09.2018/ at: Se ajusta la longitud del atributo Codigo_Registral en las clases especializadas de LA_RRR a 5 caracteres de acuerdo a la Resolución 3973 de 2018
- * 18.10.2018/ at: Se agregan los atributos p_Espacio_De_Nombres y p_Local_Id a la clase Publicidad
- * 29.10.2018/ fm: se amplia el tamaño de campo FMI en la clase predio para almacenar cadenas como 'LIBRO 2 TOMO 1/961 FOLIO 37/46 PARTIDA N 58'
- * 18.12.2018/ fm: adicion de constraints para validación logica de valores numericos mayores a 0
- * 19.12.2018/ fm-at: ajuste a constraint construccion area_construccion solo evaluar cuando sea diferente de nulo; Unión de dominios "Posesion" y "Ocupacion" para tipo de derecho; Unión de dominios "Desplazamiento Forzado" y "Victima o Restitucion" en tipo de Publicidad
- * 21.12.2018/ at: Modificación del tipo de String 'single line String' a 'multi line String' en los atributos 'Primer_Nombre', 'Segundo_Nombre', 'Primer_Apellido', 'Segundo_Apellido' y 'Razon_Social' de la clase COL_Interesado; para soportar caracteres especiales comunes en la información jurídica
- * 17.04.2019/ at: Se eliminan las validaciones de superposición en las clases lindero, punto_lindero y terreno
- * 22.04.2019/ at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
- * 03.05.2019/ at: Paso del dominio COL_UnidadEdificacionTipo del modelo Catastro-Registro al modelo LADM_Nucleo para poder ser usado por la clase LA_EspacioJuridicoUnidadEdificacion
- * 07.05.2019/ at: Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
- * 08.05.2019/ at: Se Cambia la cardinalidad del atributo Tipo en la clase Predio de obligatorio a opcional; Corrección del nombre del atributo Bosque_Area_Seminatural y su dominio asociado
- * 09.05.2019/ at: Se elimina el dominio COL_ZonaTipo; Se pasa el dominio COL_ViaTipo al modelo Ficha Predial; Asignación del prefijo CRG a todas las clases y dominios del modelo para facilitar legibilidad
- * 10.05.2019/ at: Documentación de los dominios y los nombres para mostrar de sus valores
- * 14.05.2019/ at: Creación de las clases CRG_FuenteAdministrativa y CRG_FuenteEspacial que implementan las clases del modelo LADM_COL COL_FuenteAdministrativa y COL_FuenteEspacial respectivamente; Se agrega el atributo "Codigo_Registral_Transaccion" en la clase CRG_FuenteAdministrativa para que aplique únicamente para el modelo catastro-registro
- * 15.05.2019/ at: Creación de la clase CRG_Agrupacion_Interesados que implementa la clase LA_Agrupacion_Interesados del modelo LADM_COL
+ * 28.08.2018/fm: Ajuste a cardinalidad en la composición predio_copropiedad, se elimina el requerido.
+ * 28.08.2018/fm-at: Se incluye el tipo de predio conforme a la resolucion 070 de 2011; Se elimina el atributo tipo_construccion de la clase Unidad_Construcción ya que el dominio hace referencia a tipos de predios y no a tipos de construcciones
+ * 10.09.2018/fm-at: Ajuste a los tipos de Predio conforme a la resolucion 070
+ * 21.09.2018/at: Se agrega el valor "Hipoteca" al dominio COL_RestriccionTipo, se ajusta la longitud del atributo Codigo_Registral en las clases especializadas de LA_RRR de 3 a 4 caracteres
+ * 25.09.2018/at: Se ajusta la longitud del atributo Codigo_Registral en las clases especializadas de LA_RRR a 5 caracteres de acuerdo a la Resolución 3973 de 2018
+ * 18.10.2018/at: Se agregan los atributos p_Espacio_De_Nombres y p_Local_Id a la clase Publicidad
+ * 29.10.2018/fm: se amplia el tamaño de campo FMI en la clase predio para almacenar cadenas como 'LIBRO 2 TOMO 1/961 FOLIO 37/46 PARTIDA N 58'
+ * 18.12.2018/fm: adicion de constraints para validación logica de valores numericos mayores a 0
+ * 19.12.2018/fm-at: ajuste a constraint construccion area_construccion solo evaluar cuando sea diferente de nulo; Unión de dominios "Posesion" y "Ocupacion" para tipo de derecho; Unión de dominios "Desplazamiento Forzado" y "Victima o Restitucion" en tipo de Publicidad
+ * 21.12.2018/at: Modificación del tipo de String 'single line String' a 'multi line String' en los atributos 'Primer_Nombre', 'Segundo_Nombre', 'Primer_Apellido', 'Segundo_Apellido' y 'Razon_Social' de la clase COL_Interesado; para soportar caracteres especiales comunes en la información jurídica
+ * 17.04.2019/at: Se eliminan las validaciones de superposición en las clases lindero, punto_lindero y terreno
+ * 22.04.2019/at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
+ * 03.05.2019/at: Paso del dominio COL_UnidadEdificacionTipo del modelo Catastro-Registro al modelo LADM_Nucleo para poder ser usado por la clase LA_EspacioJuridicoUnidadEdificacion
+ * 07.05.2019/at: Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
+ * 08.05.2019/at: Se Cambia la cardinalidad del atributo Tipo en la clase Predio de obligatorio a opcional; Corrección del nombre del atributo Bosque_Area_Seminatural y su dominio asociado
+ * 09.05.2019/at: Se elimina el dominio COL_ZonaTipo; Se pasa el dominio COL_ViaTipo al modelo Ficha Predial; Asignación del prefijo CRG a todas las clases y dominios del modelo para facilitar legibilidad
+ * 10.05.2019/at: Documentación de los dominios y los nombres para mostrar de sus valores
+ * 14.05.2019/at: Creación de las clases CRG_FuenteAdministrativa y CRG_FuenteEspacial que implementan las clases del modelo LADM_COL COL_FuenteAdministrativa y COL_FuenteEspacial respectivamente; Se agrega el atributo "Codigo_Registral_Transaccion" en la clase CRG_FuenteAdministrativa para que aplique únicamente para el modelo catastro-registro
+ * 15.05.2019/at: Creación de la clase CRG_Agrupacion_Interesados que implementa la clase LA_Agrupacion_Interesados del modelo LADM_COL
+ * 20.05.2019/at: Se agrega el valor "Aguas" al dominio CRG_ServidumbreTipo
  * -----------------------------------------------------------
  * 
  * (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -266,6 +267,8 @@ VERSION "V2.2.1"  // 2018-02-19 // =
       Petrolera,
       !!@ ili2db.dispName = "Eléctrica"
       Electrica,
+      !!@ ili2db.dispName = "Aguas"
+      Aguas,
       !!@ ili2db.dispName = "Otra"
       Otra
     );

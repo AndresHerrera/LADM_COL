@@ -3,16 +3,16 @@ INTERLIS 2.3;
 /** Ficha Predial.
  * 
  * 01.02.2018/ : Cambio en cardinalidad en asociacion predioFicha_predio de 1 a 0..1
- * 08.08.2018/ at:Cambio en el nombre del atributo Actividad_Economica por Destinacion_Economica; Cambio en el nombre del dominio COL_UsoTipo por COL_DestinacionEconomicaTipo; Cambio en cardinalidad de atributos en clase Predio_Ficha
- * 10.08.2018/ fm: cambio en el rol de interesado natural y jurídico ahora se asocia a Col_Interesado
- * 21.08.2018/ at:Se agrega el dominio COL_FormalidadTipo para los valores del atributo Formalidad en clase Predio_Ficha
- * 17.09.2018/ fm: cambio en el orden de los roles de la asociación PredioFicha_Predio para evitar la creación de la tabla de paso en el modelo físico cuando hay dependencia de topics
- * 17.09.2018/ at: Cambio en los nombres de los dominios COL_PredioTipoPublicoTipo y COL_PredioTipo para evitar redundancias
- * 18.02.2019/ at: Cambio en la longitud de algunos atributos de las clases Predio_Ficha y NucreoFamiliar para soportar datos levantados.
- * 21.02.2019/ at: Se elimina la dependencia entre el modelo Ficha y modelo de Avalúos
- * 22.04.2019/ at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
- * 09.05.2019/ at: Creación del atributo Tipo_Via en la clase Predio; Asignación del prefijo FPR a todas las clases y dominios del modelo para facilitar legibilidad
- * 10.05.2019/ at: Documentación de los dominios y los nombres para mostrar de sus valores
+ * 08.08.2018/at:Cambio en el nombre del atributo Actividad_Economica por Destinacion_Economica; Cambio en el nombre del dominio COL_UsoTipo por COL_DestinacionEconomicaTipo; Cambio en cardinalidad de atributos en clase Predio_Ficha
+ * 10.08.2018/fm: cambio en el rol de interesado natural y jurídico ahora se asocia a Col_Interesado
+ * 21.08.2018/at:Se agrega el dominio COL_FormalidadTipo para los valores del atributo Formalidad en clase Predio_Ficha
+ * 17.09.2018/fm: cambio en el orden de los roles de la asociación PredioFicha_Predio para evitar la creación de la tabla de paso en el modelo físico cuando hay dependencia de topics
+ * 17.09.2018/at: Cambio en los nombres de los dominios COL_PredioTipoPublicoTipo y COL_PredioTipo para evitar redundancias
+ * 18.02.2019/at: Cambio en la longitud de algunos atributos de las clases Predio_Ficha y NucreoFamiliar para soportar datos levantados.
+ * 21.02.2019/at: Se elimina la dependencia entre el modelo Ficha y modelo de Avalúos
+ * 22.04.2019/at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
+ * 09.05.2019/at: Creación del atributo Tipo_Via en la clase Predio; Asignación del prefijo FPR a todas las clases y dominios del modelo para facilitar legibilidad
+ * 10.05.2019/at: Documentación de los dominios y los nombres para mostrar de sus valores
  */
 MODEL Ficha_Predial_V2_2_1 (es)
 AT "http://www.proadmintierra.info/"

@@ -2,9 +2,9 @@ INTERLIS 2.3;
 
 /** iNFORME TECNICO JURIDICO PRELIMINAR - ANT
  * 
- * 08.02.2019/ fm: Version inicial del modelo informe tecnico-jurídico preliminar
- * 18.02.2019/ fm: Inclusion variables de correspondencia en la inscripción del predio en la entidad catastral
- * 09.05.2019/ at: Asignación del prefijo ITJP a todas las clases y dominios del modelo para facilitar legibilidad
+ * 08.02.2019/fm: Version inicial del modelo informe tecnico-jurídico preliminar
+ * 18.02.2019/fm: Inclusion variables de correspondencia en la inscripción del predio en la entidad catastral
+ * 09.05.2019/at: Asignación del prefijo ITJP a todas las clases y dominios del modelo para facilitar legibilidad
  */
 MODEL ITJP_V1_0 (es)
 AT "http://www.proadmintierra.info/"

@@ -2,12 +2,12 @@ INTERLIS 2.3;
 
 /** Cartografia de referencia.
  * 
- * 02.08.2018/ fm: Actualizacion de dependencia a la version 2.2.1 del nucleo y LADM 1.1
- * 19.04.2018/ fm-gc: Cambio de geometrias de GM_Surface2D a GM_MultiSurface2D
- * 22.04.2019/ at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
- * 07.05.2019/ at: Cambio en el tipo de geometria de las clases de los Topics LimitesOperativosCatastro y LimitesPoliticoAdministrativos para soportar 3D; Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
- * 09.05.2019/ at: Creación del dominio ZonaTipo; Asignación del prefijo CRF a todas las clases y dominios del modelo para facilitar legibilidad
- * 13.05.2019/ at: Documentación de los dominios y los nombres para mostrar de sus valores
+ * 02.08.2018/fm: Actualizacion de dependencia a la version 2.2.1 del nucleo y LADM 1.1
+ * 19.04.2018/fm-gc: Cambio de geometrias de GM_Surface2D a GM_MultiSurface2D
+ * 22.04.2019/at-fm: Se habilita soporte para identificador interno tipo uuid en el "Topic"
+ * 07.05.2019/at: Cambio en el tipo de geometria de las clases de los Topics LimitesOperativosCatastro y LimitesPoliticoAdministrativos para soportar 3D; Actualización de las referencias del modelo cambiando el marco geocéntrico de referencia de MAGNABOG a MAGNA-SIRGAS
+ * 09.05.2019/at: Creación del dominio ZonaTipo; Asignación del prefijo CRF a todas las clases y dominios del modelo para facilitar legibilidad
+ * 13.05.2019/at: Documentación de los dominios y los nombres para mostrar de sus valores
  */
 MODEL Cartografia_Referencia_V2_2_1 (es)
 AT "http://www.proadmintierra.info/"
