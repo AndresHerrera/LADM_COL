@@ -188,7 +188,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Estrato_5,
       Estrato_6
     );
-  STRUCTURE COL_ServicioPublicoTipo_Predio_Ficha_Servicio_Publico = value : MANDATORY COL_ServicioPublicoTipo; END COL_ServicioPublicoTipo_Predio_Ficha_Servicio_Publico;
+  STRUCTURE COL_ServicioPublicoTipo_ = value : MANDATORY COL_ServicioPublicoTipo; END COL_ServicioPublicoTipo_;
 
   TOPIC Ficha =
     OID AS INTERLIS.UUIDOID;
@@ -258,7 +258,7 @@ VERSION "V2.2.1"  // 2018-02-01 // =
       Formalidad : Ficha_Predial_V2_2_1.COL_FormalidadTipo;
       /** Indica las redes de servicios públicos con los que el inmueble es abastecido.
        */
-      Servicio_Publico : BAG {0..*} OF Ficha_Predial_V2_2_1.COL_ServicioPublicoTipo_Predio_Ficha_Servicio_Publico;
+      Servicio_Publico : BAG {0..*} OF Ficha_Predial_V2_2_1.COL_ServicioPublicoTipo_;
       /** caracteriza el estrato socioeconómico del predio
        */
       Estrato : Ficha_Predial_V2_2_1.COL_EstratoTipo;
