@@ -59,6 +59,7 @@ INTERLIS 2.3;
  * 14.05.2019/at: Creación de las clases CRG_FuenteAdministrativa y CRG_FuenteEspacial que implementan las clases del modelo LADM_COL COL_FuenteAdministrativa y COL_FuenteEspacial respectivamente; Se agrega el atributo "Codigo_Registral_Transaccion" en la clase CRG_FuenteAdministrativa para que aplique únicamente para el modelo catastro-registro
  * 15.05.2019/at: Creación de la clase CRG_Agrupacion_Interesados que implementa la clase LA_Agrupacion_Interesados del modelo LADM_COL
  * 20.05.2019/at: Se agrega el valor "Aguas" al dominio CRG_ServidumbreTipo
+ * 28.05.2019/at: Se eliminan dominios no usados
  * -----------------------------------------------------------
  * 
  * (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -71,27 +72,6 @@ VERSION "V2.2.1"  // 2018-02-19 // =
   IMPORTS LADM_COL_V1_1,MAGNA_SIRGAS_V0_1;
 
   DOMAIN
-
-    COL_EstructuraTipo = (
-      Croquis,
-      Linea_no_Estructurada,
-      Texto,
-      Topologico
-    );
-
-    COL_RedServiciosTipo = (
-      Petroleo,
-      Quimicos,
-      Red_Termica,
-      Telecomunicacion
-    );
-
-    COL_TipoConstruccionTipo = (
-      Anexo,
-      No_PH,
-      Parque_Cementerio,
-      PH
-    );
 
     /** Valores para indicar el nivel de acuerdo
      */

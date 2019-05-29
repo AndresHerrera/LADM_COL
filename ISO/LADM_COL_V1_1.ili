@@ -32,6 +32,7 @@ INTERLIS 2.3;
  * 14.05.2019/at: Cambio de las clases COL_FuenteAdministrativa y COL_FuenteEspacial a clases abstractas para que puedan ser implementadas en los modelos que extiendan el modelo LADM_COL; 
  * 15.05.2019/at: Cambio de la clase LA_Agrupacion_Interesados a clase abstracta; Eliminación del atributo "Codigo_Registral_Transaccion" de la clase COL_FuenteAdministrativa debido a que este es un atributo exclusivo del modelo catastro-registro
  * 20.05.2019/at: Se agrega el valor "Laudo_Administrativo" al dominio COL_FuenteAdministrativaTipo
+ * 28.05.2019/at: Cambio de clases LA_EspacioJuridicoRedServicios y LA_AgrupacionUnidadesEspaciales a clases abstractas; Paso de los dominios COL_RedServiciosTipo y COL_EstructuraTipo desde el modelo catastro-registro al modelo LADM_COL
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -66,6 +67,13 @@ VERSION "V1.1.0"  // 2018-04-19 // =
         Area_Estimado_Construccion,
         Area_No_Oficial,
         Area_Registral
+      );
+
+      COL_EstructuraTipo = (
+        Croquis,
+        Linea_no_Estructurada,
+        Texto,
+        Topologico
       );
 
       COL_FuenteEspacialTipo = (
@@ -109,6 +117,13 @@ VERSION "V1.1.0"  // 2018-04-19 // =
         Responsabilidad,
         Restriccion_Derecho_Publico,
         Restriction_Derecho_Privado
+      );
+
+      COL_RedServiciosTipo = (
+        Petroleo,
+        Quimicos,
+        Red_Termica,
+        Telecomunicacion
       );
 
       COL_UnidadEdificacionTipo = (
@@ -760,7 +775,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
 
     /** Agrupa unidades espaciales, es decir, representaciones geográficas de las unidades administrativas básicas (clase LA_BAUnit) para representar otras unidades espaciales que se forman en base a estas, como puede ser el caso de los polígonos catastrales.
      */
-    CLASS LA_AgrupacionUnidadesEspaciales
+    CLASS LA_AgrupacionUnidadesEspaciales (ABSTRACT)
     EXTENDS ObjetoVersionado =
       /** Nivel jerárquico de la agrupación, dentro del anidamiento de diferentes agrupaciones.
        */
@@ -798,7 +813,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
 
     /** Traducción al español de la clase LA_LegalSpaceUtilityNetwork. Representa un tipo de unidad espacial (LA_UNidadEspacial) cuyas instancias son las redes de servicios.
      */
-    CLASS LA_EspacioJuridicoRedServicios
+    CLASS LA_EspacioJuridicoRedServicios (ABSTRACT)
     EXTENDS LA_UnidadEspacial =
       /** Identificador de la red física hacia una referencia externa.
        */
