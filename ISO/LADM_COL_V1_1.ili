@@ -33,6 +33,7 @@ INTERLIS 2.3;
  * 15.05.2019/at: Cambio de la clase LA_Agrupacion_Interesados a clase abstracta; Eliminación del atributo "Codigo_Registral_Transaccion" de la clase COL_FuenteAdministrativa debido a que este es un atributo exclusivo del modelo catastro-registro
  * 20.05.2019/at: Se agrega el valor "Laudo_Administrativo" al dominio COL_FuenteAdministrativaTipo
  * 28.05.2019/at: Cambio de clases LA_EspacioJuridicoRedServicios y LA_AgrupacionUnidadesEspaciales a clases abstractas; Paso de los dominios COL_RedServiciosTipo y COL_EstructuraTipo desde el modelo catastro-registro al modelo LADM_COL
+ * 29.05.2019/at: Cambio a abstractas las clases LA_Nivel, LA_RelacionNecesariaUnidadesEspaciales, LA_RelacionNecesariaBAUnits y la relación puntoReferencia
  * -----------------------------------------------------------
  * 
  *  (c) IGAC y SNR con apoyo de la Cooperacion Suiza
@@ -833,7 +834,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
 
     /** Traducción de la calse LA_Level de LADM.
      */
-    CLASS LA_Nivel
+    CLASS LA_Nivel (ABSTRACT)
     EXTENDS ObjetoVersionado =
       n_ID : MANDATORY LADM_COL_V1_1.LADM_Nucleo.Oid;
       Nombre : CharacterString;
@@ -844,7 +845,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
 
     /** Traducción al español de la clase LA_RequiredRelationshipSpatialUnit de LADM.
      */
-    CLASS LA_RelacionNecesariaUnidadesEspaciales
+    CLASS LA_RelacionNecesariaUnidadesEspaciales (ABSTRACT)
     EXTENDS ObjetoVersionado =
       Relacion : MANDATORY ISO19125_Tipo;
     END LA_RelacionNecesariaUnidadesEspaciales;
@@ -903,7 +904,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
 
     /** Traducción de la clase LA_RequiredRelationshipBAUnit de LADM.
      */
-    CLASS LA_RelacionNecesariaBAUnits
+    CLASS LA_RelacionNecesariaBAUnits (ABSTRACT)
     EXTENDS ObjetoVersionado =
       Relacion : MANDATORY CharacterString;
     END LA_RelacionNecesariaBAUnits;
@@ -997,7 +998,7 @@ VERSION "V1.1.0"  // 2018-04-19 // =
       cl_Local_Id : MANDATORY CharacterString;
     END LA_CarasLindero;
 
-    ASSOCIATION puntoReferencia =
+    ASSOCIATION puntoReferencia(ABSTRACT) =
       ue (EXTERNAL) -- {0..1} LA_UnidadEspacial;
       punto -- {0..1} LA_Punto;
     END puntoReferencia;
